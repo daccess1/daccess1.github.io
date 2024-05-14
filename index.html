@@ -9,6 +9,12 @@
     <h1>TG WebApp API test</h1>
     <p id="loadResult"></p>
 
-    <script src="https://daccess1.github.io/scripts/index.js?v=1"></script>
+    <script src="https://daccess1.github.io/scripts/index.js?v=2"></script>
+    <script type="text/javascript">
+        window.addEventListener('load', () => {
+            window.Telegram.WebApp.expand();
+            document.getElementById('loadResult').innerHTML = decodeURI(window.Telegram.WebApp.initData);
+        });
+    </script>
 </body>
 </html>
