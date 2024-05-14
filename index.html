@@ -18,8 +18,13 @@
         });
 
         document.getElementById('share').addEventListener('click', (e) => {
-            //window.external.notify(JSON.stringify({eventType: eventType, eventData: eventData}));
-            window.Telegram.WebApp.MainButton.show();
+            window.external.notify(JSON.stringify({
+                eventType: "web_app_open_tg_link",
+                eventData: {
+                    path_full: "/share/url?text=Share"
+                }
+            }));
+            //window.Telegram.WebView.postEvent()
         });
 
         window.external.notify(JSON.stringify({eventType: eventType, eventData: eventData}));
