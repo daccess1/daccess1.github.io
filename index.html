@@ -19,15 +19,21 @@
         });
 
         document.getElementById('share1').addEventListener('click', (e) => {
-            window.TelegramWebviewProxy.postEvent(
+            window.Telegram.WebApp.postEvent(
                 "web_app_open_tg_link",
                 {
                     path_full: "/share/url?text=Share"
-                });
+                }
+            );
         });
 
         document.getElementById('share2').addEventListener('click', (e) => {
-            window.parent.postMessage(JSON.stringify({eventType: "web_app_open_tg_link", eventData: {path_full: "/share/url?text=Share"}}), '*');
+            window.Telegram.postEvent(
+                "web_app_open_tg_link",
+                {
+                    path_full: "/share/url?text=Share"
+                }
+            );
         });
 
         function getUserData() {
