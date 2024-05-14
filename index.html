@@ -9,6 +9,7 @@
     <h1>TG WebApp API test</h1>
     <pre id="loadResult"></pre>
     <button id="share1">share1</button>
+    <button id="share2">share2</button>
 
     <script src="https://daccess1.github.io/scripts/index.js?v=2"></script>
     <script type="text/javascript">
@@ -19,6 +20,15 @@
 
         document.getElementById('share1').addEventListener('click', (e) => {
             postEvent(
+                "web_app_open_tg_link",
+                {
+                    path_full: "/share/url?text=Share"
+                }
+            );
+        });
+
+        document.getElementById('share2').addEventListener('click', (e) => {
+            window.Telegram.WebView.postEvent(
                 "web_app_open_tg_link",
                 {
                     path_full: "/share/url?text=Share"
