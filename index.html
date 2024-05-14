@@ -7,14 +7,20 @@
 </head>
 <body>
     <h1>TG WebApp API test</h1>
-    <p id="loadResult"></p>
+    <pre id="loadResult"></pre>
 
     <script src="https://daccess1.github.io/scripts/index.js?v=2"></script>
     <script type="text/javascript">
         window.addEventListener('load', () => {
             window.Telegram.WebApp.expand();
-            document.getElementById('loadResult').innerHTML = decodeURI(window.Telegram.WebApp.initData);
+            document.getElementById('loadResult').innerHTML = JSON.stringify(getUserData());
         });
+
+        function getUserData() {
+            const decoded = decodeURI(window.Telegram.WebApp.initData);
+            const str = decoded.substring(decoded.indexOf('{') + 1, decoded.indexOf('}'));
+            return JSON.parse(decodeURI(str));
+        }
     </script>
 </body>
 </html>
