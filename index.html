@@ -9,6 +9,7 @@
     <h1>TG WebApp API test</h1>
     <pre id="loadResult"></pre>
     <button id="share1">share1</button>
+    <a href="#" onclick="navigate('/page2')">Navigate</a>
 
     <script src="https://daccess1.github.io/scripts/index.js?v=2"></script>
     <script type="text/javascript">
@@ -32,6 +33,10 @@
         function getUserData() {
             const decoded = decodeURI(window.Telegram.WebApp.initData);
             return decoded;
+        }
+
+        function navigate(url) {
+            window.history.pushState('page2', 'Page 2', url);
         }
     </script>
 </body>
