@@ -10,7 +10,7 @@
     <pre id="loadResult"></pre>
     <button id="share1">share1</button>
     <a onclick="navigate('/page2', 'page2')">Navigate 2</a>
-    <a onclick="navigate('/page2', 'page3')">Navigate 3</a>
+    <a onclick="navigate('/page3', 'page3')">Navigate 3</a>
     <p id="content">index</p>
     <pre id="debug"></pre>
 
@@ -58,12 +58,12 @@
 
         function navigate(url, state) {
             document.getElementById('content').innerHTML = state;
-            document.getElementById('debug').innerHTML = JSON.stringify(navigations);
             navigations.push({
                 url: url,
                 state: state
             });
             _wa.BackButton.show();
+            document.getElementById('debug').innerHTML = JSON.stringify(navigations);
         }
     </script>
 </body>
