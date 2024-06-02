@@ -10,11 +10,15 @@
     <pre id="loadResult"></pre>
     <button id="share1">share1</button>
     <a onclick="navigate('/page2')">Navigate</a>
+    <p id="content"></p>
 
     <script src="https://daccess1.github.io/scripts/index.js?v=2"></script>
     <script type="text/javascript">
+        let _wa;
+
         window.addEventListener('load', () => {
-            window.Telegram.WebApp.expand();
+            _wa = window.Telegram.WebApp;
+            _wa.expand();
             document.getElementById('loadResult').innerHTML = JSON.stringify(getUserData());
         });
 
@@ -31,13 +35,14 @@
         });
 
         function getUserData() {
-            const decoded = decodeURI(window.Telegram.WebApp.initData);
+            const decoded = decodeURI(_wa.initData);
             return decoded;
         }
 
         function navigate(url) {
             window.history.pushState('page2', 'Page 2', url);
-            window.Telegram.WebApp.BackButton.isVisible = true;
+            document.getElementById('content').innerHTML = 'page2';
+            _wa.BackButton.show();
         }
     </script>
 </body>
