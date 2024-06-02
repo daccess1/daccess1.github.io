@@ -9,17 +9,32 @@
     <h1>TG WebApp API test</h1>
     <pre id="loadResult"></pre>
     <button id="share1">share1</button>
-    <a onclick="navigate('/page2')">Navigate</a>
-    <p id="content"></p>
+    <a onclick="navigate('/page2', 'page2')">Navigate 2</a>
+    <a onclick="navigate('/page2', 'page3')">Navigate 3</a>
+    <p id="content">index</p>
 
     <script src="https://daccess1.github.io/scripts/index.js?v=2"></script>
     <script type="text/javascript">
         let _wa;
+        let navigations = [{
+            url: '/',
+            state: 'index'
+        }];
 
         window.addEventListener('load', () => {
             _wa = window.Telegram.WebApp;
             _wa.expand();
             document.getElementById('loadResult').innerHTML = JSON.stringify(getUserData());
+
+            _wa.BackButton.onClick(() => {
+                const prevPage = navigations[navigations.length - 1];
+                document.getElementById('content').innerHTML = prevPage.state;
+                if (navigations.length == 1) {
+                    _wa.BackButton.hide();
+                } else {
+                    navigations.pop();
+                }
+            });
         });
 
         document.getElementById('share1').addEventListener('click', (e) => {
@@ -39,9 +54,13 @@
             return decoded;
         }
 
-        function navigate(url) {
-            window.history.pushState('page2', 'Page 2', url);
-            document.getElementById('content').innerHTML = 'page2';
+        function navigate(url, state) {
+            window.history.pushState(state, '', url);
+            document.getElementById('content').innerHTML = state;
+            navigations.push({
+                url: url,
+                state: state
+            });
             _wa.BackButton.show();
         }
     </script>
