@@ -28,7 +28,7 @@
             document.getElementById('loadResult').innerHTML = JSON.stringify(getUserData());
 
             _wa.BackButton.onClick(() => {
-                const prevPage = navigations[navigations.length - 1];
+                const prevPage = navigations[navigations.length - 2];
                 document.getElementById('content').innerHTML = prevPage.state;
                 if (navigations.length == 1) {
                     _wa.BackButton.hide();
