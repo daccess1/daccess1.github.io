@@ -57,6 +57,12 @@
         }
 
         function navigate(url, state) {
+            const prevPage = navigations[navigations.length - 1];
+
+            if (url === prevPage.url) {
+                return;
+            }
+
             document.getElementById('content').innerHTML = state;
             navigations.push({
                 url: url,
