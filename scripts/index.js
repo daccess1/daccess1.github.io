@@ -23,6 +23,10 @@ function inviteButtonClick() {
     );
 }
 
+function copyUrlButtonClick() {
+    navigator.clipboard.writeText("Umperium bot share url");
+}
+
 function getUserData() {
     const decoded = decodeURI(_wa.initData);
     return decoded;
