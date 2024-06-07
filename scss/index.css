@@ -1,4 +1,4 @@
-body {
+body.wrapper {
   padding: 0;
   margin: 0;
   background-color: #01290F;
@@ -6,8 +6,9 @@ body {
   color: #FFF;
   width: 100%;
   max-width: 100%;
+  padding-bottom: 90px;
 }
-body * {
+body.wrapper * {
   box-sizing: border-box;
 }
 
@@ -16,49 +17,8 @@ html, body, div, a, p, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-.wrapper {
-  display: flex;
-  flex: 1 0 100%;
-  flex-direction: column;
-  width: 100%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 100%;
-  width: 100%;
-  padding: 0 10px;
-}
-
-.row {
-  display: flex;
-  flex: 1 0 auto;
-  margin-left: -10px;
-  margin-right: -10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: auto;
-}
-
-.col {
-  width: 100%;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-.align-items-center {
-  align-items: center;
+a {
+  text-decoration: none;
 }
 
 .screenHeader {
@@ -114,7 +74,7 @@ html, body, div, a, p, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #fedd9b;
 }
-.bottomMenu--item.active .bottomMenu--itemText {
+.bottomMenu--item--active .bottomMenu--itemText {
   color: #fff;
 }
 
