@@ -38,7 +38,7 @@ async function loadFriendsPage() {
     }
 
     const request = new XMLHttpRequest();
-    request.open("GET", "/pages/friends/page.template.html", true);
+    request.open("GET", "/pages/friends/page.template.html?v=1", true);
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
             const template = request.responseText;
