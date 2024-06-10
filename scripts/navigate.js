@@ -2,8 +2,8 @@ function backendAPIRequest(url) {
     return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
         xhr.open('get', url, true);
-        xhr.responseType = 'document';
         xhr.onload = function () {
+            console.log('XHR type:', xhr.responseType);
             var status = xhr.status;
             if (status === 200) {
                 resolve(xhr.responseText);
@@ -17,9 +17,11 @@ function backendAPIRequest(url) {
 
 async function loadFriendsPage() {
     console.log('Loading friends page');
-    // const view = await backendAPIRequest('http://localhost:8080/player/friends/018ff258-3ad0-7198-a240-e4499593faf3');
-    //
-    // console.log(view);
+    const viewF = await fetch("https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/018ff258-3ad0-7198-a240-e4499593faf3");
+    const viewFBody = await viewF.json();
+
+    console.log('XHR:', JSON.parse(view));
+    console.log('Fetch:', viewFBody);
 
     const view = {
         friends_count: 2,
