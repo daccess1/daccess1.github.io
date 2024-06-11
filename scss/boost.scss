@@ -1,0 +1,132 @@
+.screenHeader {
+  padding-bottom: 12px;
+}
+.boostTask {
+  margin-top: 33px;
+
+  &--title {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: normal;
+    color: #ffffff;
+    margin-bottom: 13px;
+  }
+
+  &--item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 0.40);
+    background-image: linear-gradient(to bottom, #104e1d, #297428);
+    border-radius: 8px;
+    padding: 10px;
+    padding-right: 15px;
+
+    & + & {
+      margin-top: 7px;
+    }
+
+    &Icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      flex: 0 0 auto;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(1, 41, 15, 0.6);
+      border-radius: 10px;
+      margin-right: 10px;
+
+      img {
+        width: 40px;
+      }
+    }
+    &Text {
+      flex: 1 1 auto;
+      &Title {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 6px;
+      }
+      &Body {
+        font-weight: 700;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        img {
+          width: 20px;
+          height: 20px;
+          margin-right: 7px;
+        }
+        &Highlight {
+          color: #F7A201;
+        }
+      }
+    }
+    &Check {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.wheelOfFortune {
+  --width: calc(100vw - 120px);
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: var(--width);
+  height: var(--width);
+  overflow: hidden;
+  background-image: url('/img/wheel-of-fortune-bg.svg');
+  background-position: center;
+  background-size: cover;
+
+  &::after {
+    content: '';
+    width: 27%;
+    height: 27%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -13.5%;
+    margin-top: -17.5%;
+    background-image: url("/img/wheel-of-fortune-arrow.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &--spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: calc((var(--width) - 10%) / -2);
+    margin-top: calc((var(--width) - 10%) / -2);
+    background-image: url('/img/wheel-of-fortune-spinner.svg');
+    background-position: center;
+    background-size: cover;
+    width: calc((var(--width) - 10%));
+    height: calc((var(--width) - 10%));
+    -webkit-transition: transform 3s ease-out, -webkit-transform 3s ease-out;
+    transition: transform 3s ease-out, -webkit-transform 3s ease-out;
+  }
+}
+.wheelOfFortuneButton {
+  background-image: linear-gradient(to top, #fe8d03, #fcbf04);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+  color: #ffffff;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0 none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 9px;
+  margin-top: 20px;
+}

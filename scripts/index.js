@@ -1,18 +1,21 @@
 let _wa;
 let _tg_user;
 let _player;
+let _toast;
 
 
 window.addEventListener('load', () => {
     _wa = window.Telegram.WebApp;
-    getUserData().then(data => {
+    getUserData().then(() => {
         _wa.expand();
     });
 
     _wa.BackButton.onClick(() => {
-        navigations.pop();
-        _wa.BackButton.hide();
+        loadHomePage();
     });
+
+    const myToastEl = document.getElementById('toast');
+    _toast = new bootstrap.Toast(myToastEl);
 });
 
 function inviteButtonClick() {
@@ -43,8 +46,4 @@ async function getUserData() {
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
         _player = await playerPayload.json();
     }
-}
-
-function navigate(page) {
-    _wa.BackButton.show();
 }

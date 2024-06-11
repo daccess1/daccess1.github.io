@@ -1,0 +1,97 @@
+<div class="container-fluid screenTopNotification" id="screenTopNotification">
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <div class="screenTopNotification--container">
+                <img src="/img/icon-timer.svg" alt="timer" class="screenTopNotification--icon">
+                <span class="screenTopNotification--text" id="screenTopNotification--boostCountdown">{{countdown}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid screenHeader">
+    <div class="row">
+        <div class="col">
+            <h1 class="screenHeader--title">Заработай больше<br>монет</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid wheelOfFortuneWrapper">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <img src="/img/wheel-of-fortune-bg.svg" alt="" style="width: 0; height: 0">
+            <img src="/img/wheel-of-fortune-spinner.svg" alt="" style="width: 0; height: 0">
+            <img src="/img/wheel-of-fortune-arrow.svg" alt="" style="width: 0; height: 0">
+            <div id="wheelOfFortune" class="wheelOfFortune">
+                <div class="wheelOfFortune--spinner" id="wheelOfFortune--spinner"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="wheelOfFortuneButton" id="wheelOfFortuneButton" onclick="spinWheel()">Крутить!</button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid boostTask">
+    <div class="row">
+        <div class="col">
+            <h3 class="boostTask--title">Список заданий</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="boostTask--item">
+                <div class="boostTask--itemIcon">
+                    <img src="/img/icon-youtube.svg" alt="youtube">
+                </div>
+                <div class="boostTask--itemText">
+                    <h3 class="boostTask--itemTextTitle">Присоединяйтесь<br>к нашему каналу</h3>
+                    <p class="boostTask--itemTextBody">
+                        <img src="/img/icon-coin.svg" alt="coin">
+                        <span class="boostTask--itemTextBodyHighlight">+5 000</span>
+                    </p>
+                </div>
+                <div class="boostTask--itemCheck">
+                    <img src="/img/icon-check-green.svg" alt="check">
+                </div>
+            </div>
+
+            <div class="boostTask--item">
+                <div class="boostTask--itemIcon">
+                    <img src="/img/icon-telegram.svg" alt="telegram">
+                </div>
+                <div class="boostTask--itemText">
+                    <h3 class="boostTask--itemTextTitle">Получите эксклюзивную<br>информацию</h3>
+                    <p class="boostTask--itemTextBody">
+                        <img src="/img/icon-coin.svg" alt="coin">
+                        <span class="boostTask--itemTextBodyHighlight">+5 000</span>
+                    </p>
+                </div>
+                <div class="boostTask--itemCheck">
+                    <img src="/img/icon-check-green.svg" alt="check">
+                </div>
+            </div>
+
+            <div class="boostTask--item">
+                <div class="boostTask--itemIcon">
+                    <img src="/img/icon-twitter.svg" alt="twitter">
+                </div>
+                <div class="boostTask--itemText">
+                    <h3 class="boostTask--itemTextTitle">Следи за нашим<br>аккаунтом в X</h3>
+                    <p class="boostTask--itemTextBody">
+                        <img src="/img/icon-coin.svg" alt="coin">
+                        <span class="boostTask--itemTextBodyHighlight">+5 000</span>
+                    </p>
+                </div>
+                <div class="boostTask--itemCheck">
+                    <img src="/img/icon-check-green.svg" alt="check">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/scripts/boost.js"></script>

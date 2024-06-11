@@ -20,9 +20,32 @@ a {
   text-decoration: none;
 }
 
+.screenTopNotification {
+  background-color: #07201f;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &--container {
+    background-color: #000;
+    padding: 5px 10px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+  }
+  &--icon {
+    width: 20px;
+    margin-right: 9px;
+  }
+  &--text {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: normal;
+    color: #ffffff;
+  }
+}
+
 .screenHeader {
-  padding-top: 23px;
-  padding-bottom: 23px;
+  padding-top: 5px;
   justify-content: center;
 
   &--title {
@@ -38,33 +61,22 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #01290f;
+  background-color: #022a10;
   padding: 10px;
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top:-13px;
-    height: 13px;
-    background-image: linear-gradient(to bottom, rgba(1, 41, 15, 0), rgba(1, 41, 15, 1));
-  }
 
   &--container {
-    background-image: linear-gradient(to top, #fe8d03, #fcbf04);
-    border-radius: 10px;
     display: flex;
     justify-content: space-around;
-    padding: 11px 0;
   }
 
   &--item {
     display: flex;
-    flex: 1 1 auto;
-    width: 20%;
+    flex: 0 1 auto;
+    width: 50px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px 8px;
 
     &Icon {
       height: 20px;
@@ -73,13 +85,30 @@ a {
     &Text {
       font-size: 10px;
       font-weight: 700;
-      color: #fedd9b;
+      color: #9aaa9f;
+      line-height: 7px;
     }
 
     &--active {
+      background-image: linear-gradient(to top, #fe8d03, #fcbf04);
+      border-radius: 8px;
       .bottomMenu--itemText {
         color: #fff;
       }
     }
+  }
+}
+
+.toast {
+  left: 20px !important;
+  right: 20px !important;
+  bottom: 80px !important;
+  width: auto;
+  position: fixed;
+  background-image: linear-gradient(to top, #fe8d03, #fcbf04);
+
+  &-body {
+    font-weight: 500;
+    font-size: 15px;
   }
 }

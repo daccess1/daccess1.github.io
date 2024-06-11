@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/scss/bootstrap.min.css">
     <link rel="stylesheet" href="/scss/index.css">
     <link rel="stylesheet" href="/scss/friends.css">
+    <link rel="stylesheet" href="/scss/boost.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
 </head>
 <body class="wrapper">
@@ -19,30 +20,41 @@
 
     <div class="bottomMenu">
         <div class="bottomMenu--container">
-            <a class="bottomMenu--item">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-home-inactive.svg" alt="home">
+            <a class="bottomMenu--item bottomMenu--item--active" data-page="home" onclick="loadHomePage()">
+                <img class="bottomMenu--itemIcon" src="/img/menu-icon-home-active.svg" data-active="/img/menu-icon-home-active.svg" data-inactive="/img/menu-icon-home-inactive.svg" alt="home">
                 <span class="bottomMenu--itemText">Home</span>
             </a>
-            <a class="bottomMenu--item">
-                <img class="bottomMenu--itemIcon" src= "/img/menu-icon-actives-inactive.svg" alt="home">
+            <a class="bottomMenu--item" data-page="actives">
+                <img class="bottomMenu--itemIcon" src="/img/menu-icon-actives-inactive.svg" data-active="/img/menu-icon-actives-active.svg" data-inactive="/img/menu-icon-actives-inactive.svg" alt="actives">
                 <span class="bottomMenu--itemText">Actives</span>
             </a>
-            <a class="bottomMenu--item bottomMenu--item--active" onclick="loadFriendsPage()">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-friends-active.svg" alt="home">
+            <a class="bottomMenu--item" onclick="loadFriendsPage()" data-page="friends">
+                <img class="bottomMenu--itemIcon" src="/img/menu-icon-friends-inactive.svg" data-active="/img/menu-icon-friends-active.svg" data-inactive="/img/menu-icon-friends-inactive.svg" alt="friends">
                 <span class="bottomMenu--itemText">Friends</span>
             </a>
-            <a class="bottomMenu--item">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-boost-inactive.svg" alt="home">
+            <a class="bottomMenu--item" onclick="loadBoostPage()" data-page="boost">
+                <img class="bottomMenu--itemIcon" src="/img/menu-icon-boost-inactive.svg" data-active="/img/menu-icon-boost-active.svg" data-inactive="/img/menu-icon-boost-inactive.svg" alt="boost">
                 <span class="bottomMenu--itemText">Boost</span>
             </a>
-            <a class="bottomMenu--item">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-airdrop-inactive.svg" alt="home">
+            <a class="bottomMenu--item" data-page="airdrop">
+                <img class="bottomMenu--itemIcon" src="/img/menu-icon-airdrop-inactive.svg" data-active="/img/menu-icon-airdrop-active.svg" data-inactive="/img/menu-icon-airdrop-inactive.svg" alt="airdrop">
                 <span class="bottomMenu--itemText">Airdrop</span>
             </a>
         </div>
     </div>
 
+    <div id="toast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="toast-body">
+
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <script src="/scripts/bootstrap.bundle.min.js"></script>
     <script src="/scripts/index.js?v=6"></script>
     <script src="/scripts/navigate.js?v=6"></script>
+    <script src="/scripts/boost.js?v=6"></script>
 </body>
 </html>
