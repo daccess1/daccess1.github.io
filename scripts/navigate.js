@@ -32,6 +32,7 @@ function changeActiveButton(page) {
 
 function loadHomePage() {
     changeActiveButton('home');
+    document.getElementById('pageContent').innerHTML = "";
     _wa.BackButton.hide();
 }
 
