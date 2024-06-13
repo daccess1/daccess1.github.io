@@ -1,0 +1,137 @@
+<div class="container-fluid screenTopNotification">
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <div class="screenTopNotification--container">
+                <img src="/img/icon-coin.svg" alt="coin" class="screenTopNotification--icon">
+                <span class="screenTopNotification--text">{{header_notification}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid screenHeader">
+    <div class="row">
+        <div class="col">
+            <h1 class="screenHeader--title">Активы - Инвестируй<br>и получай доход</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid activesTabs">
+    <div class="row">
+        <div class="col">
+            <div class="activesTabs--wrapper d-flex w-100">
+                <a class="activesTabs--item activesTabs--item--active">Раунды</a>
+                <a class="activesTabs--item">Сферы</a>
+                <a class="activesTabs--item">Проекты</a>
+                <a class="activesTabs--item">Особые</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid activesContent">
+    <div class="row">
+        <div class="col">
+            <div class="activesContent--wrapper">
+
+                {{#items}}
+                <div class="activesContent--item"
+                     data-title="{{title}}"
+                     data-icon="{{icon}}"
+                     data-text="{{text}}"
+                     data-level="{{level}}"
+                     data-income="{{income}}"
+                     data-start-price="{{start_price}}"
+                     data-income-price="{{income_price}}"
+                     data-income-value="{{income_value}}"
+                     data-id="{{id}}"
+                     onclick="showActivesModal(this)"
+                >
+                    <div class="activesContent--itemIcon">
+                        <img src="{{icon}}" alt="icon">
+                    </div>
+                    <div class="activesContent--itemText">
+                        <h3 class="activesContent--itemTextTitle"><img src="/img/icon-arrow-up.svg" alt="up">{{title}}</h3>
+                        <div class="activesContent--itemTextBody">
+                            <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyLevel">
+                                <p class="activesContent--itemTextBodyColTitle">Level</p>
+                                <p class="activesContent--itemTextBodyColValue">{{level}}</p>
+                            </div>
+                            <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyIncome">
+                                <p class="activesContent--itemTextBodyColTitle">Доходность</p>
+                                <p class="activesContent--itemTextBodyColValue">{{income}}</p>
+                            </div>
+                            <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyStartPrice">
+                                <p class="activesContent--itemTextBodyColTitle">Start price</p>
+                                <p class="activesContent--itemTextBodyColValue">{{start_price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activesContent--itemIncome">
+                        <p class="activesContent--itemIncomePrice">{{income_price}}</p>
+                        <p class="activesContent--itemIncomeValue">{{income_value}}</p>
+                    </div>
+                </div>
+                {{/items}}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="activesBlur activesBlur--hidden" id="activesBlur" onclick="hideActivesModal()"></div>
+
+<div class="activesModal activesModal--hidden" id="activesModal">
+    <div class="container-fluid">
+        <div class="row activesModal--titleWrapper">
+            <div class="col d-flex justify-content-between">
+                <h3 class="activesModal--title">
+                    <img src="/img/icon-arrow-up.svg" alt="up">
+                    <span id="activesModal--titleContent"></span>
+                </h3>
+                <button class="activesModal--close" id="activesModal--close" onclick="hideActivesModal()">
+                    <img src="/img/icon-close.svg" alt="close">
+                </button>
+            </div>
+        </div>
+        <div class="row activesModal--logoWrapper">
+            <img src="/img/actives-modal-bg.png" srcset="/img/actives-modal-bg@2x.png 2x, /img/actives-modal-bg@3x.png 3x" alt="bg" class="activesModal--logoWrapperBg">
+            <div class="col d-flex flex-column align-items-center">
+                <div class="activesModal--logo">
+                    <img src="" alt="logo" id="activesModal--logoImg">
+                </div>
+                <div class="activesModal--income">
+                    <p class="activesModal--incomePrice" id="activesModal--incomePrice"></p>
+                    <p class="activesModal--incomeValue" id="activesModal--incomeValue"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row activesModal--textWrapper">
+            <div class="col">
+                <p class="activesModal--text" id="activesModal--text"></p>
+            </div>
+        </div>
+        <div class="row activesModal--statsWrapper">
+            <div class="col d-flex justify-content-center">
+                <div class="activesModal--statsCol">
+                    <p class="activesModal--statsColTitle">Level</p>
+                    <p class="activesModal--statsColValue" id="activesModal--level"></p>
+                </div>
+                <div class="activesModal--statsCol">
+                    <p class="activesModal--statsColTitle">Доходность</p>
+                    <p class="activesModal--statsColValue" id="activesModal--income"></p>
+                </div>
+                <div class="activesModal--statsCol">
+                    <p class="activesModal--statsColTitle">Start price</p>
+                    <p class="activesModal--statsColValue" id="activesModal--startPrice"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="activesModal--button">Получить</button>
+            </div>
+        </div>
+    </div>
+</div>

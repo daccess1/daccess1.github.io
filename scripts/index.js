@@ -16,6 +16,8 @@ window.addEventListener('load', () => {
 
     const myToastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(myToastEl);
+
+    loadActivesPage();
 });
 
 function inviteButtonClick() {
