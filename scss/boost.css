@@ -55,9 +55,9 @@
   align-items: center;
 }
 .boostTask--itemTextBody img {
-  width: 20px;
-  height: 20px;
-  margin-right: 7px;
+  width: 14px;
+  margin-left: 4px;
+  margin-top: 1px;
 }
 .boostTask--itemTextBodyHighlight {
   color: #F7A201;

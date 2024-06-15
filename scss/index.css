@@ -39,7 +39,7 @@ a {
 }
 .screenTopNotification--icon {
   width: 20px;
-  margin-right: 9px;
+  margin-left: 4px;
 }
 .screenTopNotification--text {
   font-weight: 700;

@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col d-flex justify-content-end">
             <div class="screenTopNotification--container">
-                <img src="/img/icon-coin.svg" alt="coin" class="screenTopNotification--icon">
                 <span class="screenTopNotification--text">{{header_notification}}</span>
+                <img src="/img/icon-coin.svg" alt="coin" class="screenTopNotification--icon">
             </div>
         </div>
     </div>
@@ -60,17 +60,28 @@
                             </div>
                             <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyIncome">
                                 <p class="activesContent--itemTextBodyColTitle">Доходность</p>
-                                <p class="activesContent--itemTextBodyColValue">{{income}}</p>
+                                <p class="activesContent--itemTextBodyColValue">
+                                    {{income}}
+                                </p>
                             </div>
                             <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyStartPrice">
                                 <p class="activesContent--itemTextBodyColTitle">Start price</p>
-                                <p class="activesContent--itemTextBodyColValue">{{start_price}}</p>
+                                <p class="activesContent--itemTextBodyColValue">
+                                    {{start_price}}
+                                    <img src="/img/icon-coin.svg" alt="coin" class="activesContent--itemTextBodyColCoinIcon">
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="activesContent--itemIncome">
-                        <p class="activesContent--itemIncomePrice">{{income_price}}</p>
-                        <p class="activesContent--itemIncomeValue">{{income_value}}</p>
+                        <p class="activesContent--itemIncomePrice">
+                            {{income_price}}
+                            <img src="/img/icon-coin.svg" alt="coin" class="activesContent--itemIncomePriceCoinIcon">
+                        </p>
+                        <p class="activesContent--itemIncomeValue">
+                            {{income_value}}
+                            <img src="/img/icon-coin.svg" alt="coin" class="activesContent--itemIncomeValueCoinIcon">
+                        </p>
                     </div>
                 </div>
                 {{/items}}
@@ -124,7 +135,7 @@
                 </div>
                 <div class="activesModal--statsCol">
                     <p class="activesModal--statsColTitle">Start price</p>
-                    <p class="activesModal--statsColValue" id="activesModal--startPrice"></p>
+                    <p class="activesModal--statsColValue activesModal--startPrice" id="activesModal--startPrice"></p>
                 </div>
             </div>
         </div>

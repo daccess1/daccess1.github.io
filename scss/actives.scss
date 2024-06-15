@@ -96,6 +96,13 @@
           font-size: 11px;
           line-height: normal;
           color: #ffffff;
+          display: inline-flex;
+          align-items: center;
+        }
+        &CoinIcon {
+          width: 11px;
+          margin-left: 2px;
+          margin-top: 1px;
         }
       }
     }
@@ -113,6 +120,14 @@
         line-height: normal;
         text-align: right;
         color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+
+        &CoinIcon {
+          width: 14px;
+          margin-left: 2px;
+          margin-top: 2px;
+        }
       }
       &Value {
         font-weight: 700;
@@ -120,6 +135,14 @@
         line-height: normal;
         text-align: right;
         color: #4fe34f;
+        display: inline-flex;
+        align-items: center;
+
+        &CoinIcon {
+          width: 11px;
+          margin-left: 2px;
+          margin-top: 1px;
+        }
       }
     }
   }
@@ -195,6 +218,9 @@
   &--income {
     margin-top: 6px;
     margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &Price {
       font-weight: 700;
@@ -202,6 +228,18 @@
       line-height: normal;
       text-align: center;
       color: #ffffff;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: -24px;
+        top: 5px;
+        background-image: url("/img/icon-coin.svg");
+        background-size: cover;
+      }
     }
     &Value {
       font-weight: 700;
@@ -209,6 +247,18 @@
       line-height: normal;
       text-align: center;
       color: #4fe34f;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        right: -17px;
+        top: 4px;
+        background-image: url("/img/icon-coin.svg");
+        background-size: cover;
+      }
     }
   }
   &--text {
@@ -231,6 +281,9 @@
       & + & {
         border-left: 1px solid #8cad90;
       }
+      &CoinIcon {
+        width: 14px;
+      }
     }
     &ColTitle {
       font-weight: 400;
@@ -243,6 +296,22 @@
       font-size: 15px;
       line-height: normal;
       color: #ffffff;
+
+      &.activesModal--startPrice {
+        position: relative;
+        display: inline-flex;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          right: -17px;
+          top: 4px;
+          background-image: url("/img/icon-coin.svg");
+          background-size: cover;
+        }
+      }
     }
   }
   &--button {

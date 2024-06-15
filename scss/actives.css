@@ -89,6 +89,13 @@
   font-size: 11px;
   line-height: normal;
   color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+}
+.activesContent--itemTextBodyColCoinIcon {
+  width: 11px;
+  margin-left: 2px;
+  margin-top: 1px;
 }
 .activesContent--itemIncome {
   display: flex;
@@ -104,6 +111,13 @@
   line-height: normal;
   text-align: right;
   color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+}
+.activesContent--itemIncomePriceCoinIcon {
+  width: 14px;
+  margin-left: 2px;
+  margin-top: 2px;
 }
 .activesContent--itemIncomeValue {
   font-weight: 700;
@@ -111,6 +125,13 @@
   line-height: normal;
   text-align: right;
   color: #4fe34f;
+  display: inline-flex;
+  align-items: center;
+}
+.activesContent--itemIncomeValueCoinIcon {
+  width: 11px;
+  margin-left: 2px;
+  margin-top: 1px;
 }
 
 .activesModal {
@@ -179,6 +200,9 @@
 .activesModal--income {
   margin-top: 6px;
   margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .activesModal--incomePrice {
   font-weight: 700;
@@ -186,6 +210,17 @@
   line-height: normal;
   text-align: center;
   color: #ffffff;
+  position: relative;
+}
+.activesModal--incomePrice::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -24px;
+  top: 5px;
+  background-image: url("/img/icon-coin.svg");
+  background-size: cover;
 }
 .activesModal--incomeValue {
   font-weight: 700;
@@ -193,6 +228,17 @@
   line-height: normal;
   text-align: center;
   color: #4fe34f;
+  position: relative;
+}
+.activesModal--incomeValue::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  right: -17px;
+  top: 4px;
+  background-image: url("/img/icon-coin.svg");
+  background-size: cover;
 }
 .activesModal--text {
   padding-left: 38px;
@@ -213,6 +259,9 @@
 .activesModal--statsCol + .activesModal--statsCol {
   border-left: 1px solid #8cad90;
 }
+.activesModal--statsColCoinIcon {
+  width: 14px;
+}
 .activesModal--statsColTitle {
   font-weight: 400;
   font-size: 13px;
@@ -224,6 +273,20 @@
   font-size: 15px;
   line-height: normal;
   color: #ffffff;
+}
+.activesModal--statsColValue.activesModal--startPrice {
+  position: relative;
+  display: inline-flex;
+}
+.activesModal--statsColValue.activesModal--startPrice::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  right: -17px;
+  top: 4px;
+  background-image: url("/img/icon-coin.svg");
+  background-size: cover;
 }
 .activesModal--button {
   margin-top: 24px;
