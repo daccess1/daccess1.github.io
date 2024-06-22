@@ -74,33 +74,36 @@ async function loadBoostPage() {
 async function loadActivesPage() {
     changeActiveButton('actives');
 
-    const view = {
-        header_notification: "5 раундов - 15 000",
-        items: [
-            {
-                icon: "/img/actives-item-icon.svg",
-                title: "Pre-seed",
-                level: "12",
-                income: "100%",
-                start_price: "35 000",
-                income_price: "15 000",
-                income_value: "+10",
-                text: "Торговые пары, включающие биткойн и другую криптовалюту",
-                id: 1
-            },
-            {
-                icon: "/img/actives-item-icon-2.svg",
-                title: "Seed",
-                level: "1",
-                income: "150%",
-                start_price: "40 000",
-                income_price: "20 000",
-                income_value: "+15",
-                text: "Lorem ipsum dolor sit amet",
-                id: 2
-            }
-        ],
-    }
+
+    await loadRounds();
+
+    // const view = {
+    //     header_notification: "5 раундов - 15 000",
+    //     items: [
+    //         {
+    //             icon: "/img/actives-item-icon.svg",
+    //             title: "Pre-seed",
+    //             level: "12",
+    //             income: "100%",
+    //             start_price: "35 000",
+    //             income_price: "15 000",
+    //             income_value: "+10",
+    //             text: "Торговые пары, включающие биткойн и другую криптовалюту",
+    //             id: 1
+    //         },
+    //         {
+    //             icon: "/img/actives-item-icon-2.svg",
+    //             title: "Seed",
+    //             level: "1",
+    //             income: "150%",
+    //             start_price: "40 000",
+    //             income_price: "20 000",
+    //             income_value: "+15",
+    //             text: "Lorem ipsum dolor sit amet",
+    //             id: 2
+    //         }
+    //     ],
+    // }
 
     const templateRequest = await fetch("/pages/actives/actives.template.html?v=1");
     const template = await templateRequest.text();

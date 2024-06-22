@@ -4,7 +4,7 @@ let _player;
 let _toast;
 
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     _wa = window.Telegram.WebApp;
     getUserData().then(() => {
         _wa.expand();
@@ -14,10 +14,10 @@ window.addEventListener('load', () => {
         loadHomePage();
     });
 
-    const myToastEl = document.getElementById('toast');
-    _toast = new bootstrap.Toast(myToastEl);
+    const toastEl = document.getElementById('toast');
+    _toast = new bootstrap.Toast(toastEl);
 
-    loadActivesPage();
+    await loadActivesPage();
 });
 
 function inviteButtonClick() {
@@ -37,15 +37,20 @@ function copyUrlButtonClick() {
 }
 ``
 async function getUserData() {
-    let userPayload = decodeURIComponent(_wa.initData);
-    userPayload = userPayload.substring(userPayload.indexOf('user=') + 5, userPayload.lastIndexOf('}') + 1);
+    // let userPayload = decodeURIComponent(_wa.initData);
+    // userPayload = userPayload.substring(userPayload.indexOf('user=') + 5, userPayload.lastIndexOf('}') + 1);
+    //
+    // if (userPayload) {
+    //     _tg_user = JSON.parse(userPayload);
+    // }
 
-    if (userPayload) {
-        _tg_user = JSON.parse(userPayload);
+    _tg_user = {
+        id: 131705404
     }
 
     if (_tg_user) {
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
         _player = await playerPayload.json();
+        console.log(_player);
     }
 }

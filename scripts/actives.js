@@ -21,3 +21,10 @@ function hideActivesModal() {
     document.getElementById('activesModal').classList.add('activesModal--hidden');
     document.getElementById('body').classList.remove('modalShown');
 }
+
+async function loadRounds() {
+    const payload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/cards/player/${_tg_user.id}/round`);
+    const view = await payload.json();
+
+    console.log(view);
+}
