@@ -30,10 +30,29 @@ function changeActiveButton(page) {
     }
 }
 
-function loadHomePage() {
+async function loadHomePage() {
     changeActiveButton('home');
-    document.getElementById('pageContent').innerHTML = "";
+
+    const view = {
+        avatar: _player.avatar_link,
+        name: _player.name,
+        balance: _player.balance,
+        current_energy: 1000,
+        max_energy: 1000,
+        level: 4,
+        pnl: 453
+    }
+
+    const templateRequest = await fetch("/pages/home/page.template.html?v=2");
+    const template = await templateRequest.text();
+    document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
+
+    for (let i = 1; i <= view.level; i++) {
+        document.getElementsByClassName(`level--bar--${i}`)[0].classList.add('level--bar--active');
+    }
+
     _wa.BackButton.hide();
+    document.dispatchEvent(new Event('loadHome'));
 }
 
 async function loadFriendsPage() {

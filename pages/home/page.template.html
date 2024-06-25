@@ -1,0 +1,151 @@
+<div class="container-fluid screenTopNotification" id="screenTopNotification">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 d-flex justify-content-center">
+            <div class="screenTopNotification--container">
+                <img src="https://via.placeholder.com/27x27" alt="avatar" class="screenTopNotification--avatar">
+                <span class="screenTopNotification--text" id="screenTopNotification--boostCountdown">{{name}}</span>
+            </div>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+            <div class="screenTopNotification--container screenTopNotification--container-lang d-flex align-items-center">
+                <span class="screenTopNotification--text">Eng</span>
+                <img src="/img/icon-arrow-down.svg" alt="arrow">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid screenHeader">
+    <div class="row">
+        <div class="col">
+            <h1 class="screenHeader--title">{{balance}} <img src="/img/icon-coin.svg" alt="coin"></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid tapGame" id="tapGame">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="tapGame--container">
+                <div id="tapGame--game">
+                    <img src="/img/character-level-1.png" srcset="/img/character-level-1@2x.png 2x, /img/character-level-1@3x.png 3x" alt="player" class="tapGame--player">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid level">
+    <div class="row d-flex">
+        <div class="col-5 d-flex justify-content-start align-items-end">
+            <div class="level--energy d-flex">
+                <img src="/img/icon-lightning.svg" alt="lightning" class="level--energyIcon">
+                <p class="level--energyValue">
+                    <span class="level--energyValueCurrent">{{current_energy}}</span>/
+                    <span class="level--energyValueMax">{{max_energy}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="col-7 d-flex flex-column align-items-center" onclick="showLevelModal()">
+            <div class="level--barsContainer">
+                <div class="level--bar level--bar--1"></div>
+                <div class="level--bar level--bar--2"></div>
+                <div class="level--bar level--bar--3"></div>
+                <div class="level--bar level--bar--4"></div>
+                <div class="level--bar level--bar--5"></div>
+                <div class="level--bar level--bar--6"></div>
+                <div class="level--bar level--bar--7"></div>
+                <div class="level--bar level--bar--8"></div>
+                <div class="level--bar level--bar--9"></div>
+            </div>
+            <div class="level--info d-inline-flex">
+                <span class="level--infoNumber">Уровень {{level}}</span>
+                <span class="level--infoDivider">|</span>
+                <span class="level--infoPNL">PNL % {{pnl}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid levelModal d-none" id="levelModal">
+    <div class="row">
+        <div class="col">
+            <div id="levelModal--carousel" class="carousel slide" data-bs-ride="false" data-interval="false" data-bs-wrap="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
+                        <p class="levelModal--carouselText">Уровень 1 - Новичок</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
+                        <p class="levelModal--carouselText">Уровень 2 - Новичок</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
+                        <p class="levelModal--carouselText">Уровень 3 - Новичок</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#levelModal--carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#levelModal--carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="levelModal--stats">
+                <div class="levelModal--statsRow">
+                    <span class="levelModal--statsText">Число инвестиций</span>
+                    <span class="levelModal--statsValue">24</span>
+                </div>
+                <div class="levelModal--statsRow">
+                    <span class="levelModal--statsText">Объем инвестиций</span>
+                    <span class="levelModal--statsValue">35 000 <img src="/img/icon-coin.svg" alt="coin"></span>
+                </div>
+                <div class="levelModal--statsRow">
+                    <span class="levelModal--statsText">Профит</span>
+                    <span class="levelModal--statsValue">15 000  <img src="/img/icon-coin.svg" alt="coin"></span>
+                </div>
+                <div class="levelModal--statsRow">
+                    <span class="levelModal--statsText">PNL</span>
+                    <span class="levelModal--statsValue">425%</span>
+                </div>
+                <div class="levelModal--statsRow levelModal--statsRow--actives">
+                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                        <span class="levelModal--statsText">Раунды</span>
+                        <span class="levelModal--statsValue">13%</span>
+                    </div>
+                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                        <span class="levelModal--statsText">Сферы</span>
+                        <span class="levelModal--statsValue">10%</span>
+                    </div>
+                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                        <span class="levelModal--statsText">Проекты</span>
+                        <span class="levelModal--statsValue">15%</span>
+                    </div>
+                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                        <span class="levelModal--statsText">Особые</span>
+                        <span class="levelModal--statsValue">30%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="levelModal--ranking">
+                <img src="https://via.placeholder.com/33x33" alt="avatar">
+                Ваш уровень:&nbsp;<span class="levelModal--rankingCurrent">2432511</span>/<span class="levelModal--rankingTotal">2432570</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<img src="/img/icon-slide-right.svg" width="0" height="0" alt="">
+<img src="/img/tap-bg.svg" width="0" height="0" alt="">

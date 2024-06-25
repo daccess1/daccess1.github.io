@@ -1,0 +1,197 @@
+.screenTopNotification--avatar {
+  width: 27px;
+  height: 27px;
+  margin-right: 9px;
+}
+.screenTopNotification--container-lang {
+  height: 37px;
+
+  img {
+    margin-top: 4px;
+    margin-left: 4px;
+  }
+}
+
+.tapGame {
+  margin-top: 38px;
+
+  &--player {
+    position: relative;
+    z-index: 2;
+  }
+  &--container {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 252px;
+      height: 252px;
+      margin-top: -126px;
+      margin-left: -126px;
+      background-image: url("/img/tap-bg.svg");
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgb(79,227,79, 0.8),
+                  0 0 33px rgb(79,227,79, 0.6),
+                  0 0 50px rgb(79,227,79, 0.4),
+                  0 0 83px rgb(79,227,79, 0.2);
+      transition: box-shadow 0.1s ease;
+    }
+  }
+  &--tapped {
+    .tapGame--container {
+      &::after {
+        box-shadow: 1px 1px 6px rgb(0, 255, 0, 0.8),
+        1px 1px 33px rgb(0, 255, 0, 0.6),
+        1px 1px 50px rgb(0, 255, 0, 0.4),
+        1px 1px 83px rgb(0, 255, 0, 0.2)
+      }
+    }
+  }
+}
+
+.level {
+  &--barsContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  &--bar {
+    width: 15px;
+    background-color: #000;
+
+    & + & {
+      margin-left: 4px;
+    }
+    &--active {
+      background-image: linear-gradient(to top, #fe8d03, #fcbf04);
+    }
+
+    @for $i from 1 through 9 {
+      &--#{$i} {
+        height: #{$i * 11px};
+      }
+    }
+  }
+  &--info {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    padding: 4px 32px;
+    margin-top: 7px;
+    border-radius: 4px;
+
+    span {
+      font-weight: 700;
+      font-size: 10px;
+      line-height: normal;
+      text-align: center;
+    }
+    &Divider {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+    &PNL {
+      color: #FE9204;
+    }
+  }
+  &--energy {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: normal;
+    color: #ffffff;
+
+    &Icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+.levelModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 71px;
+  background-color: #01290F;
+  z-index: 10;
+
+  .carousel-control-prev-icon {
+    background-image: url("/img/icon-slide-right.svg");
+    rotate: 180deg;
+  }
+  .carousel-control-next-icon {
+    background-image: url("/img/icon-slide-right.svg");
+  }
+  &--carousel {
+    &Text {
+      width: 100%;
+      background: #000;
+      border-radius: 8px;
+      padding: 13px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+  &--stats {
+    margin-top: 8px;
+    box-shadow: 0 2.000025987625122px 2.000025987625122px 0 rgb(0 0 0 / 0.40);
+    background-image: linear-gradient(to right, #104e1d, #297428);
+    border-radius: 8px;
+    &Row {
+      padding: 11px 10px;
+      display: flex;
+      justify-content: space-between;
+
+      & + & {
+        border-top: 2px solid #01290f;
+      }
+    }
+    &Text {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: normal;
+      color: #ffffff;
+    }
+    &Value {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: normal;
+      text-align: right;
+      color: #4fe34f;
+      display: inline-flex;
+      align-items: center;
+
+      img {
+        width: 13px;
+        margin-left: 2px;
+      }
+    }
+  }
+  &--ranking {
+    background-image: linear-gradient(to bottom, #fe8d03, #fcbf04);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: normal;
+    color: #ffffff;
+    margin-top: 7px;
+    border-radius: 8px;
+
+    img {
+      margin-right: 8px;
+      border-radius: 4px;
+    }
+  }
+}

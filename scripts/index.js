@@ -6,7 +6,7 @@ let _toast;
 
 window.addEventListener('load', async () => {
     _wa = window.Telegram.WebApp;
-    getUserData().then(() => {
+    await getUserData().then(() => {
         _wa.expand();
     });
 
@@ -17,7 +17,7 @@ window.addEventListener('load', async () => {
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 
-    await loadActivesPage();
+    await loadHomePage();
 });
 
 function inviteButtonClick() {
@@ -51,6 +51,7 @@ async function getUserData() {
     if (_tg_user) {
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
         _player = await playerPayload.json();
+        _player.tap_increment = 10;
         console.log(_player);
     }
 }
