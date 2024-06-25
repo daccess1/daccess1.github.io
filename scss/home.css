@@ -40,7 +40,7 @@
   transition: box-shadow 0.1s ease;
 }
 .tapGame--tapped .tapGame--container::after {
-  box-shadow: 1px 1px 6px rgba(0, 255, 0, 0.8), 1px 1px 33px rgba(0, 255, 0, 0.6), 1px 1px 50px rgba(0, 255, 0, 0.4), 1px 1px 83px rgba(0, 255, 0, 0.2);
+  box-shadow: 2px 2px 6px rgba(0, 255, 0, 0.8), 2px 2px 33px rgba(0, 255, 0, 0.6), 2px 2px 50px rgba(0, 255, 0, 0.4), 2px 2px 83px rgba(0, 255, 0, 0.2), -2px -2px 6px rgba(0, 255, 0, 0.8), -2px -2px 33px rgba(0, 255, 0, 0.6), -2px -2px 50px rgba(0, 255, 0, 0.4), -2px -2px 83px rgba(0, 255, 0, 0.2);
 }
 
 .level--barsContainer {

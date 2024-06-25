@@ -12,7 +12,7 @@ document.addEventListener('loadHome', () => {
             container.classList.add('tapGame--tapped');
         });
     });
-    ['mouseup', 'touchend'].forEach(eventType => {
+    ['mouseup', 'touchend', 'mouseleave'].forEach(eventType => {
         target.addEventListener(eventType, (event) => {
             console.log(`x: ${event.pageX} y: ${event.pageY}`);
             container.classList.remove('tapGame--tapped');
