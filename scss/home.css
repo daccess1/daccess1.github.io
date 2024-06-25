@@ -194,4 +194,13 @@
   border-radius: 4px;
 }
 
+.tapResult {
+  font-weight: 700;
+  font-size: 28px;
+  position: fixed;
+  z-index: 20;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
 /*# sourceMappingURL=home.css.map */
