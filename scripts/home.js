@@ -6,12 +6,16 @@ async function showLevelModal() {
 document.addEventListener('loadHome', () => {
     const target = document.getElementById("tapGame--game");
     const container = document.getElementById('tapGame');
-    target.addEventListener('mousedown', (event) => {
-        console.log(`x: ${event.pageX} y: ${event.pageY}`);
-        container.classList.add('tapGame--tapped');
+    ['mousedown', 'touchstart'].forEach(eventType => {
+        target.addEventListener(eventType, (event) => {
+            console.log(`x: ${event.pageX} y: ${event.pageY}`);
+            container.classList.add('tapGame--tapped');
+        });
     });
-    target.addEventListener('mouseup', (event) => {
-        console.log(`x: ${event.pageX} y: ${event.pageY}`);
-        container.classList.remove('tapGame--tapped');
+    ['mouseup', 'touchend'].forEach(eventType => {
+        target.addEventListener(eventType, (event) => {
+            console.log(`x: ${event.pageX} y: ${event.pageY}`);
+            container.classList.remove('tapGame--tapped');
+        });
     });
 });
