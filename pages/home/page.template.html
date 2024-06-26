@@ -19,7 +19,7 @@
 <div class="container-fluid screenHeader">
     <div class="row">
         <div class="col">
-            <h1 class="screenHeader--title">{{balance}} <img src="/img/icon-coin.svg" alt="coin"></h1>
+            <h1 class="screenHeader--title"><span id="screenHeader--balance">{{balance}}</span> <img src="/img/icon-coin.svg" alt="coin"></h1>
         </div>
     </div>
 </div>
@@ -28,8 +28,10 @@
     <div class="row">
         <div class="col d-flex justify-content-center">
             <div class="tapGame--container">
-                <div id="tapGame--game">
-                    <img src="/img/character-level-1.png" srcset="/img/character-level-1@2x.png 2x, /img/character-level-1@3x.png 3x" alt="player" class="tapGame--player">
+                <div id="tapGame--game" class="tapGame--game">
+                    <picture class="tapGame--player">
+                        <img src="/img/character-level-1.png" srcset="/img/character-level-1@2x.png 2x, /img/character-level-1@3x.png 3x" alt="player" >
+                    </picture>
                 </div>
             </div>
         </div>
@@ -42,7 +44,7 @@
             <div class="level--energy d-flex">
                 <img src="/img/icon-lightning.svg" alt="lightning" class="level--energyIcon">
                 <p class="level--energyValue">
-                    <span class="level--energyValueCurrent">{{current_energy}}</span>/
+                    <span class="level--energyValueCurrent" id="level--energyValueCurrent">{{current_energy}}</span>/
                     <span class="level--energyValueMax">{{max_energy}}</span>
                 </p>
             </div>

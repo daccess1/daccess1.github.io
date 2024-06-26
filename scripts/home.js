@@ -9,14 +9,32 @@ var tapsTimeout;
 document.addEventListener('loadHome', () => {
     const target = document.getElementById("tapGame--game");
     const container = document.getElementById('tapGame');
+    const energyCurrent = document.getElementById('level--energyValueCurrent');
+    const playerBalance = document.getElementById('screenHeader--balance');
+
+    setInterval(() => {
+        if (_player.current_energy < _player.max_energy) {
+            _player.current_energy++;
+        }
+
+        energyCurrent.innerHTML = _player.current_energy;
+    }, 1000);
 
     ['mousedown', 'touchstart'].forEach(eventType => {
         target.addEventListener(eventType, (event) => {
-            container.classList.add('tapGame--tapped');
-            drawTapResult(event.pageX, event.pageY);
-            tapsCount++;
-            clearTimeout(tapsTimeout);
-            console.log(tapsCount);
+            if (_player.current_energy > 0) {
+                _player.current_energy--;
+                energyCurrent.innerHTML = _player.current_energy;
+
+                _player.balance += _player.tap_increment;
+                playerBalance.innerHTML = _player.balance;
+
+                container.classList.add('tapGame--tapped');
+                drawTapResult(event.pageX, event.pageY);
+                tapsCount++;
+                clearTimeout(tapsTimeout);
+                console.log(tapsCount);
+            }
         });
     });
     ['mouseup', 'touchend', 'mouseleave'].forEach(eventType => {
