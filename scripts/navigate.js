@@ -1,20 +1,3 @@
-function backendAPIRequest(url) {
-    return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', url, true);
-        xhr.onload = function () {
-            console.log('XHR type:', xhr.responseType);
-            var status = xhr.status;
-            if (status === 200) {
-                resolve(xhr.responseText);
-            } else {
-                reject(status);
-            }
-        };
-        xhr.send();
-    });
-}
-
 function changeActiveButton(page) {
     console.log('Active Button:', page);
     const buttons = document.getElementsByClassName('bottomMenu--item');
@@ -37,8 +20,8 @@ async function loadHomePage() {
         avatar: _player.avatar_link,
         name: _player.name,
         balance: _player.balance,
-        current_energy: 1000,
-        max_energy: 1000,
+        current_energy: _player.current_energy,
+        max_energy: _player.max_energy,
         level: 4,
         pnl: 453
     }

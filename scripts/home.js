@@ -3,20 +3,36 @@ async function showLevelModal() {
     _wa.BackButton.show();
 }
 
+var tapsCount = 0;
+var tapsTimeout;
+
 document.addEventListener('loadHome', () => {
     const target = document.getElementById("tapGame--game");
     const container = document.getElementById('tapGame');
+
     ['mousedown', 'touchstart'].forEach(eventType => {
         target.addEventListener(eventType, (event) => {
-            console.log(eventType);
             container.classList.add('tapGame--tapped');
-            container.classList.add(eventType);
             drawTapResult(event.pageX, event.pageY);
+            tapsCount++;
+            clearTimeout(tapsTimeout);
+            console.log(tapsCount);
         });
     });
     ['mouseup', 'touchend', 'mouseleave'].forEach(eventType => {
         target.addEventListener(eventType, () => {
-            //container.classList.remove('tapGame--tapped');
+            container.classList.remove('tapGame--tapped');
+            tapsTimeout = setTimeout(() => {
+                console.log('Send taps here', tapsCount);
+                if (tapsCount > 0) {
+                    backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/update_taps`, 'post', {
+                        "taps": tapsCount
+                    }).then(res => {
+                        console.log(res);
+                    });
+                }
+                tapsCount = 0;
+            }, 1000);
         });
     });
 });
@@ -37,7 +53,7 @@ function drawTapResult(x, y) {
         iterations: 1,
     });
 
-    // setTimeout(() => {
-    //     el.remove();
-    // }, 500);
+    setTimeout(() => {
+        el.remove();
+    }, 500);
 }

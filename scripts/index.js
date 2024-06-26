@@ -55,3 +55,21 @@ async function getUserData() {
         console.log(_player);
     }
 }
+
+function backendAPIRequest(url, method = 'post', data = null) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url, true);
+        xhr.setRequestHeader('Content-type', 'application/json');
+        xhr.onload = function () {
+            console.log('XHR type:', xhr.responseType);
+            var status = xhr.status;
+            if (status === 200) {
+                resolve(xhr.responseText);
+            } else {
+                reject(status);
+            }
+        };
+        xhr.send(data);
+    });
+}
