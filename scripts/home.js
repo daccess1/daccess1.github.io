@@ -8,13 +8,15 @@ document.addEventListener('loadHome', () => {
     const container = document.getElementById('tapGame');
     ['mousedown', 'touchstart'].forEach(eventType => {
         target.addEventListener(eventType, (event) => {
+            console.log(eventType);
             container.classList.add('tapGame--tapped');
+            container.classList.add(eventType);
             drawTapResult(event.pageX, event.pageY);
         });
     });
     ['mouseup', 'touchend', 'mouseleave'].forEach(eventType => {
         target.addEventListener(eventType, () => {
-            container.classList.remove('tapGame--tapped');
+            //container.classList.remove('tapGame--tapped');
         });
     });
 });
