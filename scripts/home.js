@@ -37,7 +37,7 @@ function drawTapResult(x, y) {
         iterations: 1,
     });
 
-    setTimeout(() => {
-        el.remove();
-    }, 500);
+    // setTimeout(() => {
+    //     el.remove();
+    // }, 500);
 }
