@@ -2,13 +2,11 @@ let _wa;
 let _tg_user;
 let _player;
 let _toast;
-
+let _current_actives_tab = 'round';
 
 window.addEventListener('load', async () => {
     _wa = window.Telegram.WebApp;
-    await getUserData().then(() => {
-        _wa.expand();
-    });
+    _wa.expand();
 
     _wa.BackButton.onClick(() => {
         loadHomePage();
@@ -17,8 +15,8 @@ window.addEventListener('load', async () => {
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 
-    // await loadHomePage();
-    await loadActivesPage();
+    await loadHomePage();
+    // await loadActivesPage('round');
 });
 
 function inviteButtonClick() {
@@ -59,7 +57,7 @@ async function getUserData() {
 
 async function backendAPIRequest(url, method = 'post', data = null) {
     return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.onload = function () {

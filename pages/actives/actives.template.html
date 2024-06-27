@@ -21,10 +21,10 @@
     <div class="row">
         <div class="col">
             <div class="activesTabs--wrapper d-flex w-100">
-                <a class="activesTabs--item activesTabs--item--active" data-page="rounds">Раунды</a>
-                <a class="activesTabs--item">Сферы</a>
-                <a class="activesTabs--item">Проекты</a>
-                <a class="activesTabs--item">Особые</a>
+                <a class="activesTabs--item {{#tab_rounds}}activesTabs--item--active{{/tab_rounds}}" data-tab="round" onclick="loadActivesPage('round')">Раунды</a>
+                <a class="activesTabs--item {{#tab_directions}}activesTabs--item--active{{/tab_directions}}" data-tab="direction" onclick="loadActivesPage('direction')">Сферы</a>
+                <a class="activesTabs--item {{#tab_projects}}activesTabs--item--active{{/tab_projects}}" data-tab="project" onclick="loadActivesPage('project')">Проекты</a>
+                <a class="activesTabs--item {{#tab_specials}}activesTabs--item--active{{/tab_specials}}" data-tab="special" onclick="loadActivesPage('special')">Особые</a>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
                      data-start-price="{{next_level_cost}}"
                      data-income-price="{{total_investment}}"
                      data-income-value="{{income}}"
-                     data-id="{{id}}"
+                     data-id="{{card_id}}"
                      onclick="showActivesModal(this)"
                 >
                     <div class="activesContent--itemIcon">
@@ -141,7 +141,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <button class="activesModal--button">Получить</button>
+                <button class="activesModal--button" id="activesModal--button" data-id="" onclick="upgradeActive(this)">Получить</button>
             </div>
         </div>
     </div>

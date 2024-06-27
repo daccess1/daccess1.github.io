@@ -14,6 +14,7 @@ function changeActiveButton(page) {
 }
 
 async function loadHomePage() {
+    await getUserData();
     changeActiveButton('home');
 
     const view = {
@@ -73,13 +74,17 @@ async function loadBoostPage() {
     _wa.BackButton.show();
 }
 
-async function loadActivesPage(tab = 'rounds') {
+async function loadActivesPage(tab = 'round') {
     changeActiveButton('actives');
+    _current_actives_tab = tab;
 
-
-    const data = await loadRounds();
+    let data = await loadActives(tab);
 
     const view = {
+        tab_rounds: tab === 'round',
+        tab_directions: tab === 'direction',
+        tab_projects: tab === 'project',
+        tab_specials: tab === 'special',
         header_notification: "5 раундов - 15 000",
         items: data,
     };

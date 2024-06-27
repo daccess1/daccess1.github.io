@@ -10,6 +10,10 @@ function showActivesModal(el) {
     document.getElementById('activesModal--level').innerHTML = el.dataset.level;
     document.getElementById('activesModal--income').innerHTML = el.dataset.income;
     document.getElementById('activesModal--startPrice').innerHTML = el.dataset.startPrice;
+    document.getElementById('activesModal--button').dataset.id = el.dataset.id;
+    active_modal_id = el.dataset.id;
+
+    console.log(`Show modal for ${active_modal_id}`);
 
     document.getElementById('body').classList.add('modalShown');
     blur.classList.remove('activesBlur--hidden');
@@ -22,7 +26,42 @@ function hideActivesModal() {
     document.getElementById('body').classList.remove('modalShown');
 }
 
-async function loadRounds() {
-    const payload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/cards/player/${_tg_user.id}/round`);
+async function loadActives(type = 'round') {
+    const payload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/cards/player/${_tg_user.id}/${type}`);
     return await payload.json();
+}
+
+async function upgradeActive(el) {
+    let is_success = await upgradeRequest(el.dataset.id);
+    hideActivesModal();
+
+    console.log('Card upgrade result:', is_success);
+
+    if (is_success) {
+        document.getElementById("toast-body").innerHTML = `Актив успешно получен!`;
+        _toast.show();
+        await loadActivesPage(_current_actives_tab);
+    } else {
+        document.getElementById("toast-body").innerHTML = `Не удалось получить актив`;
+        _toast.show();
+    }
+}
+
+async function upgradeRequest(id) {
+    return new Promise(function (resolve, ) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('post', `https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/cards/player/${_tg_user.id}/upgrade`, true);
+        xhr.setRequestHeader('Content-type', 'application/json');
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status === 200) {
+                resolve(true);
+            } else {
+                resolve(false);
+            }
+        };
+        xhr.send(JSON.stringify({
+            card_id: id
+        }));
+    });
 }
