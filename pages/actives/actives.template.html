@@ -37,22 +37,22 @@
 
                 {{#items}}
                 <div class="activesContent--item"
-                     data-title="{{title}}"
-                     data-icon="{{icon}}"
+                     data-title="{{name}}"
+                     data-icon="{{image_url}}"
                      data-text="{{text}}"
                      data-level="{{level}}"
-                     data-income="{{income}}"
-                     data-start-price="{{start_price}}"
-                     data-income-price="{{income_price}}"
-                     data-income-value="{{income_value}}"
+                     data-income="{{profit_percentage}}%"
+                     data-start-price="{{next_level_cost}}"
+                     data-income-price="{{total_investment}}"
+                     data-income-value="{{income}}"
                      data-id="{{id}}"
                      onclick="showActivesModal(this)"
                 >
                     <div class="activesContent--itemIcon">
-                        <img src="{{icon}}" alt="icon">
+                        <img src="{{image_url}}" alt="icon">
                     </div>
                     <div class="activesContent--itemText">
-                        <h3 class="activesContent--itemTextTitle"><img src="/img/icon-arrow-up.svg" alt="up">{{title}}</h3>
+                        <h3 class="activesContent--itemTextTitle"><img src="/img/icon-arrow-up.svg" alt="up">{{name}}</h3>
                         <div class="activesContent--itemTextBody">
                             <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyLevel">
                                 <p class="activesContent--itemTextBodyColTitle">Level</p>
@@ -61,13 +61,13 @@
                             <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyIncome">
                                 <p class="activesContent--itemTextBodyColTitle">Доходность</p>
                                 <p class="activesContent--itemTextBodyColValue">
-                                    {{income}}
+                                    {{profit_percentage}}%
                                 </p>
                             </div>
                             <div class="activesContent--itemTextBodyCol activesContent--itemTextBodyStartPrice">
                                 <p class="activesContent--itemTextBodyColTitle">Start price</p>
                                 <p class="activesContent--itemTextBodyColValue">
-                                    {{start_price}}
+                                    {{next_level_cost}}
                                     <img src="/img/icon-coin.svg" alt="coin" class="activesContent--itemTextBodyColCoinIcon">
                                 </p>
                             </div>
@@ -75,11 +75,11 @@
                     </div>
                     <div class="activesContent--itemIncome">
                         <p class="activesContent--itemIncomePrice">
-                            {{income_price}}
+                            {{total_investment}}
                             <img src="/img/icon-coin.svg" alt="coin" class="activesContent--itemIncomePriceCoinIcon">
                         </p>
                         <p class="activesContent--itemIncomeValue">
-                            {{income_value}}
+                            {{income}}
                             <img src="/img/icon-coin.svg" alt="coin" class="activesContent--itemIncomeValueCoinIcon">
                         </p>
                     </div>

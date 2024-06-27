@@ -138,7 +138,7 @@
   top: 0;
   bottom: 71px;
   background-color: #01290F;
-  z-index: 10;
+  z-index: 40;
 }
 .levelModal .carousel-control-prev-icon {
   background-image: url("/img/icon-slide-right.svg");

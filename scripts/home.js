@@ -34,14 +34,12 @@ document.addEventListener('loadHome', () => {
                 drawTapResult(event.pageX, event.pageY);
                 tapsCount++;
                 clearTimeout(tapsTimeout);
-                console.log(tapsCount);
             }
         });
     });
     ['mouseup', 'mouseleave'].forEach(eventType => {
         target.addEventListener(eventType, () => {
             tapsTimeout = setTimeout(() => {
-                console.log('Send taps here', tapsCount);
                 if (tapsCount > 0) {
                     backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/update_taps`, 'post', {
                         "taps": tapsCount

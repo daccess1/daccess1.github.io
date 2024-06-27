@@ -17,7 +17,8 @@ window.addEventListener('load', async () => {
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 
-    await loadHomePage();
+    // await loadHomePage();
+    await loadActivesPage();
 });
 
 function inviteButtonClick() {
@@ -56,7 +57,7 @@ async function getUserData() {
     }
 }
 
-function backendAPIRequest(url, method = 'post', data = null) {
+async function backendAPIRequest(url, method = 'post', data = null) {
     return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
@@ -70,6 +71,6 @@ function backendAPIRequest(url, method = 'post', data = null) {
                 reject(status);
             }
         };
-        xhr.send(data);
+        xhr.send(data ? JSON.stringify(data) : null);
     });
 }

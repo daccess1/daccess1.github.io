@@ -24,7 +24,5 @@ function hideActivesModal() {
 
 async function loadRounds() {
     const payload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/cards/player/${_tg_user.id}/round`);
-    const view = await payload.json();
-
-    console.log(view);
+    return await payload.json();
 }
