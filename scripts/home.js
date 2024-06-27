@@ -4,7 +4,7 @@ async function showLevelModal() {
 }
 
 var tapsCount = 0;
-var tapsTimeout;
+var tapsTimeout, animateTimeout;
 
 document.addEventListener('loadHome', () => {
     const target = document.getElementById("tapGame--game");
@@ -38,9 +38,8 @@ document.addEventListener('loadHome', () => {
             }
         });
     });
-    ['mouseup', 'touchend', 'mouseleave'].forEach(eventType => {
+    ['mouseup', 'mouseleave'].forEach(eventType => {
         target.addEventListener(eventType, () => {
-            container.classList.remove('tapGame--tapped');
             tapsTimeout = setTimeout(() => {
                 console.log('Send taps here', tapsCount);
                 if (tapsCount > 0) {
@@ -52,6 +51,9 @@ document.addEventListener('loadHome', () => {
                 }
                 tapsCount = 0;
             }, 1000);
+            animateTimeout = setTimeout(() => {
+                container.classList.remove('tapGame--tapped');
+            }, 100);
         });
     });
 });
