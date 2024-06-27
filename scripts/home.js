@@ -20,7 +20,7 @@ document.addEventListener('loadHome', () => {
         energyCurrent.innerHTML = _player.current_energy;
     }, 1000);
 
-    ['mousedown', 'touchstart'].forEach(eventType => {
+    ['touchstart'].forEach(eventType => {
         target.addEventListener(eventType, (event) => {
             if (_player.current_energy > 0) {
                 _player.current_energy--;

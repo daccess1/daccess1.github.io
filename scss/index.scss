@@ -10,6 +10,9 @@ body.wrapper {
 
   * {
     box-sizing: border-box;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 body.wrapper.modalShown {
