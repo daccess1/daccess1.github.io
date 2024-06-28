@@ -18,7 +18,8 @@ window.addEventListener('load', async () => {
     _toast = new bootstrap.Toast(toastEl);
 
     // await loadHomePage();
-    await loadBoostPage();
+    // await loadBoostPage();
+    await loadFriendsPage();
 });
 
 function inviteButtonClick() {
@@ -28,7 +29,7 @@ function inviteButtonClick() {
             console.log('postEvent callback')
         },
         {
-            path_full: `https://t.me/share/url?url=${encodeURI('https://t.me/big_bad_bot?ref_id=123')}&text=Share`
+            path_full: `https://t.me/share/url?url=${encodeURI('big_bad_bot?ref_id=123')}&text=${encodeURI('Share bot url https://t.me/big_bad_bot?ref_id=123')}`
         }
     );
 }
