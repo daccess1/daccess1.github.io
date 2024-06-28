@@ -139,6 +139,18 @@
   bottom: 71px;
   background-color: #01290F;
   z-index: 40;
+  overflow-y: auto;
+}
+.levelModal .swiper-button-next::after, .levelModal .swiper-button-prev::after {
+  background-image: url("/img/icon-slide-right.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  width: 18px;
+  height: 28px;
+}
+.levelModal .swiper-button-prev::after {
+  rotate: 180deg;
 }
 .levelModal .carousel-control-prev-icon {
   background-image: url("/img/icon-slide-right.svg");

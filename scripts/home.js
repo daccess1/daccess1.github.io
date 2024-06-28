@@ -1,4 +1,16 @@
 async function showLevelModal() {
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
     document.getElementById('levelModal').classList.remove('d-none');
     _wa.BackButton.show();
 }
@@ -11,6 +23,7 @@ document.addEventListener('loadHome', () => {
     const container = document.getElementById('tapGame');
     const energyCurrent = document.getElementById('level--energyValueCurrent');
     const playerBalance = document.getElementById('screenHeader--balance');
+    showLevelModal();
 
     setInterval(() => {
         if (_player.current_energy < _player.max_energy) {

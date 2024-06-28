@@ -73,11 +73,34 @@
 <div class="container-fluid levelModal d-none" id="levelModal">
     <div class="row">
         <div class="col">
-            <div id="levelModal--carousel" class="carousel slide" data-bs-ride="false" data-interval="false" data-bs-wrap="false">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
+            <!-- Slider main container -->
+            <div class="swiper levelModal--carousel">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
                         <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
                         <p class="levelModal--carouselText">Уровень 1 - Новичок</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
+                        <p class="levelModal--carouselText">Уровень 2 - Новичок</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
+                        <p class="levelModal--carouselText">Уровень 3 - Новичок</p>
+                    </div>
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+            <!--div id="levelModal--carousel" class="carousel slide" data-bs-ride="false" data-interval="false" data-bs-wrap="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+
                     </div>
                     <div class="carousel-item">
                         <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
@@ -97,7 +120,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
+        </div-->
     </div>
     <div class="row">
         <div class="col">
