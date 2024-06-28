@@ -50,7 +50,7 @@ async function loadFriendsPage() {
         friends: viewData
     }
 
-    const templateRequest = await fetch("/pages/friends/page.template.html?v=24");
+    const templateRequest = await fetch("/pages/friends/page.template.html?v=25");
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
