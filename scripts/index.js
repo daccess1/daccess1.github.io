@@ -29,7 +29,7 @@ function inviteButtonClick() {
             console.log('postEvent callback')
         },
         {
-            path_full: `https://t.me/share/url?url=${encodeURI('big_bad_bot?ref_id=123')}&text=${encodeURI('Share bot url https://t.me/big_bad_bot?ref_id=123')}`
+            path_full: `https://t.me/share/url?text=${encodeURI('Share bot url https://t.me/big_bad_bot?ref_id=123')}`
         }
     );
 }
