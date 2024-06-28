@@ -23,7 +23,6 @@ document.addEventListener('loadHome', () => {
     const container = document.getElementById('tapGame');
     const energyCurrent = document.getElementById('level--energyValueCurrent');
     const playerBalance = document.getElementById('screenHeader--balance');
-    showLevelModal();
 
     setInterval(() => {
         if (_player.current_energy < _player.max_energy) {

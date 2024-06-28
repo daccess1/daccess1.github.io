@@ -30,7 +30,10 @@
     </div>
     <div class="row">
         <div class="col">
-            <button class="wheelOfFortuneButton" id="wheelOfFortuneButton" onclick="spinWheel()">Крутить!</button>
+            <button class="wheelOfFortuneButton" id="wheelOfFortuneButton" onclick="spinWheel()">
+                {{#can_spin}}Крутить{{/can_spin}}
+                {{#can_not_spin}}Осталось приглашений: {{invites_left}}{{/can_not_spin}}
+            </button>
         </div>
     </div>
 </div>

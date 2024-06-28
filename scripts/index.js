@@ -8,6 +8,8 @@ window.addEventListener('load', async () => {
     _wa = window.Telegram.WebApp;
     _wa.expand();
 
+    await getUserData();
+
     _wa.BackButton.onClick(() => {
         loadHomePage();
     });
@@ -15,8 +17,8 @@ window.addEventListener('load', async () => {
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 
-    await loadHomePage();
-    // await loadActivesPage('round');
+    // await loadHomePage();
+    await loadBoostPage();
 });
 
 function inviteButtonClick() {
@@ -51,6 +53,7 @@ async function getUserData() {
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
         _player = await playerPayload.json();
         _player.tap_increment = 10;
+        _player.friends_total = 4;
         console.log(_player);
     }
 }

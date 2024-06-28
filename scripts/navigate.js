@@ -63,7 +63,10 @@ async function loadBoostPage() {
     // const viewData = await viewDataPayload.json();
 
     const view = {
-        countdown: new Date(5 * 1000).toISOString().slice(11, 19)
+        countdown: new Date(1 * 1000).toISOString().slice(11, 19),
+        can_spin: _player.friends_total >= 3,
+        can_not_spin: _player.friends_total < 3,
+        invites_left: 3 - _player.friends_total
     }
     _boostCountdownTime = 5;
 

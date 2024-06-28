@@ -18,7 +18,11 @@ document.addEventListener("loadBoost", function() {
     }, 1000);
 });
 
-function spinWheel() {
+async function spinWheel() {
+    if (_player.friends_total < 3) {
+        console.log('Navigate to friends page');
+        return await loadFriendsPage();
+    }
     if (_wheelRotated || _boostCountdownTime) {
         return;
     }
@@ -26,11 +30,14 @@ function spinWheel() {
     const sectors = [
         0, 1000, -1, 1000, 3000, 10000, 0, 1000, 5000, 3000
     ]
-    let targetSector = Math.floor(Math.random() * 10);
+    // let targetSector = Math.floor(Math.random() * 10);
+    //
+    // while (targetSector === 2) {
+    //     targetSector = Math.floor(Math.random() * 10) + 1;
+    // }
 
-    while (targetSector === 2) {
-        targetSector = Math.floor(Math.random() * 10) + 1;
-    }
+    const result = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/spin_wheel`);
+    console.log(result);
 
     let div = document.getElementById('wheelOfFortune--spinner'),
         deg = 3600 - targetSector * 36 - Math.floor(Math.random() * 25);
