@@ -89,7 +89,7 @@ async function loadActivesPage(tab = 'round') {
     for (let item of data) {
         if (item.level > 0) {
             total_purchased++;
-            total_income += item.income
+            total_income += item.income;
         }
     }
 
@@ -98,7 +98,7 @@ async function loadActivesPage(tab = 'round') {
         tab_directions: tab === 'direction',
         tab_projects: tab === 'project',
         tab_specials: tab === 'special',
-        header_notification: `активов: ${total_purchased} | доход: ${total_income}`,
+        header_notification: `активы: ${total_purchased} | доход: ${total_income}`,
         items: data,
     };
 
