@@ -105,7 +105,7 @@ a {
   left: 20px !important;
   right: 20px !important;
   bottom: 80px !important;
-  width: auto;
+  width: auto !important;
   position: fixed;
   background-image: linear-gradient(to top, #fe8d03, #fcbf04);
 }
