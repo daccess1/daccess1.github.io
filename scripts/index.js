@@ -54,9 +54,9 @@ async function getUserData() {
         console.log('Start param', _start_param);
     }
 
-    _tg_user = {
-        id: 131705404
-    }
+    // _tg_user = {
+    //     id: 131705404
+    // }
 
     if (_tg_user) {
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
