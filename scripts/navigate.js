@@ -47,6 +47,7 @@ async function loadFriendsPage() {
 
     const view = {
         friends_count: viewData.length,
+        ref_id: _player.ref_id,
         friends: viewData
     }
 
