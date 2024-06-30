@@ -118,12 +118,12 @@ a {
     font-size: 15px;
   }
 }
-.btn-primary {
+body.wrapper .btn-primary {
   background-image: linear-gradient(to top, #fe8d03, #fcbf04);
-  border: 0 none;
+  border: 1px solid #fe8d03;
   font-weight: 700;
   padding: 7px 12px;
 }
-.form-control:focus {
+body.wrapper .form-control:focus {
   border-color: #fe8d03;
 }
