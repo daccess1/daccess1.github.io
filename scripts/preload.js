@@ -33,7 +33,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 38;
+    const ver = 39;
 
     const scripts = [
         `/scripts/bootstrap.bundle.min.js?v=${ver}`,
