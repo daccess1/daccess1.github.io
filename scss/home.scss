@@ -20,6 +20,10 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0 none;
+    background: transparent;
 
     &::after {
       content: '';

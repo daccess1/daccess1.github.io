@@ -1,3 +1,31 @@
+body.wrapper {
+  padding: 0;
+  margin: 0;
+  background-color: #01290F;
+  font-family: "Open Sans", sans-serif;
+  color: #FFF;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 90px;
+
+  * {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+body.wrapper.modalShown {
+  overflow: hidden;
+}
+html, body, div, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
 .screenTopNotification {
   background-color: #07201f;
   padding-top: 10px;

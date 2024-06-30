@@ -14,10 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.addEventListener('preload', async () => {
     console.log('loadscreen event');
-    _wa = window.Telegram.WebApp;
-    _wa.headerColor = '#01290F';
-    _wa.backgroundColor = '#01290F';
-    _wa.expand();
+
 
     _wa.BackButton.onClick(() => {
         loadHomePage();
@@ -37,11 +34,12 @@ async function preload() {
     const ver = 42;
 
     const scripts = [
+        `/scripts/index.js?v=${ver}`,
         `/scripts/bootstrap.bundle.min.js?v=${ver}`,
         `/scripts/mustache.min.js?v=${ver}`,
         `/scripts/swiper-bundle.min.js?v=${ver}`,
-        `/scripts/index.js?v=${ver}`,
-        `/scripts/home.js?v=${ver}`,
+
+        // `/scripts/home.js?v=${ver}`,
         `/scripts/navigate.js?v=${ver}`,
         `/scripts/boost.js?v=${ver}`,
         `/scripts/actives.js?v=${ver}`,
@@ -91,7 +89,7 @@ async function fetchResource(url, type) {
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.innerHTML = payload;
-        document.head.appendChild(script);
+        document.body.appendChild(script);
         eval(payload);
     }
 }

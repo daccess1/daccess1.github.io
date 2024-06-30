@@ -83,6 +83,7 @@
   font-size: 10px;
   line-height: normal;
   color: #8cad90;
+  margin: 0;
 }
 .activesContent--itemTextBodyColValue {
   font-weight: 700;
@@ -91,6 +92,7 @@
   color: #ffffff;
   display: inline-flex;
   align-items: center;
+  margin: 0;
 }
 .activesContent--itemTextBodyColCoinIcon {
   width: 11px;
@@ -273,6 +275,7 @@
   font-size: 15px;
   line-height: normal;
   color: #ffffff;
+  margin: 0;
 }
 .activesModal--statsColValue.activesModal--startPrice {
   position: relative;
