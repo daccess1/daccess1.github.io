@@ -24,6 +24,7 @@
   -webkit-appearance: none;
   border: 0 none;
   background: transparent;
+  padding: 0;
 }
 .tapGame--game::after {
   content: "";
@@ -37,6 +38,8 @@
 .tapGame--player {
   position: relative;
   z-index: 2;
+  width: 252px;
+  height: 294px;
 }
 .tapGame--container {
   position: relative;
