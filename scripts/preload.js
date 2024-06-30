@@ -20,13 +20,13 @@ document.addEventListener('preload', async () => {
     _toast = new bootstrap.Toast(toastEl);
 
     await loadHomePage();
-    document.getElementById('bottomMenu').classList.remove('d-none');
+    document.getElementById('bottomMenu').style = null;
     // await loadBoostPage();
     // await loadFriendsPage();
 });
 
 async function preload() {
-    const ver = 33;
+    const ver = 37;
 
     const scripts = [
         `/scripts/bootstrap.bundle.min.js?v=${ver}`,
