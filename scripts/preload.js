@@ -5,6 +5,13 @@ var _toast;
 var _current_actives_tab = 'round';
 var _start_param = null;
 
+document.addEventListener('DOMContentLoaded', async () => {
+    _wa = window.Telegram.WebApp;
+    _wa.headerColor = '#01290F';
+    _wa.backgroundColor = '#01290F';
+    _wa.expand();
+} );
+
 document.addEventListener('preload', async () => {
     console.log('loadscreen event');
     _wa = window.Telegram.WebApp;
