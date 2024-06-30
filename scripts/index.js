@@ -1,19 +1,3 @@
-
-
-
-
-function inviteButtonClick() {
-    window.Telegram.WebView.postEvent(
-        "web_app_open_tg_link",
-        () => {
-            console.log('postEvent callback')
-        },
-        {
-            path_full: `https://t.me/share/url?text=${encodeURI('Share bot url https://t.me/big_bad_bot?ref_id=123')}`
-        }
-    );
-}
-
 function copyUrlButtonClick() {
     navigator.clipboard.writeText(`https://t.me/big_bad_bot/bigbadgame?startapp${_player.ref_id}`);
     document.getElementById("toast-body").innerHTML = `Ссылка скопирована`;

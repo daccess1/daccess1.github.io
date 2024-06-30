@@ -1,3 +1,10 @@
+var _wa;
+var _tg_user;
+var _player;
+var _toast;
+var _current_actives_tab = 'round';
+var _start_param = null;
+
 document.addEventListener('preload', async () => {
     console.log('loadscreen event');
     _wa = window.Telegram.WebApp;
