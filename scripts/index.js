@@ -6,6 +6,8 @@ let _current_actives_tab = 'round';
 
 window.addEventListener('load', async () => {
     _wa = window.Telegram.WebApp;
+    _wa.headerColor = '#01290F';
+    _wa.backgroundColor = '#01290F';
     _wa.expand();
 
     await getUserData();
@@ -17,9 +19,9 @@ window.addEventListener('load', async () => {
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 
-    // await loadHomePage();
+    await loadHomePage();
     // await loadBoostPage();
-    await loadFriendsPage();
+    // await loadFriendsPage();
 });
 
 function inviteButtonClick() {
