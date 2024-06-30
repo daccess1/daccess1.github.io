@@ -337,9 +337,13 @@
   top: 0;
   bottom: 0;
   z-index: 199;
-  backdrop-filter: blur(10px);
 
   &--hidden {
     display: none;
+  }
+}
+.pageContent.blur {
+  & > .container-fluid {
+    filter: blur(10px);
   }
 }

@@ -1,6 +1,7 @@
 function showActivesModal(el) {
     const modal = document.getElementById('activesModal');
     const blur = document.getElementById('activesBlur');
+    const content = document.getElementById('pageContent');
 
     document.getElementById('activesModal--titleContent').innerHTML = el.dataset.title;
     document.getElementById('activesModal--logoImg').src = el.dataset.icon;
@@ -18,12 +19,14 @@ function showActivesModal(el) {
     document.getElementById('body').classList.add('modalShown');
     blur.classList.remove('activesBlur--hidden');
     modal.classList.remove('activesModal--hidden');
+    content.classList.add('blur');
 }
 
 function hideActivesModal() {
     document.getElementById('activesBlur').classList.add('activesBlur--hidden');
     document.getElementById('activesModal').classList.add('activesModal--hidden');
     document.getElementById('body').classList.remove('modalShown');
+    document.getElementById('pageContent').classList.remove('blur');
 }
 
 async function loadActives(type = 'round') {

@@ -28,12 +28,13 @@ document.addEventListener('preload', async () => {
 
     await loadHomePage();
     document.getElementById('bottomMenu').style = null;
+    document.getElementById('toast').style = null;
     // await loadBoostPage();
     // await loadFriendsPage();
 });
 
 async function preload() {
-    const ver = 39;
+    const ver = 42;
 
     const scripts = [
         `/scripts/bootstrap.bundle.min.js?v=${ver}`,

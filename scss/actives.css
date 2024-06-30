@@ -311,10 +311,13 @@
   top: 0;
   bottom: 0;
   z-index: 199;
-  backdrop-filter: blur(10px);
 }
 .activesBlur--hidden {
   display: none;
+}
+
+.pageContent.blur > .container-fluid {
+  filter: blur(10px);
 }
 
 /*# sourceMappingURL=actives.css.map */
