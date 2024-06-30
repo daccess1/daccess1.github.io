@@ -39,23 +39,28 @@ function copyUrlButtonClick() {
 }
 ``
 async function getUserData() {
-    // let userPayload = decodeURIComponent(_wa.initData);
-    // userPayload = userPayload.substring(userPayload.indexOf('user=') + 5, userPayload.lastIndexOf('}') + 1);
-    //
-    // if (userPayload) {
-    //     _tg_user = JSON.parse(userPayload);
-    // }
+    let userPayload = decodeURIComponent(_wa.initData);
+    userPayload = userPayload.substring(userPayload.indexOf('user=') + 5, userPayload.lastIndexOf('}') + 1);
 
-    _tg_user = {
-        id: 131705404
+    if (userPayload) {
+        _tg_user = JSON.parse(userPayload);
+        console.log(_tg_user);
     }
+
+    // _tg_user = {
+    //     id: 131705404
+    // }
 
     if (_tg_user) {
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
-        _player = await playerPayload.json();
-        _player.tap_increment = 10;
-        _player.friends_total = 4;
-        console.log(_player);
+        if (playerPayload.status === 200) {
+            _player = await playerPayload.json();
+            _player.tap_increment = 10;
+            _player.friends_total = 4;
+            console.log(_player);
+        } else if (playerPayload.status === 404) {
+            console.log('Create player here');
+        }
     }
 }
 
