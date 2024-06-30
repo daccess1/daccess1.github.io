@@ -36,6 +36,8 @@
 }
 .tapGame--container {
   position: relative;
+  width: 252px;
+  height: 294px;
 }
 .tapGame--container::after {
   content: "";

@@ -37,6 +37,8 @@
   }
   &--container {
     position: relative;
+    width: 252px;
+    height: 294px;
 
     &::after {
       content: '';
