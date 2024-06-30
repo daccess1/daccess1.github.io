@@ -83,13 +83,22 @@ async function loadActivesPage(tab = 'round') {
     _current_actives_tab = tab;
 
     let data = await loadActives(tab);
+    let total_income = 0;
+    let total_purchased = 0;
+
+    for (let item of data) {
+        if (item.level > 0) {
+            total_purchased++;
+            total_income += item.income
+        }
+    }
 
     const view = {
         tab_rounds: tab === 'round',
         tab_directions: tab === 'direction',
         tab_projects: tab === 'project',
         tab_specials: tab === 'special',
-        header_notification: "5 раундов - 15 000",
+        header_notification: `активов: ${total_purchased} | доход: ${total_income}`,
         items: data,
     };
 
