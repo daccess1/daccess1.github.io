@@ -3,6 +3,7 @@ let _tg_user;
 let _player;
 let _toast;
 let _current_actives_tab = 'round';
+let _start_param = null;
 
 window.addEventListener('load', async () => {
     _wa = window.Telegram.WebApp;
@@ -49,6 +50,11 @@ async function getUserData() {
         console.log(_tg_user);
     }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('start_param')) {
+        _start_param = urlParams.get('start_param');
+    }
+
     // _tg_user = {
     //     id: 131705404
     // }
@@ -61,7 +67,18 @@ async function getUserData() {
             _player.friends_total = 4;
             console.log(_player);
         } else if (playerPayload.status === 404) {
-            console.log('Create player here');
+            const body = {
+                "user_id": _tg_user.id,
+                "user_name": _tg_user.first_name + ' ' + _tg_user.last_name,
+                "inviter_ref_id": _start_param,
+                "avatar_link": "https://storage.yandexcloud.net/umperium-storage/uploads/test-upload.jpg"
+            }
+            const response = await backendAPIRequest('https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player', 'post', body);
+            if (response.status === 200) {
+                const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
+                _player = await playerPayload.json();
+            }
+
         }
     }
 }
@@ -75,9 +92,14 @@ async function backendAPIRequest(url, method = 'post', data = null) {
             console.log('XHR type:', xhr.responseType);
             var status = xhr.status;
             if (status === 200) {
-                resolve(xhr.responseText);
+                resolve({
+                    status: status,
+                    body: xhr.responseText
+                });
             } else {
-                reject(status);
+                reject({
+                    status: status
+                });
             }
         };
         xhr.send(data ? JSON.stringify(data) : null);
