@@ -269,6 +269,7 @@
   font-size: 13px;
   line-height: normal;
   color: #8cad90;
+  margin: 0;
 }
 .activesModal--statsColValue {
   font-weight: 700;
