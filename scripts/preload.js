@@ -4,10 +4,6 @@ document.addEventListener('load', async () => {
     _wa.backgroundColor = '#01290F';
     _wa.expand();
 
-    _wa.BackButton.onClick(() => {
-        loadHomePage();
-    });
-
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 });
@@ -15,6 +11,9 @@ document.addEventListener('load', async () => {
 document.addEventListener('preload', async () => {
     console.log('loadscreen event');
 
+    _wa.BackButton.onClick(() => {
+        loadHomePage();
+    });
 
     await loadHomePage();
     document.getElementById('bottomMenu').classList.remove('d-none');
