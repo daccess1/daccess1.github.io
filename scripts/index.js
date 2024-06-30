@@ -40,8 +40,10 @@ async function getUserData() {
         console.log('Start param', _start_param);
     }
 
-    _tg_user = {
-        id: 131705404
+    if (!_tg_user) {
+        _tg_user = {
+            id: 131705404
+        }
     }
 
     if (_tg_user) {

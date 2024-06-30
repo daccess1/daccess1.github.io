@@ -21,7 +21,8 @@ document.addEventListener('preload', async () => {
 async function preload() {
     const scripts = [
         '/scripts/bootstrap.bundle.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js',
+        '/scripts/mustache.min.js',
+        '/scripts/swiper-bundle.min.js',
         '/scripts/index.js?v=32',
         '/scripts/home.js?v=32',
         '/scripts/navigate.js?v=32',
@@ -30,7 +31,7 @@ async function preload() {
     ];
     const styles = [
         '/scss/bootstrap.min.css',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        '/scss/swiper-bundle.min.css',
         '/scss/index.css?v=32',
         '/scss/home.css?v=32',
         '/scss/friends.css?v=32',
