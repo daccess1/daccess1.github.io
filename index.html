@@ -16,20 +16,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/scss/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/scss/index.css?v=32">
-    <link rel="stylesheet" href="/scss/home.css?v=32">
-    <link rel="stylesheet" href="/scss/friends.css">
-    <link rel="stylesheet" href="/scss/boost.css">
-    <link rel="stylesheet" href="/scss/actives.css">
-    <link rel="stylesheet" href="/scss/airdrop.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
+
+    <script src=""></script>
 </head>
 <body class="wrapper" id="body">
-    <div id="pageContent"></div>
+    <div id="pageContent">
+        <div id="loadscreen" style="text-align: center; font-size: 24px; font-weight: 700; font-family: 'Open Sans', sans-serif; width: 100%; margin-top: 100px">LoadScreen</div>
+    </div>
 
-    <div class="bottomMenu">
+    <div id="bottomMenu" class="bottomMenu d-none">
         <div class="bottomMenu--container">
             <a class="bottomMenu--item bottomMenu--item--active" data-page="home" onclick="loadHomePage()">
                 <img class="bottomMenu--itemIcon" src="/img/menu-icon-home-active.svg" data-active="/img/menu-icon-home-active.svg" data-inactive="/img/menu-icon-home-inactive.svg" alt="home">
@@ -63,12 +58,16 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="/scripts/preload.js"></script>
+    <script type="text/javascript">
+        preload();
+    </script>
     <script src="/scripts/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/scripts/index.js?v=32"></script>
+    <!--script src="/scripts/index.js?v=32"></script>
     <script src="/scripts/home.js?v=32"></script>
     <script src="/scripts/navigate.js?v=32"></script>
     <script src="/scripts/boost.js?v=32"></script>
-    <script src="/scripts/actives.js?v=32"></script>
+    <script src="/scripts/actives.js?v=32"></script-->
 </body>
 </html>

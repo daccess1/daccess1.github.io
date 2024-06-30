@@ -5,23 +5,7 @@ let _toast;
 let _current_actives_tab = 'round';
 let _start_param = null;
 
-window.addEventListener('load', async () => {
-    _wa = window.Telegram.WebApp;
-    _wa.headerColor = '#01290F';
-    _wa.backgroundColor = '#01290F';
-    _wa.expand();
 
-    _wa.BackButton.onClick(() => {
-        loadHomePage();
-    });
-
-    const toastEl = document.getElementById('toast');
-    _toast = new bootstrap.Toast(toastEl);
-
-    await loadHomePage();
-    // await loadBoostPage();
-    // await loadFriendsPage();
-});
 
 function inviteButtonClick() {
     window.Telegram.WebView.postEvent(
@@ -40,7 +24,7 @@ function copyUrlButtonClick() {
     document.getElementById("toast-body").innerHTML = `Ссылка скопирована`;
     _toast.show();
 }
-``
+
 async function getUserData() {
     let userPayload = decodeURIComponent(_wa.initData);
     userPayload = userPayload.substring(userPayload.indexOf('user=') + 5, userPayload.lastIndexOf('}') + 1);
@@ -56,9 +40,9 @@ async function getUserData() {
         console.log('Start param', _start_param);
     }
 
-    // _tg_user = {
-    //     id: 131705404
-    // }
+    _tg_user = {
+        id: 131705404
+    }
 
     if (_tg_user) {
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
