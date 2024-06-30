@@ -1,5 +1,4 @@
-document.addEventListener('preload', async () => {
-    console.log('loadscreen event');
+document.addEventListener('load', async () => {
     _wa = window.Telegram.WebApp;
     _wa.headerColor = '#01290F';
     _wa.backgroundColor = '#01290F';
@@ -11,6 +10,11 @@ document.addEventListener('preload', async () => {
 
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
+});
+
+document.addEventListener('preload', async () => {
+    console.log('loadscreen event');
+
 
     await loadHomePage();
     document.getElementById('bottomMenu').classList.remove('d-none');
@@ -19,25 +23,27 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
+    const ver = 33;
+
     const scripts = [
-        '/scripts/bootstrap.bundle.min.js',
-        '/scripts/mustache.min.js',
-        '/scripts/swiper-bundle.min.js',
-        '/scripts/index.js?v=32',
-        '/scripts/home.js?v=32',
-        '/scripts/navigate.js?v=32',
-        '/scripts/boost.js?v=32',
-        '/scripts/actives.js?v=32',
+        `/scripts/bootstrap.bundle.min.js?v=${ver}`,
+        `/scripts/mustache.min.js?v=${ver}`,
+        `/scripts/swiper-bundle.min.js?v=${ver}`,
+        `/scripts/index.js?v=${ver}`,
+        `/scripts/home.js?v=${ver}`,
+        `/scripts/navigate.js?v=${ver}`,
+        `/scripts/boost.js?v=${ver}`,
+        `/scripts/actives.js?v=${ver}`,
     ];
     const styles = [
-        '/scss/bootstrap.min.css',
-        '/scss/swiper-bundle.min.css',
-        '/scss/index.css?v=32',
-        '/scss/home.css?v=32',
-        '/scss/friends.css?v=32',
-        '/scss/boost.css?v=32',
-        '/scss/actives.css?v=32',
-        '/scss/airdrop.css?v=32',
+        `/scss/bootstrap.min.css?v=${ver}`,
+        `/scss/swiper-bundle.min.css?v=${ver}`,
+        `/scss/index.css?v=${ver}`,
+        `/scss/home.css?v=${ver}`,
+        `/scss/friends.css?v=${ver}`,
+        `/scss/boost.css?v=${ver}`,
+        `/scss/actives.css?v=${ver}`,
+        `/scss/airdrop.css?v=${ver}`,
     ];
 
     let promises = [];
@@ -73,7 +79,7 @@ async function fetchResource(url, type) {
     if (type === 'script') {
         const script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = url;
+        script.innerHTML = payload;
         document.head.appendChild(script);
         eval(payload);
     }
