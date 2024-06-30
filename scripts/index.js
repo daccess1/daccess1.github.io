@@ -1,9 +1,4 @@
-let _wa;
-let _tg_user;
-let _player;
-let _toast;
-let _current_actives_tab = 'round';
-let _start_param = null;
+
 
 
 
