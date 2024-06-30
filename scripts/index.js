@@ -53,6 +53,7 @@ async function getUserData() {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('start_param')) {
         _start_param = urlParams.get('start_param');
+        console.log('Start param', _start_param);
     }
 
     // _tg_user = {
