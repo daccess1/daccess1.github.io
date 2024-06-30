@@ -53,6 +53,7 @@
   font-size: 15px;
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 .boostTask--itemTextBody img {
   width: 14px;

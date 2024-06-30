@@ -122,6 +122,7 @@
 }
 .friendsList--item--textScore {
   font-size: 10px;
+  margin-bottom: 0;
 }
 .friendsList--item--textScore img {
   width: 10px;

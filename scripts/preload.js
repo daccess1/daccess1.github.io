@@ -31,15 +31,13 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 43;
+    const ver = 44;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
         `/scripts/bootstrap.bundle.min.js?v=${ver}`,
         `/scripts/mustache.min.js?v=${ver}`,
         `/scripts/swiper-bundle.min.js?v=${ver}`,
-
-        // `/scripts/home.js?v=${ver}`,
         `/scripts/navigate.js?v=${ver}`,
         `/scripts/boost.js?v=${ver}`,
         `/scripts/actives.js?v=${ver}`,
