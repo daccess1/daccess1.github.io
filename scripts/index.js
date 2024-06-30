@@ -36,7 +36,9 @@ function inviteButtonClick() {
 }
 
 function copyUrlButtonClick() {
-    navigator.clipboard.writeText("Umperium bot share url");
+    navigator.clipboard.writeText(`https://t.me/big_bad_bot/bigbadgame?startapp${_player.ref_id}`);
+    document.getElementById("toast-body").innerHTML = `Ссылка скопирована`;
+    _toast.show();
 }
 ``
 async function getUserData() {
@@ -70,14 +72,13 @@ async function getUserData() {
                 "user_id": _tg_user.id,
                 "user_name": _tg_user.first_name + ' ' + _tg_user.last_name,
                 "inviter_ref_id": _start_param,
-                "avatar_link": "https://storage.yandexcloud.net/umperium-storage/uploads/test-upload.jpg"
+                "avatar_link": ""
             }
             const response = await backendAPIRequest('https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player', 'post', body);
             if (response.status === 200) {
                 const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
                 _player = await playerPayload.json();
             }
-
         }
     }
 }

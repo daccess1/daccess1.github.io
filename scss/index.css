@@ -114,4 +114,15 @@ a {
   font-size: 15px;
 }
 
+.btn-primary {
+  background-image: linear-gradient(to top, #fe8d03, #fcbf04);
+  border: 0 none;
+  font-weight: 700;
+  padding: 7px 12px;
+}
+
+.form-control:focus {
+  border-color: #fe8d03;
+}
+
 /*# sourceMappingURL=index.css.map */

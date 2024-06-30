@@ -98,3 +98,15 @@ async function loadActivesPage(tab = 'round') {
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
 }
+
+async function loadAirdropPage() {
+    changeActiveButton('airdrop');
+
+    const view = {
+        balance: _player.balance
+    }
+
+    const templateRequest = await fetch("/pages/airdrop/airdrop.template.html");
+    const template = await templateRequest.text();
+    document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
+}

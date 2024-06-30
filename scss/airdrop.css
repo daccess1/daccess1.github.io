@@ -1,0 +1,37 @@
+.airdropIcon {
+  width: 70%;
+  margin: 30px auto 20px;
+}
+
+.airdropBody {
+  margin-top: 36px;
+}
+.airdropBody--text {
+  font-size: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: 700;
+}
+
+.donate {
+  margin-top: 40px;
+}
+
+.screenHeader--airdrop {
+  margin-top: 100px;
+}
+.screenHeader--airdrop .screenHeader--title + .screenHeader--title {
+  margin-top: 36px;
+}
+.screenHeader--airdrop .screenHeader--title {
+  font-size: 36px;
+}
+.screenHeader--airdrop .screenHeader--title--points {
+  font-size: 24px;
+}
+.screenHeader--airdrop .screenHeader--title img {
+  width: 24px;
+  margin-top: -4px;
+}
+
+/*# sourceMappingURL=airdrop.css.map */

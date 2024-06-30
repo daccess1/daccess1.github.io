@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/scss/friends.css">
     <link rel="stylesheet" href="/scss/boost.css">
     <link rel="stylesheet" href="/scss/actives.css">
+    <link rel="stylesheet" href="/scss/airdrop.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
 </head>
 <body class="wrapper" id="body">
@@ -46,7 +47,7 @@
                 <img class="bottomMenu--itemIcon" src="/img/menu-icon-boost-inactive.svg" data-active="/img/menu-icon-boost-active.svg" data-inactive="/img/menu-icon-boost-inactive.svg" alt="boost">
                 <span class="bottomMenu--itemText">Boost</span>
             </a>
-            <a class="bottomMenu--item" data-page="airdrop">
+            <a class="bottomMenu--item" onclick="loadAirdropPage()" data-page="airdrop">
                 <img class="bottomMenu--itemIcon" src="/img/menu-icon-airdrop-inactive.svg" data-active="/img/menu-icon-airdrop-active.svg" data-inactive="/img/menu-icon-airdrop-inactive.svg" alt="airdrop">
                 <span class="bottomMenu--itemText">Airdrop</span>
             </a>
