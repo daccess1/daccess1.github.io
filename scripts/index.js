@@ -50,7 +50,7 @@ async function getUserData() {
         console.log(_tg_user);
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(decodeURIComponent(window.location.href));
     if (urlParams.has('start_param')) {
         _start_param = urlParams.get('start_param');
         console.log('Start param', _start_param);
