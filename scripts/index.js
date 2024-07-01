@@ -29,6 +29,7 @@ async function getUserData() {
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
             _player.tap_increment = 10;
+            _player.friends_total = 4;
             console.log(_player);
         } else if (playerPayload.status === 404) {
             const body = {
@@ -52,7 +53,6 @@ async function backendAPIRequest(url, method = 'post', data = null) {
         xhr.open(method, url, true);
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.onload = function () {
-            console.log('XHR type:', xhr.responseType);
             var status = xhr.status;
             if (status === 200) {
                 resolve({

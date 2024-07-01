@@ -72,3 +72,27 @@ async function spinWheel() {
 
     }, 3000);
 }
+
+async function applyPromocode() {
+    const input = document.getElementById('promocodeValue');
+    const code = input.value;
+
+    console.log(code);
+
+    try {
+        const response = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/redeem_promo_code`, "post", {
+            code: code
+        });
+        if (response.status === 200) {
+            const data = JSON.parse(response.body);
+            document.getElementById("toast-body").innerHTML = `Промокод применен! Получено ${data.balance}`;
+            _toast.show();
+        } else {
+            document.getElementById("toast-body").innerHTML = `Не удалось применить промокод`;
+            _toast.show();
+        }
+    } catch (ex) {
+        document.getElementById("toast-body").innerHTML = `Не удалось применить промокод`;
+        _toast.show();
+    }
+}

@@ -23,10 +23,11 @@ document.addEventListener('preload', async () => {
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 
-    await loadHomePage();
+    // await loadHomePage();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
-    // await loadBoostPage();
+    await getUserData();
+    await loadBoostPage();
     // await loadFriendsPage();
 });
 
@@ -88,6 +89,5 @@ async function fetchResource(url, type) {
         script.type = 'text/javascript';
         script.innerHTML = payload;
         document.body.appendChild(script);
-        eval(payload);
     }
 }

@@ -28,6 +28,7 @@ document.addEventListener('loadHome', () => {
         if (_player.current_energy < _player.max_energy) {
             _player.current_energy++;
         }
+        console.log('energy');
 
         energyCurrent.innerHTML = _player.current_energy;
     }, 1000);
