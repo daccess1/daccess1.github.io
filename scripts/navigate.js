@@ -23,8 +23,8 @@ async function loadHomePage() {
         balance: _player.balance,
         current_energy: _player.current_energy,
         max_energy: _player.max_energy,
-        level: 4,
-        pnl: 453
+        level: _player.player_level.level,
+        pnl: _player.average_cards_profit
     }
 
     const templateRequest = await fetch("/pages/home/page.template.html?v=2");

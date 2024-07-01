@@ -16,7 +16,6 @@ async function getUserData() {
     const urlParams = new URLSearchParams(decodeURIComponent(window.location.href));
     if (urlParams.has('start_param')) {
         _start_param = urlParams.get('start_param');
-        console.log('Start param', _start_param);
     }
 
     if (!_tg_user) {
@@ -30,7 +29,6 @@ async function getUserData() {
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
             _player.tap_increment = 10;
-            _player.friends_total = 4;
             console.log(_player);
         } else if (playerPayload.status === 404) {
             const body = {

@@ -68,6 +68,14 @@ async function showLevelModal() {
         },
     });
 
+    const response = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/stats`);
+    const data = await response.json();
+
+    document.getElementById('levelModal--statsValue--totalActives').innerHTML = data.total_investments_count;
+    document.getElementById('levelModal--statsValue--totalSpent').innerHTML = data.total_investments_amout;
+    document.getElementById('levelModal--statsValue--totalIncome').innerHTML = data.total_income_from_cards;
+    document.getElementById('levelModal--statsValue--pnl').innerHTML = data.total_average_cards_profit_percent + '%';
+
     document.getElementById('levelModal').classList.remove('d-none');
     _wa.BackButton.show();
 }
