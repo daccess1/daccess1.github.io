@@ -1,18 +1,21 @@
-let _boostCountdownTime = 10;
-let _wheelRotated = !!_boostCountdownTime;
+let _wheelRotated;
+var _countdownInterval;
+console.log('boost js');
 
-document.addEventListener("loadBoost", function() {
-    console.log('load');
+document.addEventListener('loadBoost', function() {
+    console.log('load boost');
+    _wheelRotated = !!_player.time_to_next_spin;
+
     const screenTopNotification = document.getElementById("screenTopNotification");
     const timer = document.getElementById("screenTopNotification--boostCountdown");
 
-    const countDown = setInterval(() => {
-        _boostCountdownTime--;
-        timer.innerHTML = new Date(_boostCountdownTime * 1000).toISOString().slice(11, 19);
+    clearInterval(_countdownInterval);
+    _countdownInterval = setInterval(() => {
+        timer.innerHTML = new Date(_player.time_to_next_spin * 1000).toISOString().slice(11, 19);
 
-        if (_boostCountdownTime <= 0) {
+        if (_player.time_to_next_spin <= 0) {
             _wheelRotated = false;
-            window.clearInterval(countDown);
+            window.clearInterval(_countdownInterval);
             screenTopNotification.style.display = "none";
         }
     }, 1000);
@@ -23,8 +26,9 @@ async function spinWheel() {
         console.log('Navigate to friends page');
         return await loadFriendsPage();
     }
-    if (_wheelRotated || _boostCountdownTime) {
-        return;
+
+    if (_wheelRotated) {
+        return ;
     }
 
     const sectors = [
@@ -38,6 +42,11 @@ async function spinWheel() {
 
     const result = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/spin_wheel`);
     console.log(result);
+    if (result.status !== 200) {
+
+    }
+    const data = JSON.parse(result.body);
+    const targetSector = data.sector_id - 1;
 
     let div = document.getElementById('wheelOfFortune--spinner'),
         deg = 3600 - targetSector * 36 - Math.floor(Math.random() * 25);
@@ -51,19 +60,20 @@ async function spinWheel() {
 
     const screenTopNotification = document.getElementById("screenTopNotification");
     const timer = document.getElementById("screenTopNotification--boostCountdown");
-    _boostCountdownTime = 7200;
-    timer.innerHTML = new Date(_boostCountdownTime * 1000).toISOString().slice(11, 19);
+
+    timer.innerHTML = new Date(data.time_to_next_spin * 1000).toISOString().slice(11, 19);
+    _player.time_to_next_spin = data.time_to_next_spin;
+    _player.balance += data.prize;
 
     setTimeout(() =>{
         screenTopNotification.style.display = "block";
         document.getElementById("toast-body").innerHTML = `Ваш выигрыш: ${sectors[targetSector]} очков`;
         _toast.show();
 
-        const countDown = setInterval(() => {
-            _boostCountdownTime--;
-            timer.innerHTML = new Date(_boostCountdownTime * 1000).toISOString().slice(11, 19);
+        _countdownInterval = setInterval(() => {
+            timer.innerHTML = new Date(_player.time_to_next_spin * 1000).toISOString().slice(11, 19);
 
-            if (_boostCountdownTime <= 0) {
+            if (_player.time_to_next_spin <= 0) {
                 _wheelRotated = false;
                 window.clearInterval(countDown);
                 screenTopNotification.style.display = "none";
@@ -83,15 +93,19 @@ async function applyPromocode() {
         const response = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/redeem_promo_code`, "post", {
             code: code
         });
+        console.log(response);
         if (response.status === 200) {
+            console.log('Success');
             const data = JSON.parse(response.body);
-            document.getElementById("toast-body").innerHTML = `Промокод применен! Получено ${data.balance}`;
+            _player.balance += data.bonus;
+            document.getElementById("toast-body").innerHTML = `Промокод применен! Получено ${data.bonus}`;
             _toast.show();
         } else {
             document.getElementById("toast-body").innerHTML = `Не удалось применить промокод`;
             _toast.show();
         }
     } catch (ex) {
+        console.log('Ex:', ex);
         document.getElementById("toast-body").innerHTML = `Не удалось применить промокод`;
         _toast.show();
     }

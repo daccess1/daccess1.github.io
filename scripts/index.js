@@ -29,7 +29,6 @@ async function getUserData() {
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
             _player.tap_increment = 10;
-            _player.friends_total = 4;
             console.log(_player);
         } else if (playerPayload.status === 404) {
             const body = {
@@ -44,6 +43,14 @@ async function getUserData() {
                 _player = await playerPayload.json();
             }
         }
+        clearInterval(_wheel_interval);
+        _wheel_interval = setInterval(() => {
+            _player.time_to_next_spin--;
+            if (_player.time_to_next_spin <= 0) {
+                _player.time_to_next_spin = 0;
+                clearInterval(_wheel_interval);
+            }
+        }, 1000);
     }
 }
 

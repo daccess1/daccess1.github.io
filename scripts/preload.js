@@ -4,6 +4,7 @@ var _player;
 var _toast;
 var _current_actives_tab = 'round';
 var _start_param = null;
+var _wheel_interval;
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
@@ -23,16 +24,16 @@ document.addEventListener('preload', async () => {
     const toastEl = document.getElementById('toast');
     _toast = new bootstrap.Toast(toastEl);
 
-    // await loadHomePage();
+    await loadHomePage();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
-    await getUserData();
-    await loadBoostPage();
+    // await getUserData();
+    // await loadBoostPage();
     // await loadFriendsPage();
 });
 
 async function preload() {
-    const ver = 44;
+    const ver = 45;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
@@ -68,8 +69,6 @@ async function preload() {
     await Promise.all(promises);
 
     document.dispatchEvent(new Event('preload'));
-
-    console.log('promises finished');
 }
 
 async function fetchResource(url, type) {

@@ -27,7 +27,7 @@ async function loadHomePage() {
         pnl: _player.average_cards_profit
     }
 
-    const templateRequest = await fetch("/pages/home/page.template.html?v=2");
+    const templateRequest = await fetch("/pages/home/home.template.html?v=2");
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
 
@@ -59,15 +59,17 @@ async function loadFriendsPage() {
 
 async function loadBoostPage() {
     console.log('Loading boost page');
+    await getUserData();
     changeActiveButton('boost');
     // const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
     // const viewData = await viewDataPayload.json();
 
     const view = {
-        countdown: new Date(1 * 1000).toISOString().slice(11, 19),
+        countdown: new Date(_player.time_to_next_spin * 1000).toISOString().slice(11, 19),
         can_spin: _player.friends_total >= 3,
         can_not_spin: _player.friends_total < 3,
-        invites_left: 3 - _player.friends_total
+        invites_left: 3 - _player.friends_total,
+        timer_hidden: _player.time_to_next_spin <= 0,
     }
     _boostCountdownTime = 5;
 

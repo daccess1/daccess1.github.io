@@ -1,6 +1,7 @@
 var tapsCount = 0;
 var tapsTimeout, animateTimeout;
 var energyCurrent, homePlayerBalance, homeTapContainer;
+var energyInterval;
 
 function tapEventListener(event) {
     console.log(event);
@@ -19,16 +20,17 @@ function tapEventListener(event) {
 }
 
 document.addEventListener('loadHome', () => {
+    console.log('load home event');
     const target = document.getElementById("tapGame--game");
     homeTapContainer = document.getElementById('tapGame');
     energyCurrent = document.getElementById('level--energyValueCurrent');
     homePlayerBalance = document.getElementById('screenHeader--balance');
 
-    setInterval(() => {
+    clearInterval(energyInterval);
+    energyInterval = setInterval(() => {
         if (_player.current_energy < _player.max_energy) {
             _player.current_energy++;
         }
-        console.log('energy');
 
         energyCurrent.innerHTML = _player.current_energy;
     }, 1000);
@@ -61,6 +63,7 @@ async function showLevelModal() {
         // Optional parameters
         direction: 'horizontal',
         loop: false,
+        initialSlide: _player.player_level.level - 1,
 
         // Navigation arrows
         navigation: {
@@ -76,6 +79,10 @@ async function showLevelModal() {
     document.getElementById('levelModal--statsValue--totalSpent').innerHTML = data.total_investments_amout;
     document.getElementById('levelModal--statsValue--totalIncome').innerHTML = data.total_income_from_cards;
     document.getElementById('levelModal--statsValue--pnl').innerHTML = data.total_average_cards_profit_percent + '%';
+    document.getElementById('levelModal--statsValue--rounds').innerHTML = data.card_type_distribution.round + '%';
+    document.getElementById('levelModal--statsValue--directions').innerHTML = data.card_type_distribution.direction + '%';
+    document.getElementById('levelModal--statsValue--projects').innerHTML = data.card_type_distribution.project + '%';
+    document.getElementById('levelModal--statsValue--specials').innerHTML = data.card_type_distribution.special + '%';
 
     document.getElementById('levelModal').classList.remove('d-none');
     _wa.BackButton.show();
