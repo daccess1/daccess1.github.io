@@ -20,8 +20,13 @@ async function getUserData() {
 
     if (!_tg_user) {
         _tg_user = {
-            id: 131705404
+            id: 131705404,
+            language_code: 'ru'
         }
+    }
+
+    if (!_available_translations.includes(_tg_user.language_code)) {
+        _tg_user.language_code = 'en';
     }
 
     if (_tg_user) {
@@ -29,6 +34,7 @@ async function getUserData() {
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
             _player.tap_increment = 10;
+            _player.language_code = _tg_user.language_code;
             console.log(_player);
         } else if (playerPayload.status === 404) {
             const body = {

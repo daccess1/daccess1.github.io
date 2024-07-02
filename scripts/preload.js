@@ -25,6 +25,11 @@ document.addEventListener('preload', async () => {
     _toast = new bootstrap.Toast(toastEl);
 
     await loadHomePage();
+    document.getElementById('bottomMenu--itemText--home').innerHTML = _translations[_player.language_code].menu.home;
+    document.getElementById('bottomMenu--itemText--actives').innerHTML = _translations[_player.language_code].menu.actives;
+    document.getElementById('bottomMenu--itemText--friends').innerHTML = _translations[_player.language_code].menu.friends;
+    document.getElementById('bottomMenu--itemText--boost').innerHTML = _translations[_player.language_code].menu.boost;
+    document.getElementById('bottomMenu--itemText--airdrop').innerHTML = _translations[_player.language_code].menu.airdrop;
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
     // await getUserData();
@@ -43,6 +48,7 @@ async function preload() {
         `/scripts/navigate.js?v=${ver}`,
         `/scripts/boost.js?v=${ver}`,
         `/scripts/actives.js?v=${ver}`,
+        `/scripts/translations.js?v=${ver}`,
     ];
     const styles = [
         `/scss/bootstrap.min.css?v=${ver}`,

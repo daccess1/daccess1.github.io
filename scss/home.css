@@ -139,6 +139,9 @@
 .level--energyIcon {
   margin-right: 4px;
 }
+.level--energyValue {
+  margin-bottom: 0;
+}
 
 .levelModal {
   position: fixed;

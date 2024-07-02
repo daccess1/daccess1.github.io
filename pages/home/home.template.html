@@ -62,7 +62,7 @@
                 <div class="level--bar level--bar--9"></div>
             </div>
             <div class="level--info d-inline-flex">
-                <span class="level--infoNumber">Уровень {{level}}</span>
+                <span class="level--infoNumber">{{text.level}} {{level}}</span>
                 <span class="level--infoDivider">|</span>
                 <span class="level--infoPNL">PNL % {{pnl}}</span>
             </div>
@@ -80,15 +80,15 @@
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
-                        <p class="levelModal--carouselText">Уровень 1 - Новичок</p>
+                        <p class="levelModal--carouselText">{{text.level}} 1 - Новичок</p>
                     </div>
                     <div class="swiper-slide">
                         <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
-                        <p class="levelModal--carouselText">Уровень 2 - Новичок</p>
+                        <p class="levelModal--carouselText">{{text.level}} 2 - Новичок</p>
                     </div>
                     <div class="swiper-slide">
                         <img src="/img/character-level-1-modal.png" srcset="/img/character-level-1-modal@2x.png 2x, /img/character-level-1-modal@3x.png 3x" class="d-block w-100" alt="level-1">
-                        <p class="levelModal--carouselText">Уровень 3 - Новичок</p>
+                        <p class="levelModal--carouselText">{{text.level}} 3 - Новичок</p>
                     </div>
                 </div>
                 <!-- If we need navigation buttons -->
@@ -101,36 +101,36 @@
         <div class="col">
             <div class="levelModal--stats">
                 <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">Число инвестиций</span>
-                    <span class="levelModal--statsValue" id="levelModal--statsValue--totalActives">24</span>
+                    <span class="levelModal--statsText">{{text.investments_count}}</span>
+                    <span class="levelModal--statsValue" id="levelModal--statsValue--totalActives"></span>
                 </div>
                 <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">Объем инвестиций</span>
-                    <span class="levelModal--statsValue" id="levelModal--statsValue--totalSpent">35 000 <img src="/img/icon-coin.svg" alt="coin"></span>
+                    <span class="levelModal--statsText">{{text.investments_const}}</span>
+                    <span class="levelModal--statsValue"><span id="levelModal--statsValue--totalSpent"></span> <img src="/img/icon-coin.svg" alt="coin"></span>
                 </div>
                 <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">Профит</span>
-                    <span class="levelModal--statsValue" id="levelModal--statsValue--totalIncome">15 000  <img src="/img/icon-coin.svg" alt="coin"></span>
+                    <span class="levelModal--statsText">{{text.profit}}</span>
+                    <span class="levelModal--statsValue"><span id="levelModal--statsValue--totalIncome"></span>  <img src="/img/icon-coin.svg" alt="coin"></span>
                 </div>
                 <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">PNL</span>
-                    <span class="levelModal--statsValue" id="levelModal--statsValue--pnl">425%</span>
+                    <span class="levelModal--statsText">{{text.pnl}}</span>
+                    <span class="levelModal--statsValue" id="levelModal--statsValue--pnl"></span>
                 </div>
                 <div class="levelModal--statsRow levelModal--statsRow--actives">
                     <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">Раунды</span>
-                        <span class="levelModal--statsValue" id="levelModal--statsValue--rounds">13%</span>
+                        <span class="levelModal--statsText">{{text.rounds}}</span>
+                        <span class="levelModal--statsValue" id="levelModal--statsValue--rounds"></span>
                     </div>
                     <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">Сферы</span>
-                        <span class="levelModal--statsValue" id="levelModal--statsValue--directions">10%</span>
+                        <span class="levelModal--statsText">{{text.directions}}</span>
+                        <span class="levelModal--statsValue" id="levelModal--statsValue--directions"></span>
                     </div>
                     <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">Проекты</span>
-                        <span class="levelModal--statsValue" id="levelModal--statsValue--projects">15%</span>
+                        <span class="levelModal--statsText">{{text.projects}}</span>
+                        <span class="levelModal--statsValue" id="levelModal--statsValue--projects"></span>
                     </div>
                     <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">Особые</span>
+                        <span class="levelModal--statsText">{{text.specials}}</span>
                         <span class="levelModal--statsValue" id="levelModal--statsValue--specials">30%</span>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
         <div class="col">
             <div class="levelModal--ranking">
                 <img src="{{avatar}}"  width="33px" height="33px" alt="avatar">
-                Ваше место:&nbsp;<span class="levelModal--rankingCurrent" id="levelModal--rankingCurrent"></span>/<span class="levelModal--rankingTotal" id="levelModal--rankingTotal"></span>
+                {{text.ranking}}:&nbsp;<span class="levelModal--rankingCurrent" id="levelModal--rankingCurrent"></span>/<span class="levelModal--rankingTotal" id="levelModal--rankingTotal"></span>
             </div>
         </div>
     </div>

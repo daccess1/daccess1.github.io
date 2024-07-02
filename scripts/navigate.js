@@ -24,7 +24,8 @@ async function loadHomePage() {
         current_energy: _player.current_energy,
         max_energy: _player.max_energy,
         level: _player.player_level.level,
-        pnl: _player.average_cards_profit
+        pnl: _player.average_cards_profit,
+        text: _translations[_player.language_code].home
     }
 
     const templateRequest = await fetch("/pages/home/home.template.html?v=2");
