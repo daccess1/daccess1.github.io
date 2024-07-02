@@ -25,6 +25,9 @@ document.addEventListener('loadHome', () => {
     homeTapContainer = document.getElementById('tapGame');
     energyCurrent = document.getElementById('level--energyValueCurrent');
     homePlayerBalance = document.getElementById('screenHeader--balance');
+    const langSelect =  document.getElementById('langSelect');
+
+    langSelect.value = _player.language_code;
 
     clearInterval(energyInterval);
     energyInterval = setInterval(() => {
@@ -55,6 +58,15 @@ document.addEventListener('loadHome', () => {
                 homeTapContainer.classList.remove('tapGame--tapped');
             }, 100);
         });
+    });
+
+    langSelect.addEventListener('change', () => {
+        const newLang = langSelect.value;
+        console.log('lang change:', newLang);
+        _lang = newLang;
+        _player.language_code = newLang;
+        renderBottomMenu();
+        loadHomePage();
     });
 });
 

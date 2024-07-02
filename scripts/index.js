@@ -34,7 +34,7 @@ async function getUserData() {
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
             _player.tap_increment = 10;
-            _player.language_code = _tg_user.language_code;
+            _player.language_code = _lang;
             console.log(_player);
         } else if (playerPayload.status === 404) {
             const body = {
@@ -80,4 +80,12 @@ async function backendAPIRequest(url, method = 'post', data = null) {
         };
         xhr.send(data ? JSON.stringify(data) : null);
     });
+}
+
+function renderBottomMenu() {
+    document.getElementById('bottomMenu--itemText--home').innerHTML = _translations[_player.language_code].menu.home;
+    document.getElementById('bottomMenu--itemText--actives').innerHTML = _translations[_player.language_code].menu.actives;
+    document.getElementById('bottomMenu--itemText--friends').innerHTML = _translations[_player.language_code].menu.friends;
+    document.getElementById('bottomMenu--itemText--boost').innerHTML = _translations[_player.language_code].menu.boost;
+    document.getElementById('bottomMenu--itemText--airdrop').innerHTML = _translations[_player.language_code].menu.airdrop;
 }

@@ -61,7 +61,6 @@ async function loadFriendsPage() {
 
 async function loadBoostPage() {
     console.log('Loading boost page');
-    await getUserData();
     changeActiveButton('boost');
     // const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
     // const viewData = await viewDataPayload.json();
