@@ -25,7 +25,8 @@ async function loadHomePage() {
         max_energy: _player.max_energy,
         level: _player.player_level.level,
         pnl: _player.average_cards_profit,
-        text: _translations[_player.language_code].home
+        text: _translations[_player.language_code].home,
+        language_code: _player.language_code
     }
 
     const templateRequest = await fetch("/pages/home/home.template.html?v=2");
