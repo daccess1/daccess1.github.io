@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col screenHeader">
-            <h1 class="screenHeader--title">Invite friends and you will<br>get bonuses!</h1>
+            <h1 class="screenHeader--title">{{{text.title}}}</h1>
         </div>
     </div>
 </div>
@@ -9,7 +9,7 @@
 <div class="container-fluid inviteButtons">
     <div class="row">
         <div class="col d-flex">
-            <a class="inviteButtons--button inviteButtons--buttonInvite" href="https://t.me/share/url?url=https://t.me/big_bad_bot/bigbadgame?startapp={{ref_id}}&text=Share%20bot%20url">Invite friend <img src="/img/button-icon-plus.svg" alt="plus"></a>
+            <a class="inviteButtons--button inviteButtons--buttonInvite" href="https://t.me/share/url?url=https://t.me/big_bad_bot/bigbadgame?startapp={{ref_id}}&text=Share%20bot%20url">{{text.invite_button}} <img src="/img/button-icon-plus.svg" alt="plus"></a>
             <a class="inviteButtons--button inviteButtons--buttonCopyUrl" onclick="copyUrlButtonClick()">
                 <img src="/img/button-icon-copy.svg" alt="copy">
             </a>
@@ -25,9 +25,9 @@
                     <img src="/img/icon-invite-gift.png" srcset="/img/icon-invite-gift@2x.png 2x, /img/icon-invite-gift@3x.png 3x" alt="gift">
                 </div>
                 <div class="inviteInfo--itemText">
-                    <h3 class="inviteInfo--itemTextTitle">Invite friend</h3>
+                    <h3 class="inviteInfo--itemTextTitle">{{text.one_friend_title}}</h3>
                     <p class="inviteInfo--itemTextBody">
-                        <span class="inviteInfo--itemTextBodyHighlight">+10 000 </span> <img src="/img/icon-coin.svg" alt="coin"> for 1 friend
+                        <span class="inviteInfo--itemTextBodyHighlight">+10 000 </span> <img src="/img/icon-coin.svg" alt="coin"> {{text.one_friend_bonus}}
                     </p>
                 </div>
             </div>
@@ -36,9 +36,9 @@
                     <img src="/img/icon-invite-gift.png" srcset="/img/icon-invite-gift@2x.png 2x, /img/icon-invite-gift@3x.png 3x" alt="gift">
                 </div>
                 <div class="inviteInfo--itemText">
-                    <h3 class="inviteInfo--itemTextTitle">Invite friend</h3>
+                    <h3 class="inviteInfo--itemTextTitle">{{text.five_friend_title}}</h3>
                     <p class="inviteInfo--itemTextBody">
-                        <span class="inviteInfo--itemTextBodyHighlight">+50 000 </span> <img src="/img/icon-coin.svg" alt="coin"> for 5 friends
+                        <span class="inviteInfo--itemTextBodyHighlight">+50 000 </span> <img src="/img/icon-coin.svg" alt="coin"> {{text.five_friend_bonus}}
                     </p>
                 </div>
             </div>
@@ -50,7 +50,7 @@
     <div class="row">
         <div class="col">
             <div class="friendsList--blockTitle d-flex justify-content-between align-items-center">
-                <h2 class="friendsList--blockTitle--text">List of your friends ({{friends_count}})</h2>
+                <h2 class="friendsList--blockTitle--text">{{text.friends_list_title}} ({{friends_count}})</h2>
                 <a class="friendsList--blockTitle--refreshButton">
                     <img src="/img/icon-refresh.svg" alt="refresh">
                 </a>

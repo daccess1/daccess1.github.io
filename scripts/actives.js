@@ -41,11 +41,11 @@ async function upgradeActive(el) {
     console.log('Card upgrade result:', is_success);
 
     if (is_success) {
-        document.getElementById("toast-body").innerHTML = `Актив успешно получен!`;
+        document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_success;
         _toast.show();
         await loadActivesPage(_current_actives_tab);
     } else {
-        document.getElementById("toast-body").innerHTML = `Не удалось получить актив`;
+        document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_fail;
         _toast.show();
     }
 }

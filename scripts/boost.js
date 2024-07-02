@@ -67,7 +67,7 @@ async function spinWheel() {
 
     setTimeout(() =>{
         screenTopNotification.style.display = "block";
-        document.getElementById("toast-body").innerHTML = `Ваш выигрыш: ${sectors[targetSector]} очков`;
+        document.getElementById("toast-body").innerHTML = `${_translations[_player.language_code].boost.spin_success} ${sectors[targetSector]}`;
         _toast.show();
 
         _countdownInterval = setInterval(() => {
@@ -98,15 +98,15 @@ async function applyPromocode() {
             console.log('Success');
             const data = JSON.parse(response.body);
             _player.balance += data.bonus;
-            document.getElementById("toast-body").innerHTML = `Промокод применен! Получено ${data.bonus}`;
+            document.getElementById("toast-body").innerHTML = `${_translations[_player.language_code].boost.promocode_success} ${data.bonus}`;
             _toast.show();
         } else {
-            document.getElementById("toast-body").innerHTML = `Не удалось применить промокод`;
+            document.getElementById("toast-body").innerHTML = _translations[_player.language_code].boost.promocode_error;
             _toast.show();
         }
     } catch (ex) {
         console.log('Ex:', ex);
-        document.getElementById("toast-body").innerHTML = `Не удалось применить промокод`;
+        document.getElementById("toast-body").innerHTML = _translations[_player.language_code].boost.promocode_error;
         _toast.show();
     }
 }

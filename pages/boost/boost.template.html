@@ -12,7 +12,7 @@
 <div class="container-fluid screenHeader">
     <div class="row">
         <div class="col">
-            <h1 class="screenHeader--title">Заработай больше<br>монет</h1>
+            <h1 class="screenHeader--title">{{{text.title}}}</h1>
         </div>
     </div>
 </div>
@@ -31,8 +31,8 @@
     <div class="row">
         <div class="col">
             <button class="wheelOfFortuneButton" id="wheelOfFortuneButton" onclick="spinWheel()">
-                {{#can_spin}}Крутить{{/can_spin}}
-                {{#can_not_spin}}Осталось приглашений: {{invites_left}}{{/can_not_spin}}
+                {{#can_spin}} {{text.button}} {{/can_spin}}
+                {{#can_not_spin}} {{text.button_invite}}: {{invites_left}}{{/can_not_spin}}
             </button>
         </div>
     </div>
@@ -41,7 +41,7 @@
 <div class="container-fluid boostTask">
     <div class="row">
         <div class="col">
-            <h3 class="boostTask--title">Список заданий</h3>
+            <h3 class="boostTask--title">{{text.task_list_title}}</h3>
         </div>
     </div>
     <div class="row">
@@ -51,7 +51,7 @@
                     <img src="/img/icon-youtube.svg" alt="youtube">
                 </div>
                 <div class="boostTask--itemText">
-                    <h3 class="boostTask--itemTextTitle">Присоединяйтесь<br>к нашему каналу</h3>
+                    <h3 class="boostTask--itemTextTitle">{{{text.task_youtube}}}</h3>
                     <p class="boostTask--itemTextBody">
                         <span class="boostTask--itemTextBodyHighlight">+5 000</span>
                         <img src="/img/icon-coin.svg" alt="coin">
@@ -67,7 +67,7 @@
                     <img src="/img/icon-telegram.svg" alt="telegram">
                 </div>
                 <div class="boostTask--itemText">
-                    <h3 class="boostTask--itemTextTitle">Получите эксклюзивную<br>информацию</h3>
+                    <h3 class="boostTask--itemTextTitle">{{{text.task_tg}}}</h3>
                     <p class="boostTask--itemTextBody">
                         <span class="boostTask--itemTextBodyHighlight">+5 000</span>
                         <img src="/img/icon-coin.svg" alt="coin">
@@ -83,7 +83,7 @@
                     <img src="/img/icon-twitter.svg" alt="twitter">
                 </div>
                 <div class="boostTask--itemText">
-                    <h3 class="boostTask--itemTextTitle">Следи за нашим<br>аккаунтом в X</h3>
+                    <h3 class="boostTask--itemTextTitle">{{{text.task_twitter}}}</h3>
                     <p class="boostTask--itemTextBody">
                         <span class="boostTask--itemTextBodyHighlight">+5 000</span>
                         <img src="/img/icon-coin.svg" alt="coin">
@@ -100,15 +100,15 @@
 <div class="container-fluid promocode">
     <div class="row">
         <div class="col">
-            <h3 class="boostTask--title">Промокод</h3>
+            <h3 class="boostTask--title">{{text.promocode}}</h3>
         </div>
     </div>
     <div class="row">
         <div class="col-7">
-            <input type="text" class="form-control" id="promocodeValue" placeholder="Промокод">
+            <input type="text" class="form-control" id="promocodeValue" placeholder="{{text.promocode}}">
         </div>
         <div class="col-5">
-            <button class="btn btn-primary w-100" onclick="applyPromocode()">Применить</button>
+            <button class="btn btn-primary w-100" onclick="applyPromocode()">{{text.promocode_button}}</button>
         </div>
     </div>
 </div>

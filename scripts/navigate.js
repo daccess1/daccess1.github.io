@@ -49,10 +49,11 @@ async function loadFriendsPage() {
     const view = {
         friends_count: viewData.length,
         ref_id: _player.ref_id,
-        friends: viewData
+        friends: viewData,
+        text: _translations[_player.language_code].friends
     }
 
-    const templateRequest = await fetch("/pages/friends/page.template.html?v=25");
+    const templateRequest = await fetch("/pages/friends/friends.template.html?v=25");
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
@@ -71,6 +72,7 @@ async function loadBoostPage() {
         can_not_spin: _player.friends_total < 3,
         invites_left: 3 - _player.friends_total,
         timer_hidden: _player.time_to_next_spin <= 0,
+        text: _translations[_player.language_code].boost
     }
     _boostCountdownTime = 5;
 
@@ -101,8 +103,9 @@ async function loadActivesPage(tab = 'round') {
         tab_directions: tab === 'direction',
         tab_projects: tab === 'project',
         tab_specials: tab === 'special',
-        header_notification: `активы: ${total_purchased} | доход: ${total_income}`,
+        header_notification: `${_translations[_player.language_code].actives.header_actives}: ${total_purchased} | ${_translations[_player.language_code].actives.header_income}: ${total_income}`,
         items: data,
+        text: _translations[_player.language_code].actives
     };
 
     const templateRequest = await fetch("/pages/actives/actives.template.html?v=1");
@@ -115,7 +118,8 @@ async function loadAirdropPage() {
     changeActiveButton('airdrop');
 
     const view = {
-        balance: _player.balance
+        balance: _player.balance,
+        text: _translations[_player.language_code].airdrop
     }
 
     const templateRequest = await fetch("/pages/airdrop/airdrop.template.html");
