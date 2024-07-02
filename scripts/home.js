@@ -83,6 +83,8 @@ async function showLevelModal() {
     document.getElementById('levelModal--statsValue--directions').innerHTML = data.card_type_distribution.direction + '%';
     document.getElementById('levelModal--statsValue--projects').innerHTML = data.card_type_distribution.project + '%';
     document.getElementById('levelModal--statsValue--specials').innerHTML = data.card_type_distribution.special + '%';
+    document.getElementById('levelModal--rankingCurrent').innerHTML = data.leaderboard_position;
+    document.getElementById('levelModal--rankingTotal').innerHTML = data.total_players;
 
     document.getElementById('levelModal').classList.remove('d-none');
     _wa.BackButton.show();
