@@ -28,6 +28,7 @@ async function loadHomePage() {
         level: _player.player_level.level,
         pnl: _player.average_cards_profit,
         text: _translations[_player.language_code].home,
+        text_levels: _translations[_player.language_code].levels,
         language_code: _player.language_code
     }
 

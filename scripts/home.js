@@ -85,12 +85,16 @@ document.addEventListener('loadHome', () => {
         });
     });
 
-    langSelect.addEventListener('change', () => {
+    langSelect.addEventListener('change', async () => {
         const newLang = langSelect.value;
         console.log('lang change:', newLang);
         _lang = newLang;
         _player.language_code = newLang;
+        await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/lang`, 'post', {
+            language_code: newLang
+        });
         renderBottomMenu();
+        console.log('Reloading home');
         loadHomePage();
     });
 });

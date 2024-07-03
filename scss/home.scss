@@ -102,7 +102,7 @@
       background-image: linear-gradient(to top, #fe8d03, #fcbf04);
     }
 
-    @for $i from 1 through 9 {
+    @for $i from 1 through 8 {
       &--#{$i} {
         height: #{$i * 11px};
       }
