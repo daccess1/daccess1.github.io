@@ -7,6 +7,7 @@ body.wrapper {
   width: 100%;
   max-width: 100%;
   padding-bottom: 90px;
+  overflow: hidden;
 }
 body.wrapper * {
   box-sizing: border-box;
@@ -26,6 +27,12 @@ html, body, div, a, p, h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
+}
+
+.pageContent {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
 }
 
 .screenTopNotification {
@@ -123,11 +130,6 @@ body.wrapper .btn-primary {
 
 body.wrapper .form-control:focus {
   border-color: #fe8d03;
-}
-
-.pageContent {
-  overflow-x: hidden;
-  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */
