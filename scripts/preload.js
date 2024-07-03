@@ -43,7 +43,7 @@ function ignore(e) {
 }
 
 async function preload() {
-    const ver = 47;
+    const ver = 48;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
