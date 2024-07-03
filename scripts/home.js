@@ -42,8 +42,10 @@ document.addEventListener('loadHome', () => {
     ['click'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
     });
+
     ['mouseup', 'mouseleave', 'touchend'].forEach(eventType => {
-        target.addEventListener(eventType, () => {
+        target.addEventListener(eventType, (e) => {
+            e.preventDefault();
             tapsTimeout = setTimeout(() => {
                 if (tapsCount > 0) {
                     backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/update_taps`, 'post', {
@@ -57,7 +59,7 @@ document.addEventListener('loadHome', () => {
             animateTimeout = setTimeout(() => {
                 homeTapContainer.classList.remove('tapGame--tapped');
             }, 100);
-        });
+        }, { passive: false });
     });
 
     langSelect.addEventListener('change', () => {
