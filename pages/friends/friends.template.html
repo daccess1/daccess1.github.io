@@ -65,14 +65,14 @@
                     <div class="friendsList--item--text">
                         <p class="friendsList--item--textName">{{user_name}}</p>
                         <p class="friendsList--item--textScore">
-                            Master
+                            {{level_name}}
+                            {{balance}}
                             <img src="/img/icon-coin.svg" alt="coin">
-                            {{score}}
                         </p>
                     </div>
                 </div>
                 <div class="friendsList--item--reward d-flex align-items-center">
-                    <img src="/img/icon-coin.svg" alt="coin"> +750K
+                    +{{profit}} <img src="/img/icon-coin.svg" alt="coin">
                 </div>
             </div>
             {{/friends}}

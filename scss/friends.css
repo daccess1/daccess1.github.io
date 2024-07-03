@@ -130,6 +130,8 @@
 .friendsList--item--textScore img {
   width: 10px;
   height: 10px;
+  margin-left: 0px;
+  margin-top: -2px;
 }
 .friendsList--item--reward {
   font-weight: 700;
@@ -138,7 +140,7 @@
 .friendsList--item--reward img {
   width: 20px;
   height: 20px;
-  margin-right: 7px;
+  margin-left: 4px;
 }
 
 /*# sourceMappingURL=friends.css.map */

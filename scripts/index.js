@@ -39,18 +39,18 @@ async function getUserData() {
         }
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
-            _player.tap_increment = 10;
-            _player.language_code = _lang;
+            // _player.language_code = _lang;
             console.log(_player);
         } else {
             const body = {
                 "user_id": _tg_user.id,
                 "user_name": _tg_user.first_name + ' ' + _tg_user.last_name,
                 "inviter_ref_id": _start_param,
-                "avatar_link": ""
+                "avatar_link": "",
+                "language_code": _tg_user.language_code
             }
             const response = await backendAPIRequest('https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player', 'post', body);
-            if (response.status === 201) {
+            if (response.status === 200 || response.status === 201) {
                 _player = JSON.parse(response.body);
             }
         }

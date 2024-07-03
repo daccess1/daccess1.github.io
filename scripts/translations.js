@@ -8,6 +8,16 @@ var _translations = {
             boost: "Boost",
             airdrop: "Airdrop",
         },
+        levels: {
+            1: "Beginner",
+            2: "Conservative",
+            3: "Moderate",
+            4: "Rational",
+            5: "Speculative",
+            6: "Aggressive",
+            7: "Enterprise",
+            8: "Institutional"
+        },
         home: {
             level: "Level",
             investments_count: "Investments count",
@@ -73,6 +83,16 @@ var _translations = {
             friends: "Друзья",
             boost: "Буст",
             airdrop: "Airdrop",
+        },
+        levels: {
+            1: "Начинающий",
+            2: "Консервативный",
+            3: "Умеренный",
+            4: "Рациональный",
+            5: "Спекулятивный",
+            6: "Агрессивный",
+            7: "Корпоративный",
+            8: "Институциональный"
         },
         home: {
             level: "Уровень",

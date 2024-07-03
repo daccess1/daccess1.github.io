@@ -49,6 +49,10 @@ async function loadFriendsPage() {
     const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
     const viewData = await viewDataPayload.json();
 
+    for (let item of viewData) {
+        item.level_name = _translations[_player.language_code].levels[item.player_level.level];
+    }
+
     const view = {
         friends_count: viewData.length,
         ref_id: _player.ref_id,
