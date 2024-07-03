@@ -30,8 +30,14 @@ async function getUserData() {
     }
 
     if (_tg_user) {
-        console.log('Loading player')
-        const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
+        console.log('Loading player');
+        let playerPayload;
+        try {
+            playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
+
+        } catch (ex) {
+
+        }
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
             _player.tap_increment = 10;
@@ -46,10 +52,11 @@ async function getUserData() {
             }
             const response = await backendAPIRequest('https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player', 'post', body);
             if (response.status === 200) {
-                const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
+                playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
                 _player = await playerPayload.json();
             }
         }
+
         clearInterval(_wheel_interval);
         _wheel_interval = setInterval(() => {
             _player.time_to_next_spin--;
