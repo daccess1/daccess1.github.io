@@ -73,7 +73,7 @@ async function backendAPIRequest(url, method = 'post', data = null) {
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.onload = function () {
             var status = xhr.status;
-            if (status === 200) {
+            if (status < 300) {
                 resolve({
                     status: status,
                     body: xhr.responseText
