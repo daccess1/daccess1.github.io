@@ -1,3 +1,5 @@
+var page_version = 58;
+
 function changeActiveButton(page) {
     console.log('Active Button:', page);
     const buttons = document.getElementsByClassName('bottomMenu--item');
@@ -29,7 +31,7 @@ async function loadHomePage() {
         language_code: _player.language_code
     }
 
-    const templateRequest = await fetch("/pages/home/home.template.html?v=2");
+    const templateRequest = await fetch(`/pages/home/home.template.html?v=${page_version}`);
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
 
@@ -54,7 +56,7 @@ async function loadFriendsPage() {
         text: _translations[_player.language_code].friends
     }
 
-    const templateRequest = await fetch("/pages/friends/friends.template.html?v=25");
+    const templateRequest = await fetch(`/pages/friends/friends.template.html?v=${page_version}`);
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
@@ -76,7 +78,7 @@ async function loadBoostPage() {
     }
     _boostCountdownTime = 5;
 
-    const templateRequest = await fetch("/pages/boost/boost.template.html?v=2");
+    const templateRequest = await fetch(`/pages/boost/boost.template.html?v=${page_version}`);
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     document.dispatchEvent(new Event('loadBoost'));
@@ -108,7 +110,7 @@ async function loadActivesPage(tab = 'round') {
         text: _translations[_player.language_code].actives
     };
 
-    const templateRequest = await fetch("/pages/actives/actives.template.html?v=1");
+    const templateRequest = await fetch(`/pages/actives/actives.template.html?v=${page_version}`);
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
@@ -122,7 +124,7 @@ async function loadAirdropPage() {
         text: _translations[_player.language_code].airdrop
     }
 
-    const templateRequest = await fetch("/pages/airdrop/airdrop.template.html");
+    const templateRequest = await fetch(`/pages/airdrop/airdrop.template.html?v=${page_version}`);
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
