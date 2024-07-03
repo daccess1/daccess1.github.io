@@ -86,6 +86,9 @@
   color: #F7A201;
 }
 
+.friendsList {
+  margin-bottom: 91px;
+}
 .friendsList--blockTitle--text {
   font-weight: 700;
   font-size: 15px;
