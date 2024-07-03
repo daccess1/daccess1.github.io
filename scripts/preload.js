@@ -45,6 +45,7 @@ async function preload() {
         `/scripts/navigate.js?v=${ver}`,
         `/scripts/boost.js?v=${ver}`,
         `/scripts/actives.js?v=${ver}`,
+        `/scripts/airdrop.js?v=${ver}`,
         `/scripts/translations.js?v=${ver}`,
     ];
     const styles = [

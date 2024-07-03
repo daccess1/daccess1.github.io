@@ -1,7 +1,7 @@
 <div class="container-fluid screenHeader screenHeader--airdrop">
     <div class="row">
         <div class="col">
-            <h1 class="screenHeader--title screenHeader--title--points">{{balance}} <img src="/img/icon-coin.svg" alt="coin"></h1>
+            <h1 class="screenHeader--title screenHeader--title--points"><span id="airdropBalance">{{balance}}</span> <img src="/img/icon-coin.svg" alt="coin"></h1>
             <h1 class="screenHeader--title">Airdrop</h1>
         </div>
     </div>
@@ -21,7 +21,7 @@
             <input type="text" class="form-control" id="donationValue" placeholder="{{text.button}}">
         </div>
         <div class="col-5">
-            <button class="btn btn-primary w-100">{{text.button}}</button>
+            <button class="btn btn-primary w-100" onclick="donate()">{{text.button}}</button>
         </div>
     </div>
 </div>

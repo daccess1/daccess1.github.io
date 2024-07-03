@@ -80,7 +80,8 @@ async function backendAPIRequest(url, method = 'post', data = null) {
                 });
             } else {
                 reject({
-                    status: status
+                    status: status,
+                    error: xhr.responseText
                 });
             }
         };

@@ -73,7 +73,9 @@ var _translations = {
             title: "Airdrop",
             text: "After ending of the first season the token will be listed.<br><br>Right now you can send some of your points for charity.",
             button: "Send",
-            success: "Donation sent"
+            success: "Donation sent",
+            error: "Donation failed",
+            error_insufficient_funds: "Not enough coins to donate"
         }
     },
     ru: {
