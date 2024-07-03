@@ -34,7 +34,6 @@ async function getUserData() {
         let playerPayload;
         try {
             playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
-
         } catch (ex) {
 
         }
@@ -51,9 +50,8 @@ async function getUserData() {
                 "avatar_link": ""
             }
             const response = await backendAPIRequest('https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player', 'post', body);
-            if (response.status === 200) {
-                playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
-                _player = await playerPayload.json();
+            if (response.status === 201) {
+                _player = JSON.parse(response.body);
             }
         }
 
