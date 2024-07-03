@@ -30,13 +30,14 @@ async function getUserData() {
     }
 
     if (_tg_user) {
+        console.log('Loading player')
         const playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
             _player.tap_increment = 10;
             _player.language_code = _lang;
             console.log(_player);
-        } else if (playerPayload.status === 404) {
+        } else {
             const body = {
                 "user_id": _tg_user.id,
                 "user_name": _tg_user.first_name + ' ' + _tg_user.last_name,

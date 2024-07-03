@@ -4,7 +4,22 @@ var energyCurrent, homePlayerBalance, homeTapContainer;
 var energyInterval;
 
 function tapEventListener(event) {
-    console.log(event);
+    console.log('tap', event);
+    console.log('type', event.type);
+    console.log(event.changedTouches[0].clientX);
+    let posX, posY;
+
+    if (event.type === 'touchstart') {
+        console.log('touchend evt pos')
+        posX = event.changedTouches[0].clientX;
+        posY = event.changedTouches[0].clientY;
+    } else {
+        posX = event.pageX;
+        posY = event.pageY;
+    }
+
+    console.log(posX, posY);
+
     if (_player.current_energy > 0) {
         _player.current_energy--;
         energyCurrent.innerHTML = _player.current_energy;
@@ -13,7 +28,7 @@ function tapEventListener(event) {
         homePlayerBalance.innerHTML = _player.balance;
 
         homeTapContainer.classList.add('tapGame--tapped');
-        drawTapResult(event.pageX, event.pageY);
+        drawTapResult(posX, posY);
         tapsCount++;
         clearTimeout(tapsTimeout);
     }
@@ -38,14 +53,22 @@ document.addEventListener('loadHome', () => {
         energyCurrent.innerHTML = _player.current_energy;
     }, 1000);
 
-    // ['mousedown', 'touchstart'].forEach(eventType => {
-    ['click'].forEach(eventType => {
+    const eventParams = { passive: false };
+    target.addEventListener('touchcancel', ignore, eventParams);
+    target.addEventListener('touchend', ignore, eventParams);
+
+    function ignore(e) {
+        e.preventDefault();
+    }
+
+    ['mousedown', 'touchstart'].forEach(eventType => {
+    // ['click'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
     });
 
     ['mouseup', 'mouseleave', 'touchend'].forEach(eventType => {
         target.addEventListener(eventType, (e) => {
-            e.preventDefault();
+            console.log(eventType, e.type);
             tapsTimeout = setTimeout(() => {
                 if (tapsCount > 0) {
                     backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/update_taps`, 'post', {
@@ -59,7 +82,7 @@ document.addEventListener('loadHome', () => {
             animateTimeout = setTimeout(() => {
                 homeTapContainer.classList.remove('tapGame--tapped');
             }, 100);
-        }, { passive: false });
+        });
     });
 
     langSelect.addEventListener('change', () => {

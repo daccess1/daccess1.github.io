@@ -21,10 +21,10 @@
     <div class="row">
         <div class="col">
             <div class="activesTabs--wrapper d-flex w-100">
-                <a class="activesTabs--item {{#tab_rounds}}activesTabs--item--active{{/tab_rounds}}" data-tab="round" onclick="loadActivesPage('round')">{{text.rounds}}</a>
-                <a class="activesTabs--item {{#tab_directions}}activesTabs--item--active{{/tab_directions}}" data-tab="direction" onclick="loadActivesPage('direction')">{{text.directions}}</a>
-                <a class="activesTabs--item {{#tab_projects}}activesTabs--item--active{{/tab_projects}}" data-tab="project" onclick="loadActivesPage('project')">{{text.projects}}</a>
-                <a class="activesTabs--item {{#tab_specials}}activesTabs--item--active{{/tab_specials}}" data-tab="special" onclick="loadActivesPage('special')">{{text.specials}}</a>
+                <a class="activesTabs--item {{#tab_rounds}}activesTabs--item--active{{/tab_rounds}}" data-tab="round" onclick="loadActivesPage('round')" ontouchend="loadActivesPage('round')">{{text.rounds}}</a>
+                <a class="activesTabs--item {{#tab_directions}}activesTabs--item--active{{/tab_directions}}" data-tab="direction" onclick="loadActivesPage('direction')" ontouchend="loadActivesPage('direction')">{{text.directions}}</a>
+                <a class="activesTabs--item {{#tab_projects}}activesTabs--item--active{{/tab_projects}}" data-tab="project" onclick="loadActivesPage('project')" ontouchend="loadActivesPage('project')">{{text.projects}}</a>
+                <a class="activesTabs--item {{#tab_specials}}activesTabs--item--active{{/tab_specials}}" data-tab="special" onclick="loadActivesPage('special')" ontouchend="loadActivesPage('special')">{{text.specials}}</a>
             </div>
         </div>
     </div>
@@ -47,6 +47,7 @@
                      data-income-value="{{income}}"
                      data-id="{{card_id}}"
                      onclick="showActivesModal(this)"
+                     ontouchend="showActivesModal(this)"
                 >
                     <div class="activesContent--itemIcon">
                         <img src="{{image_url}}" alt="icon">
@@ -91,7 +92,7 @@
     </div>
 </div>
 
-<div class="activesBlur activesBlur--hidden" id="activesBlur" onclick="hideActivesModal()"></div>
+<div class="activesBlur activesBlur--hidden" id="activesBlur" onclick="hideActivesModal()" ontouchend="hideActivesModal()"></div>
 
 <div class="activesModal activesModal--hidden" id="activesModal">
     <div class="container-fluid">
@@ -101,7 +102,7 @@
                     <img src="/img/icon-arrow-up.svg" alt="up">
                     <span id="activesModal--titleContent"></span>
                 </h3>
-                <button class="activesModal--close" id="activesModal--close" onclick="hideActivesModal()">
+                <button class="activesModal--close" id="activesModal--close" onclick="hideActivesModal()" ontouchend="hideActivesModal()">
                     <img src="/img/icon-close.svg" alt="close">
                 </button>
             </div>
@@ -141,7 +142,7 @@
         </div>
         <div class="row z-1 position-relative">
             <div class="col">
-                <button class="activesModal--button" id="activesModal--button" data-id="" onclick="upgradeActive(this)">{{text.upgrade}}</button>
+                <button class="activesModal--button" id="activesModal--button" data-id="" ontouchend="upgradeActive(this)" onclick="upgradeActive(this)">{{text.upgrade}}</button>
             </div>
         </div>
     </div>

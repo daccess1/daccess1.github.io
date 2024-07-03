@@ -30,7 +30,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <button class="wheelOfFortuneButton" id="wheelOfFortuneButton" onclick="spinWheel()">
+            <button class="wheelOfFortuneButton" id="wheelOfFortuneButton" onclick="spinWheel()" ontouchend="spinWheel()">
                 {{#can_spin}} {{text.button}} {{/can_spin}}
                 {{#can_not_spin}} {{text.button_invite}}: {{invites_left}}{{/can_not_spin}}
             </button>
@@ -108,7 +108,7 @@
             <input type="text" class="form-control" id="promocodeValue" placeholder="{{text.promocode}}">
         </div>
         <div class="col-5">
-            <button class="btn btn-primary w-100" onclick="applyPromocode()">{{text.promocode_button}}</button>
+            <button class="btn btn-primary w-100" onclick="applyPromocode()" ontouchend="applyPromocode()">{{text.promocode_button}}</button>
         </div>
     </div>
 </div>
