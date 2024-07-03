@@ -34,6 +34,14 @@ document.addEventListener('preload', async () => {
     // await loadFriendsPage();
 });
 
+const eventParams = { passive: false };
+document.body.addEventListener('touchcancel', ignore, eventParams);
+document.body.addEventListener('touchend', ignore, eventParams);
+
+function ignore(e) {
+    e.preventDefault();
+}
+
 async function preload() {
     const ver = 47;
 
