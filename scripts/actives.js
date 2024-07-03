@@ -1,3 +1,5 @@
+var active_modal_id;
+
 function showActivesModal(el) {
     const modal = document.getElementById('activesModal');
     const blur = document.getElementById('activesBlur');
@@ -23,6 +25,7 @@ function showActivesModal(el) {
 }
 
 function hideActivesModal() {
+    console.log('Hiding actives modals');
     document.getElementById('activesBlur').classList.add('activesBlur--hidden');
     document.getElementById('activesModal').classList.add('activesModal--hidden');
     document.getElementById('body').classList.remove('modalShown');
