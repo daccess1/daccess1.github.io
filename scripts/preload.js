@@ -46,18 +46,18 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 61;
+    const ver = 62;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
         `/scripts/bootstrap.bundle.min.js?v=${ver}`,
         `/scripts/mustache.min.js?v=${ver}`,
         `/scripts/swiper-bundle.min.js?v=${ver}`,
+        `/scripts/translations.js?v=${ver}`,
         `/scripts/navigate.js?v=${ver}`,
         `/scripts/boost.js?v=${ver}`,
         `/scripts/actives.js?v=${ver}`,
         `/scripts/airdrop.js?v=${ver}`,
-        `/scripts/translations.js?v=${ver}`,
     ];
     const styles = [
         `/scss/bootstrap.min.css?v=${ver}`,

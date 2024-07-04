@@ -56,7 +56,7 @@ var _translations = {
             change_lang: "Select language"
         },
         actives: {
-            title: "Actives - Invest<br>and gain profit",
+            title: "Invest<br>and gain profit",
             rounds: "Rounds",
             directions: "Directions",
             projects: "Projects",
@@ -65,8 +65,8 @@ var _translations = {
             income: "Income",
             price: "Price",
             upgrade: "Upgrade",
-            header_actives: "actives",
-            header_income: "income",
+            header_actives: "Actives",
+            header_income: "Income",
             toast_success: "Active successfully upgraded",
             toast_fail: "Active upgrade failed",
             modal_invested: "Invested",
@@ -99,6 +99,7 @@ var _translations = {
         airdrop: {
             title: "Airdrop",
             text: "After ending of the first season the token will be listed.<br><br>Right now you can send some of your points for charity.",
+            placeholder: "Amount",
             button: "Send",
             success: "Donation sent",
             error: "Donation failed",
@@ -114,14 +115,38 @@ var _translations = {
             airdrop: "Airdrop",
         },
         levels: {
-            1: "Начинающий",
-            2: "Консервативный",
-            3: "Умеренный",
-            4: "Рациональный",
-            5: "Спекулятивный",
-            6: "Агрессивный",
-            7: "Корпоративный",
-            8: "Институциональный"
+            1: {
+                name: "Начинающий",
+                score: "от 0"
+            },
+            2: {
+                name: "Консервативный",
+                score: "от 5K"
+            },
+            3: {
+                name: "Умеренный",
+                score: "от 25K"
+            },
+            4: {
+                name: "Рациональный",
+                score: "от 100K"
+            },
+            5: {
+                name: "Спекулятивный",
+                score: "от 1M"
+            },
+            6: {
+                name: "Агрессивный",
+                score: "от 10M"
+            },
+            7: {
+                name: "Корпоративный",
+                score: "от 50M"
+            },
+            8: {
+                name: "Институциональный",
+                score: "от 100M"
+            }
         },
         home: {
             level: "Уровень",
@@ -137,7 +162,7 @@ var _translations = {
             change_lang: "Выберите язык"
         },
         actives: {
-            title: "Активы - Инвестируй<br>и получай доход",
+            title: "Инвестируй<br>и получай доход",
             rounds: "Раунды",
             directions: "Сферы",
             projects: "Проекты",
@@ -146,8 +171,8 @@ var _translations = {
             income: "Доход",
             price: "Цена",
             upgrade: "Улучшить",
-            header_actives: "активы",
-            header_income: "доход",
+            header_actives: "Активы",
+            header_income: "Доход",
             toast_success: "Актив успешно улучшен",
             toast_fail: "Не удалось улучшить актив",
             modal_invested: "Инвестировано",
@@ -181,6 +206,7 @@ var _translations = {
             title: "Airdrop",
             text: "После окончания первого сезона состоится листинг.<br><br>Сейчас вы можете отправить часть своих поинтов в фонд на благотворительность.",
             button: "Отправить",
+            placeholder: "Введите сумму",
             success: "Пожертвование отправлено",
             error: "Пожертвование не отправлено",
             error_insufficient_funds: "Недостаточно поинтов"
