@@ -46,7 +46,7 @@ async function upgradeActive(el) {
     if (is_success) {
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_success;
         _toast.show();
-        await loadActivesPage(_current_actives_tab);
+        await loadActivesPage(_current_actives_tab, true);
     } else {
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_fail;
         _toast.show();

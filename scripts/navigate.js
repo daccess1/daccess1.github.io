@@ -1,4 +1,4 @@
-var page_version = 58;
+var page_version = 60;
 
 function changeActiveButton(page) {
     console.log('Active Button:', page);
@@ -16,6 +16,10 @@ function changeActiveButton(page) {
 }
 
 async function loadHomePage() {
+    if (_active_page === "home") {
+        return;
+    }
+
     await getUserData();
     changeActiveButton('home');
 
@@ -42,9 +46,15 @@ async function loadHomePage() {
 
     _wa.BackButton.hide();
     document.dispatchEvent(new Event('loadHome'));
+    _toast.hide();
+    _active_page = "home";
 }
 
 async function loadFriendsPage() {
+    if (_active_page === "friends") {
+        return;
+    }
+
     console.log('Loading friends page');
     changeActiveButton('friends');
     const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
@@ -65,9 +75,15 @@ async function loadFriendsPage() {
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
+    _toast.hide();
+    _active_page = "friends";
 }
 
 async function loadBoostPage() {
+    if (_active_page === "boost") {
+        return;
+    }
+
     console.log('Loading boost page');
     changeActiveButton('boost');
     // const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
@@ -88,9 +104,15 @@ async function loadBoostPage() {
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     document.dispatchEvent(new Event('loadBoost'));
     _wa.BackButton.show();
+    _toast.hide();
+    _active_page = "boost";
 }
 
-async function loadActivesPage(tab = 'round') {
+async function loadActivesPage(tab = 'round', reload = false) {
+    if (_active_page === `actives_${tab}` && !reload) {
+        return;
+    }
+
     changeActiveButton('actives');
     _current_actives_tab = tab;
 
@@ -119,9 +141,18 @@ async function loadActivesPage(tab = 'round') {
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
+
+    if (!reload) {
+        _toast.hide();
+    }
+    _active_page = `actives_${tab}`;
 }
 
 async function loadAirdropPage() {
+    if (_active_page === "airdrop") {
+        return;
+    }
+
     changeActiveButton('airdrop');
 
     const view = {
@@ -133,4 +164,6 @@ async function loadAirdropPage() {
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
+    _toast.hide();
+    _active_page = "airdrop";
 }

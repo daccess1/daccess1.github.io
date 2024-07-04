@@ -5,7 +5,7 @@ var _toast;
 var _current_actives_tab = 'round';
 var _start_param = null;
 var _wheel_interval;
-var _lang = 'ru';
+var _active_page = 'loadscreen';
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
@@ -20,6 +20,7 @@ document.addEventListener('preload', async () => {
 
     _wa.BackButton.onClick(() => {
         loadHomePage();
+        _active_page = "home";
     });
 
     const toastEl = document.getElementById('toast');

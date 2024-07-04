@@ -86,6 +86,8 @@ document.addEventListener('loadHome', () => {
 });
 
 async function showLevelModal() {
+    _active_page = "level_modal";
+
     const swiper = new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
@@ -145,7 +147,6 @@ async function changeLanguage(el) {
     }
 
     console.log('lang change:', newLang);
-    _lang = newLang;
     _player.language_code = newLang;
     await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/lang`, 'post', {
         language_code: newLang
