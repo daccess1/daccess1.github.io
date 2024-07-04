@@ -6,7 +6,6 @@ var energyInterval;
 function tapEventListener(event) {
     console.log('tap', event);
     console.log('type', event.type);
-    console.log(event.changedTouches[0].clientX);
     let posX, posY;
 
     if (event.type === 'touchstart') {
@@ -40,9 +39,9 @@ document.addEventListener('loadHome', () => {
     homeTapContainer = document.getElementById('tapGame');
     energyCurrent = document.getElementById('level--energyValueCurrent');
     homePlayerBalance = document.getElementById('screenHeader--balance');
-    const langSelect =  document.getElementById('langSelect');
+    const selectedLangButton = document.getElementsByClassName(`changeLangButton--${_player.language_code}`)[0];
 
-    langSelect.value = _player.language_code;
+    selectedLangButton.classList.add('changeLangButton--active');
 
     clearInterval(energyInterval);
     energyInterval = setInterval(() => {
@@ -84,19 +83,6 @@ document.addEventListener('loadHome', () => {
             }, 100);
         });
     });
-
-    langSelect.addEventListener('change', async () => {
-        const newLang = langSelect.value;
-        console.log('lang change:', newLang);
-        _lang = newLang;
-        _player.language_code = newLang;
-        await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/lang`, 'post', {
-            language_code: newLang
-        });
-        renderBottomMenu();
-        console.log('Reloading home');
-        loadHomePage();
-    });
 });
 
 async function showLevelModal() {
@@ -131,7 +117,6 @@ async function showLevelModal() {
     _wa.BackButton.show();
 }
 
-
 function drawTapResult(x, y) {
     var el = document.createElement('div');
     el.innerHTML = '+' + _player.tap_increment;
@@ -151,4 +136,21 @@ function drawTapResult(x, y) {
     setTimeout(() => {
         el.remove();
     }, 500);
+}
+
+async function changeLanguage(el) {
+    const newLang = el.dataset.lang;
+    if (_player.language_code === newLang) {
+        return;
+    }
+
+    console.log('lang change:', newLang);
+    _lang = newLang;
+    _player.language_code = newLang;
+    await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/lang`, 'post', {
+        language_code: newLang
+    });
+    renderBottomMenu();
+    console.log('Reloading home');
+    loadHomePage();
 }

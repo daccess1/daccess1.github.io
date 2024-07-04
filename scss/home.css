@@ -243,15 +243,44 @@
   position: relative;
 }
 
-.langSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+.screenTopNotification--text--button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0 none;
+  background-color: #000;
+  color: #fff;
   padding: 0;
   margin: 0;
-  opacity: 0;
+}
+
+.changeLangButton {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #9aaa9f;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
+  border: 1px solid #9aaa9f;
+  border-radius: 10px;
+  position: relative;
+}
+.changeLangButton--active {
+  color: #fff;
+  border-color: #fff;
+}
+.changeLangButton--active::after {
+  position: absolute;
+  content: "";
+  background-image: url("/img/icon-check-green.svg");
+  width: 23px;
+  height: 17px;
+  top: 50%;
+  margin-top: -9px;
+  right: 10px;
+}
+.changeLangButton + .changeLangButton {
+  margin-top: 8px;
 }
 
 /*# sourceMappingURL=home.css.map */

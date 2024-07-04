@@ -3,7 +3,7 @@
         <div class="col d-flex justify-content-end">
             <div class="screenTopNotification--container">
                 <span class="screenTopNotification--text">{{header_notification}}</span>
-                <img src="/img/icon-coin.svg" alt="coin" class="screenTopNotification--icon">
+                <img src="/img/icon-coin.svg" alt="coin" class="screenTopNotification--icon screenTopNotification--icon--coin">
             </div>
         </div>
     </div>
@@ -113,8 +113,8 @@
                     <img src="" alt="logo" id="activesModal--logoImg">
                 </div>
                 <div class="activesModal--income">
-                    <p class="activesModal--incomePrice">Инвестировано: <span id="activesModal--incomePrice"></span></p>
-                    <p class="activesModal--incomeValue">Доход: <span id="activesModal--incomeValue"></span></p>
+                    <p class="activesModal--incomePrice">{{text.modal_invested}}: <span id="activesModal--incomePrice"></span></p>
+                    <p class="activesModal--incomeValue">{{text.modal_profit}}: <span id="activesModal--incomeValue"></span></p>
                 </div>
             </div>
         </div>

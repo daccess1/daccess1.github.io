@@ -8,12 +8,9 @@
             </div>
         </div>
         <div class="col-3 d-flex justify-content-end">
-            <div class="screenTopNotification--container screenTopNotification--container-lang d-flex align-items-center">
-                <select id="langSelect" class="langSelect">
-                    <option value="en">English</option>
-                    <option value="ru">Русский</option>
-                </select>
-                <span class="screenTopNotification--text text-capitalize">{{language_code}}</span>
+            <div class="screenTopNotification--container screenTopNotification--container-lang d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#langModal">
+                <span data-bs-toggle="modal" data-bs-target="#langModal" class="screenTopNotification--text screenTopNotification--text--button text-capitalize">{{language_code}}</span>
+
                 <img src="/img/icon-arrow-down.svg" alt="arrow">
             </div>
         </div>
@@ -23,7 +20,7 @@
 <div class="container-fluid screenHeader">
     <div class="row">
         <div class="col">
-            <h1 class="screenHeader--title"><span id="screenHeader--balance">{{balance}}</span> <img src="/img/icon-coin.svg" alt="coin"></h1>
+            <h1 class="screenHeader--title"><span id="screenHeader--balance">{{balance}}</span> <img src="/img/icon-coin.svg" class="screenHeader--titleIcon" alt="coin"></h1>
         </div>
     </div>
 </div>
@@ -149,6 +146,25 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="langModal" tabindex="-1" aria-labelledby="langModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="langModalLabel">{{text.change_lang}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="/img/icon-close.svg" alt="close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <a class="changeLangButton changeLangButton--en" data-lang="en" onclick="changeLanguage(this)" data-bs-dismiss="modal">English</a>
+                <a class="changeLangButton changeLangButton--ru" data-lang="ru" onclick="changeLanguage(this)" data-bs-dismiss="modal">Русский</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <img src="/img/icon-slide-right.svg" width="0" height="0" alt="">
 <img src="/img/tap-bg.svg" width="0" height="0" alt="">

@@ -35,7 +35,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 58;
+    const ver = 59;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,

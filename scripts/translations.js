@@ -28,7 +28,8 @@ var _translations = {
             directions: "Directions",
             projects: "Projects",
             specials: "Special",
-            ranking: "Your rank"
+            ranking: "Your rank",
+            change_lang: "Select language"
         },
         actives: {
             title: "Actives - Invest<br>and gain profit",
@@ -43,7 +44,9 @@ var _translations = {
             header_actives: "actives",
             header_income: "income",
             toast_success: "Active successfully upgraded",
-            toast_fail: "Active upgrade failed"
+            toast_fail: "Active upgrade failed",
+            modal_invested: "Invested",
+            modal_profit: "Profit"
         },
         friends: {
             title: "Invite friends and you will<br>get bonuses!",
@@ -106,7 +109,8 @@ var _translations = {
             directions: "Сферы",
             projects: "Проекты",
             specials: "Особые",
-            ranking: "Ваше место"
+            ranking: "Ваше место",
+            change_lang: "Выберите язык"
         },
         actives: {
             title: "Активы - Инвестируй<br>и получай доход",
@@ -121,7 +125,9 @@ var _translations = {
             header_actives: "активы",
             header_income: "доход",
             toast_success: "Актив успешно улучшен",
-            toast_fail: "Не удалось улучшить актив"
+            toast_fail: "Не удалось улучшить актив",
+            modal_invested: "Инвестировано",
+            modal_profit: "Доход"
         },
         friends: {
             title: "Приглашай друзей и<br>получай бонусы",
