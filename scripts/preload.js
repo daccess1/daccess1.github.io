@@ -6,6 +6,16 @@ var _current_actives_tab = 'round';
 var _start_param = null;
 var _wheel_interval;
 var _active_page = 'loadscreen';
+var _levels = {
+    1: 0,
+    2: 5000,
+    3: 25000,
+    4: 100000,
+    5: 1000000,
+    6: 10000000,
+    7: 50000000,
+    8: 100000000
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;

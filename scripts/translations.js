@@ -9,14 +9,38 @@ var _translations = {
             airdrop: "Airdrop",
         },
         levels: {
-            1: "Beginner",
-            2: "Conservative",
-            3: "Moderate",
-            4: "Rational",
-            5: "Speculative",
-            6: "Aggressive",
-            7: "Enterprise",
-            8: "Institutional"
+            1: {
+                name: "Beginner",
+                score: "from 0"
+            },
+            2: {
+                name: "Conservative",
+                score: "from 5K"
+            },
+            3: {
+                name: "Moderate",
+                score: "from 25K"
+            },
+            4: {
+                name: "Rational",
+                score: "from 100K"
+            },
+            5: {
+                name: "Speculative",
+                score: "from 1M"
+            },
+            6: {
+                name: "Aggressive",
+                score: "from 10M"
+            },
+            7: {
+                name: "Enterprise",
+                score: "from 50M"
+            },
+            8: {
+                name: "Institutional",
+                score: "from 100M"
+            }
         },
         home: {
             level: "Level",

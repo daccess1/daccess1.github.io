@@ -115,6 +115,23 @@ async function showLevelModal() {
     document.getElementById('levelModal--rankingCurrent').innerHTML = data.leaderboard_position;
     document.getElementById('levelModal--rankingTotal').innerHTML = data.total_players;
 
+    const progress = document.getElementsByClassName('progress--level');
+    for (let el of progress) {
+        el.classList.add('d-none');
+    }
+    const scores = document.getElementsByClassName('progress--minScore');
+    for (let el of scores) {
+        el.classList.remove('d-none');
+    }
+
+    const progressEL = document.getElementById(`progress--level--${_player.player_level.level}`);
+    progressEL.classList.remove('d-none');
+    document.getElementById(`progress--minScore--${_player.player_level.level}`).classList.add('d-none');
+
+    const width = Math.floor(_player.balance / _levels[_player.player_level.level + 1] * 100);
+    progressEL.getElementsByClassName('progress-bar')[0].style.width = `${width}%`;
+    progressEL.getElementsByClassName('progress-bar')[0].getElementsByClassName('progress--levelText')[0].innerHTML = `${_player.balance} / ${_levels[_player.player_level.level + 1]}`;
+
     document.getElementById('levelModal').classList.remove('d-none');
     _wa.BackButton.show();
 }
@@ -153,5 +170,5 @@ async function changeLanguage(el) {
     });
     renderBottomMenu();
     console.log('Reloading home');
-    loadHomePage();
+    loadHomePage(true);
 }

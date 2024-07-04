@@ -178,6 +178,10 @@
   line-height: normal;
   text-align: center;
   color: #ffffff;
+  margin-bottom: 4px;
+}
+.levelModal--carouselLevel {
+  margin: 0;
 }
 .levelModal--stats {
   margin-top: 8px;
@@ -281,6 +285,36 @@
 }
 .changeLangButton + .changeLangButton {
   margin-top: 8px;
+}
+
+.progress--level {
+  background-image: linear-gradient(to right, #104e1d, #297428);
+  position: relative;
+}
+.progress--level .progress-bar {
+  background-image: linear-gradient(to bottom, #fe8d03, #fcbf04);
+  font-weight: 700;
+}
+
+.progress--levelText {
+  width: 100%;
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2px;
+}
+
+.progress--minScore {
+  display: flex;
+  font-size: 15px;
+  height: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=home.css.map */
