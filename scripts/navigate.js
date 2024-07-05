@@ -84,8 +84,6 @@ async function loadBoostPage() {
 
     console.log('Loading boost page');
     changeActiveButton('boost');
-    // const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
-    // const viewData = await viewDataPayload.json();
 
     const view = {
         countdown: new Date(_player.time_to_next_spin * 1000).toISOString().slice(11, 19),

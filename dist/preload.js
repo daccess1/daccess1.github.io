@@ -40,24 +40,16 @@ document.addEventListener('preload', async () => {
     renderBottomMenu();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
-    // await getUserData();
-    // await loadBoostPage();
-    // await loadFriendsPage();
 });
 
 async function preload() {
     const ver = 64;
 
     const scripts = [
-        `/scripts/index.js?v=${ver}`,
-        `/scripts/bootstrap.bundle.min.js?v=${ver}`,
-        `/scripts/mustache.min.js?v=${ver}`,
-        `/scripts/swiper-bundle.min.js?v=${ver}`,
-        `/scripts/translations.js?v=${ver}`,
-        `/scripts/navigate.js?v=${ver}`,
-        `/scripts/boost.js?v=${ver}`,
-        `/scripts/actives.js?v=${ver}`,
-        `/scripts/airdrop.js?v=${ver}`,
+        `/dist/bootstrap.bundle.min.js?v=${ver}`,
+        `/dist/mustache.min.js?v=${ver}`,
+        `/dist/swiper-bundle.min.js?v=${ver}`,
+        `/dist/bundle.min.js?v=${ver}`,
     ];
     const styles = [
         `/scss/bootstrap.min.css?v=${ver}`,

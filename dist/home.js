@@ -95,12 +95,9 @@ async function showLevelModal() {
     _active_page = "level_modal";
 
     const swiper = new Swiper('.swiper', {
-        // Optional parameters
         direction: 'horizontal',
         loop: false,
         initialSlide: _player.player_level.level - 1,
-
-        // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
