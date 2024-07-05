@@ -106,6 +106,9 @@
 .level--bar--8 {
   height: 88px;
 }
+.level--bar--9 {
+  height: 99px;
+}
 .level--info {
   background-color: #000;
   display: flex;

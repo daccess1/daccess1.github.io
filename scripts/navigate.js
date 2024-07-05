@@ -1,4 +1,4 @@
-var _page_version = 63;
+var _page_version = 64;
 
 function changeActiveButton(page) {
     console.log('Active Button:', page);
@@ -40,9 +40,7 @@ async function loadHomePage(reload = false) {
     const template = await templateRequest.text();
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
 
-    for (let i = 1; i <= view.level; i++) {
-        document.getElementsByClassName(`level--bar--${i}`)[0].classList.add('level--bar--active');
-    }
+    drawLevelBars();
 
     _wa.BackButton.hide();
     document.dispatchEvent(new Event('loadHome'));

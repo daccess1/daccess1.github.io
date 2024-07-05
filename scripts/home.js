@@ -26,8 +26,14 @@ function tapEventListener(event) {
         _player.balance += _player.tap_increment;
         homePlayerBalance.innerHTML = _player.balance;
 
+        if (_player.balance >= _levels[_player.player_level.level + 1]) {
+            _player.player_level.level++;
+            document.getElementById('level--infoNumberValue').innerHTML = _player.player_level.level;
+        }
+
         homeTapContainer.classList.add('tapGame--tapped');
         drawTapResult(posX, posY);
+        drawLevelBars();
         tapsCount++;
         clearTimeout(tapsTimeout);
     }
@@ -171,4 +177,32 @@ async function changeLanguage(el) {
     renderBottomMenu();
     console.log('Reloading home');
     loadHomePage(true);
+}
+
+function drawLevelBars() {
+    let coloredBars = 0;
+
+    const pointsForLevel = _levels[_player.player_level.level + 1] - _levels[_player.player_level.level];
+    const pointsPerBar = Math.floor(pointsForLevel / 9);
+    const earnedInLevel = _player.balance - _levels[_player.player_level.level];
+
+    let bars = 0;
+    while (bars < earnedInLevel) {
+        bars+= pointsPerBar;
+        coloredBars++;
+    }
+
+    for (let i = 1; i <= coloredBars; i++) {
+        console.log(`color bar ${i}`);
+        document.getElementsByClassName(`level--bar--${i}`)[0].classList.add('level--bar--active');
+    }
+    for (let i = coloredBars + 1; i <= 9; i++) {
+        console.log(`uncolor bar ${i}`);
+        document.getElementsByClassName(`level--bar--${i}`)[0].classList.remove('level--bar--active');
+    }
+
+    console.log('PPL:', pointsForLevel);
+    console.log('PPB:', pointsPerBar);
+    console.log('Earned:', earnedInLevel);
+    console.log('Colored bars:', coloredBars);
 }
