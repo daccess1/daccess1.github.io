@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  umperium_frontend:
+    image: umperium_frontend:local
+    build: .
+    ports:
+      - 9090:80
