@@ -180,15 +180,13 @@ async function changeLanguage(el) {
 }
 
 function drawLevelBars() {
+    const pointsPerBar = Math.floor(_levels[_player.player_level.level + 1] / 9);
+
     let coloredBars = 0;
+    let barsScore = 0;
 
-    const pointsForLevel = _levels[_player.player_level.level + 1] - _levels[_player.player_level.level];
-    const pointsPerBar = Math.floor(pointsForLevel / 9);
-    const earnedInLevel = _player.balance - _levels[_player.player_level.level];
-
-    let bars = 0;
-    while (bars < earnedInLevel) {
-        bars+= pointsPerBar;
+    while (barsScore < _player.balance) {
+        barsScore+= pointsPerBar;
         coloredBars++;
     }
 
@@ -200,9 +198,4 @@ function drawLevelBars() {
         console.log(`uncolor bar ${i}`);
         document.getElementsByClassName(`level--bar--${i}`)[0].classList.remove('level--bar--active');
     }
-
-    console.log('PPL:', pointsForLevel);
-    console.log('PPB:', pointsPerBar);
-    console.log('Earned:', earnedInLevel);
-    console.log('Colored bars:', coloredBars);
 }
