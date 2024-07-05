@@ -62,12 +62,7 @@ async function preload() {
     const styles = [
         `/scss/bootstrap.min.css?v=${ver}`,
         `/scss/swiper-bundle.min.css?v=${ver}`,
-        `/scss/index.css?v=${ver}`,
-        `/scss/home.css?v=${ver}`,
-        `/scss/friends.css?v=${ver}`,
-        `/scss/boost.css?v=${ver}`,
-        `/scss/actives.css?v=${ver}`,
-        `/scss/airdrop.css?v=${ver}`,
+        `/scss/bundle.min.css?v=${ver}`
     ];
 
     let promises = [];
