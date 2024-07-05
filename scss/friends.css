@@ -74,6 +74,7 @@
   font-size: 15px;
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 .inviteInfo--itemTextBody img {
   width: 14px;

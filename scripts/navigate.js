@@ -1,4 +1,4 @@
-var _page_version = 62;
+var _page_version = 63;
 
 function changeActiveButton(page) {
     console.log('Active Button:', page);
@@ -50,8 +50,8 @@ async function loadHomePage(reload = false) {
     _active_page = "home";
 }
 
-async function loadFriendsPage() {
-    if (_active_page === "friends") {
+async function loadFriendsPage(reload = false) {
+    if (_active_page === "friends" && !reload) {
         return;
     }
 
