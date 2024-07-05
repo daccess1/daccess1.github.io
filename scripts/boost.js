@@ -34,22 +34,18 @@ async function spinWheel() {
     const sectors = [
         0, 1000, -1, 1000, 3000, 10000, 0, 1000, 5000, 3000
     ]
-    // let targetSector = Math.floor(Math.random() * 10);
-    //
-    // while (targetSector === 2) {
-    //     targetSector = Math.floor(Math.random() * 10) + 1;
-    // }
 
     const result = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/spin_wheel`);
-    console.log(result);
-    if (result.status !== 200) {
 
+    if (result.status !== 200) {
+        return;
     }
+
     const data = JSON.parse(result.body);
     const targetSector = data.sector_id - 1;
 
     let div = document.getElementById('wheelOfFortune--spinner'),
-        deg = 3600 - targetSector * 36 - Math.floor(Math.random() * 25);
+        deg = 3600 - targetSector * 36 - 18;
 
     div.style.transform = 'rotate('+deg+'deg)';
     div.style.webkitTransform = 'rotate('+deg+'deg)';
