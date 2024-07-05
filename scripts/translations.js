@@ -44,7 +44,7 @@ var _translations = {
         },
         home: {
             level: "Level",
-            investments_count: "Investments count",
+            investments_count: "Actives",
             investments_const: "Investments amount",
             profit: "Profit",
             pnl: "PNL",
@@ -150,7 +150,7 @@ var _translations = {
         },
         home: {
             level: "Уровень",
-            investments_count: "Число инвестиций",
+            investments_count: "Активы",
             investments_const: "Объем инвестиций",
             profit: "Профит",
             pnl: "PNL",
