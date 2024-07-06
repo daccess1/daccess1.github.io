@@ -11,31 +11,31 @@ var _translations = {
         levels: {
             1: {
                 name: "Beginner",
-                score: "from 0"
+                score: "0 - 5K"
             },
             2: {
                 name: "Conservative",
-                score: "from 5K"
+                score: "5K - 25K"
             },
             3: {
                 name: "Moderate",
-                score: "from 25K"
+                score: "25K - 100K"
             },
             4: {
                 name: "Rational",
-                score: "from 100K"
+                score: "100K - 1M"
             },
             5: {
                 name: "Speculative",
-                score: "from 1M"
+                score: "1M - 10M"
             },
             6: {
                 name: "Aggressive",
-                score: "from 10M"
+                score: "10M - 50M"
             },
             7: {
                 name: "Enterprise",
-                score: "from 50M"
+                score: "50M - 100M"
             },
             8: {
                 name: "Institutional",
@@ -118,31 +118,31 @@ var _translations = {
         levels: {
             1: {
                 name: "Начинающий",
-                score: "от 0"
+                score: "0 - 5K"
             },
             2: {
                 name: "Консервативный",
-                score: "от 5K"
+                score: "5K - 25K"
             },
             3: {
                 name: "Умеренный",
-                score: "от 25K"
+                score: "25K - 100K"
             },
             4: {
                 name: "Рациональный",
-                score: "от 100K"
+                score: "100K - 1M"
             },
             5: {
                 name: "Спекулятивный",
-                score: "от 1M"
+                score: "1M - 10M"
             },
             6: {
                 name: "Агрессивный",
-                score: "от 10M"
+                score: "10M - 50M"
             },
             7: {
                 name: "Корпоративный",
-                score: "от 50M"
+                score: "50M - 100M"
             },
             8: {
                 name: "Институциональный",

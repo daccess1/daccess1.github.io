@@ -85,7 +85,7 @@
                         <div class="levelModal--carouselLevel">
                             <div class="progress progress--level d-none" id="progress--level--1" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                 <div class="progress-bar overflow-visible" style="width: 0">
-                                    <span class="progress--levelText">1200/5000</span>
+                                    <span class="progress--levelText"></span>
                                 </div>
                             </div>
                             <div class="progress--minScore" id="progress--minScore--1">{{text_levels.1.score}}</div>
@@ -117,6 +117,14 @@
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="levelModal--ranking">
+                <img src="{{avatar}}"  width="33px" height="33px" alt="avatar">
+                {{text.ranking}}:&nbsp;<span class="levelModal--rankingCurrent" id="levelModal--rankingCurrent"></span>/<span class="levelModal--rankingTotal" id="levelModal--rankingTotal"></span>
             </div>
         </div>
     </div>
@@ -157,14 +165,6 @@
                         <span class="levelModal--statsValue" id="levelModal--statsValue--specials">30%</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="levelModal--ranking">
-                <img src="{{avatar}}"  width="33px" height="33px" alt="avatar">
-                {{text.ranking}}:&nbsp;<span class="levelModal--rankingCurrent" id="levelModal--rankingCurrent"></span>/<span class="levelModal--rankingTotal" id="levelModal--rankingTotal"></span>
             </div>
         </div>
     </div>

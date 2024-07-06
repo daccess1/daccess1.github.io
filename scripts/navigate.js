@@ -98,7 +98,6 @@ async function loadBoostPage() {
         tasks: tasks,
         text: _translations[_player.language_code].boost
     }
-    _boostCountdownTime = 5;
 
     const templateRequest = await fetch(`/pages/boost/boost.template.html?v=${_page_version}`);
     const template = await templateRequest.text();

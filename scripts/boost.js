@@ -108,20 +108,21 @@ async function applyPromocode() {
 }
 
 async function clickTask(el) {
-    if (el.classList.contains('boostTask--item--clicked')) {
-        console.log('Already clicked');
-        return;
-    }
-
     const id = el.dataset.id;
     const url = el.dataset.url;
+
+    if (el.classList.contains('boostTask--item--clicked')) {
+        console.log('Already clicked');
+        _wa.openLink(url);
+        return;
+    }
 
     const response = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/tasks/${id}`, "post", null);
     console.log(response);
 
     if (response.status === 200) {
+        el.classList.add('boostTask--item--clicked');
+        el.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
         _wa.openLink(url);
     }
-
-    el.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
 }
