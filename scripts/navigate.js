@@ -1,4 +1,4 @@
-var _page_version = 64;
+var _page_version = 65;
 
 function changeActiveButton(page) {
     console.log('Active Button:', page);
@@ -84,8 +84,10 @@ async function loadBoostPage() {
 
     console.log('Loading boost page');
     changeActiveButton('boost');
-    // const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
-    // const viewData = await viewDataPayload.json();
+    const tasksRequest = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/tasks`);
+    const tasks = await tasksRequest.json();
+
+    console.log(tasks);
 
     const view = {
         countdown: new Date(_player.time_to_next_spin * 1000).toISOString().slice(11, 19),
@@ -93,6 +95,7 @@ async function loadBoostPage() {
         can_not_spin: _player.friends_total < 3,
         invites_left: 3 - _player.friends_total,
         timer_hidden: _player.time_to_next_spin <= 0,
+        tasks: tasks,
         text: _translations[_player.language_code].boost
     }
     _boostCountdownTime = 5;

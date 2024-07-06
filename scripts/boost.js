@@ -106,3 +106,22 @@ async function applyPromocode() {
         _toast.show();
     }
 }
+
+async function clickTask(el) {
+    if (el.classList.contains('boostTask--item--clicked')) {
+        console.log('Already clicked');
+        return;
+    }
+
+    const id = el.dataset.id;
+    const url = el.dataset.url;
+
+    const response = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/tasks/${id}`, "post", null);
+    console.log(response);
+
+    if (response.status === 200) {
+        _wa.openLink(url);
+    }
+
+    el.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
+}

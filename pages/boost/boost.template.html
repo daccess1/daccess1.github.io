@@ -46,54 +46,27 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="boostTask--item">
+
+            {{#tasks}}
+            <div class="boostTask--item {{#clicked}}boostTask--item--clicked{{/clicked}}"
+                 data-id="{{id.$oid}}"
+                 data-url="{{url}}"
+                 onclick="clickTask(this)">
                 <div class="boostTask--itemIcon">
-                    <img src="/img/icon-youtube.svg" alt="youtube">
+                    <img src="{{icon}}" alt="youtube">
                 </div>
                 <div class="boostTask--itemText">
-                    <h3 class="boostTask--itemTextTitle">{{{text.task_youtube}}}</h3>
+                    <h3 class="boostTask--itemTextTitle">{{{title}}}</h3>
                     <p class="boostTask--itemTextBody">
-                        <span class="boostTask--itemTextBodyHighlight">+5 000</span>
+                        <span class="boostTask--itemTextBodyHighlight">+{{bonus}}</span>
                         <img src="/img/icon-coin.svg" alt="coin">
                     </p>
                 </div>
-                <div class="boostTask--itemCheck">
+                <div class="boostTask--itemCheck {{#clicked}}d-inline-flex{{/clicked}}">
                     <img src="/img/icon-check-green.svg" alt="check">
                 </div>
             </div>
-
-            <div class="boostTask--item">
-                <div class="boostTask--itemIcon">
-                    <img src="/img/icon-telegram.svg" alt="telegram">
-                </div>
-                <div class="boostTask--itemText">
-                    <h3 class="boostTask--itemTextTitle">{{{text.task_tg}}}</h3>
-                    <p class="boostTask--itemTextBody">
-                        <span class="boostTask--itemTextBodyHighlight">+5 000</span>
-                        <img src="/img/icon-coin.svg" alt="coin">
-                    </p>
-                </div>
-                <div class="boostTask--itemCheck">
-                    <img src="/img/icon-check-green.svg" alt="check">
-                </div>
-            </div>
-
-            <div class="boostTask--item">
-                <div class="boostTask--itemIcon">
-                    <img src="/img/icon-twitter.svg" alt="twitter">
-                </div>
-                <div class="boostTask--itemText">
-                    <h3 class="boostTask--itemTextTitle">{{{text.task_twitter}}}</h3>
-                    <p class="boostTask--itemTextBody">
-                        <span class="boostTask--itemTextBodyHighlight">+5 000</span>
-                        <img src="/img/icon-coin.svg" alt="coin">
-                    </p>
-                </div>
-                <div class="boostTask--itemCheck">
-                    <img src="/img/icon-check-green.svg" alt="check">
-                </div>
-            </div>
-
+            {{/tasks}}
         </div>
     </div>
 </div>
