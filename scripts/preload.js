@@ -16,6 +16,8 @@ var _levels = {
     7: 50000000,
     8: 100000000
 }
+var _actives_daily_interval;
+var _actives_daily_countdown;
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
@@ -40,13 +42,14 @@ document.addEventListener('preload', async () => {
     renderBottomMenu();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
+    await loadActivesPage('round');
     // await getUserData();
     // await loadBoostPage();
     // await loadFriendsPage();
 });
 
 async function preload() {
-    const ver = 67;
+    const ver = 68;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
@@ -62,7 +65,8 @@ async function preload() {
     const styles = [
         `/scss/bootstrap.min.css?v=${ver}`,
         `/scss/swiper-bundle.min.css?v=${ver}`,
-        `/scss/bundle.min.css?v=${ver}`
+        `/scss/bundle.min.css?v=${ver}`,
+        `/scss/tmp.min.css?v=${ver}`
     ];
 
     let promises = [];

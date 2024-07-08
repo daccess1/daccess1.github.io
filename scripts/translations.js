@@ -70,10 +70,11 @@ var _translations = {
             toast_success: "Active successfully upgraded",
             toast_fail: "Active upgrade failed",
             modal_invested: "Invested",
-            modal_profit: "Profit"
+            modal_profit: "Profit",
+            daily_card: "Daily card",
         },
         friends: {
-            title: "Invite friends and you will<br>get bonuses!",
+            title: "Invite friends and<br>get bonuses!",
             invite_button: "Invite friend",
             one_friend_title: "Invite friend",
             one_friend_bonus: "for each friend",
@@ -177,7 +178,8 @@ var _translations = {
             toast_success: "Актив успешно улучшен",
             toast_fail: "Не удалось улучшить актив",
             modal_invested: "Инвестировано",
-            modal_profit: "Доход"
+            modal_profit: "Доход",
+            daily_card: "Карточка дня",
         },
         friends: {
             title: "Приглашай друзей и<br>получай бонусы",

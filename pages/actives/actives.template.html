@@ -17,6 +17,30 @@
     </div>
 </div>
 
+{{#daily_active}}
+<div class="container-fluid" id="dailyCardWrapper">
+    <div class="row">
+        <div class="col">
+            <div class="dailyCard" onclick="showActivesModalDaily()">
+                <div class="dailyCard--left">
+                    <h3 class="dailyCard--title">{{daily.title}}</h3>
+                    <div class="dailyCard--reward">
+                        <span>{{daily.reward}}</span>
+                        <img src="/img/icon-coin.svg" alt="coin">
+                    </div>
+                </div>
+                <div class="dailyCard--right">
+                    <div class="dailyCard--timer">
+                        <div class="dailyCard--timerCountdown" id="dailyCard--timerCountdown">{{daily.countdown_text}}</div>
+                    </div>
+                    <div class="dailyCard--cornerText">{{text.daily_card}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/daily_active}}
+
 <div class="container-fluid activesTabs">
     <div class="row">
         <div class="col">
@@ -92,6 +116,31 @@
 </div>
 
 <div class="activesBlur activesBlur--hidden" id="activesBlur" onclick="hideActivesModal()"></div>
+
+<div class="activesModal activesModalDaily activesModal--hidden" id="activesModalDaily">
+    <div class="activesModalDaily--cornerText">{{text.daily_card}}</div>
+    <div class="container-fluid">
+        <div class="row activesModal--titleWrapper">
+            <div class="col d-flex justify-content-end">
+                <button class="activesModal--close" onclick="hideActivesModal()">
+                    <img src="/img/icon-close.svg" alt="close">
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="activesModalDaily--question">{{daily.question}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{#daily.answers}}
+                <button class="activesModalDaily--answer">{{.}}</button>
+                {{/daily.answers}}
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="activesModal activesModal--hidden" id="activesModal">
     <div class="container-fluid">

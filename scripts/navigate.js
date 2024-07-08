@@ -1,4 +1,4 @@
-var _page_version = 67;
+var _page_version = 68;
 
 function changeActiveButton(page) {
     console.log('Active Button:', page);
@@ -46,6 +46,7 @@ async function loadHomePage(reload = false) {
     document.dispatchEvent(new Event('loadHome'));
     _toast.hide();
     _active_page = "home";
+    clearInterval(_actives_daily_interval);
 }
 
 async function loadFriendsPage(reload = false) {
@@ -75,6 +76,8 @@ async function loadFriendsPage(reload = false) {
     _wa.BackButton.show();
     _toast.hide();
     _active_page = "friends";
+
+    clearInterval(_actives_daily_interval);
 }
 
 async function loadBoostPage() {
@@ -106,6 +109,8 @@ async function loadBoostPage() {
     _wa.BackButton.show();
     _toast.hide();
     _active_page = "boost";
+
+    clearInterval(_actives_daily_interval);
 }
 
 async function loadActivesPage(tab = 'round', reload = false) {
@@ -127,6 +132,8 @@ async function loadActivesPage(tab = 'round', reload = false) {
         }
     }
 
+    _actives_daily_countdown = 46325;
+
     const view = {
         tab_rounds: tab === 'round',
         tab_directions: tab === 'direction',
@@ -134,7 +141,19 @@ async function loadActivesPage(tab = 'round', reload = false) {
         tab_specials: tab === 'special',
         header_notification: `${_translations[_player.language_code].actives.header_actives}: ${total_purchased} | ${_translations[_player.language_code].actives.header_income}: ${total_income}`,
         items: data,
-        text: _translations[_player.language_code].actives
+        text: _translations[_player.language_code].actives,
+        daily: {
+            title: "Прокачай ум и получи",
+            question: "Какая криптовалюта крупнейшая по капитализации?",
+            answers: [
+                'Bitcoin',
+                'Ethereum',
+                'TON'
+            ],
+            reward: 5000,
+            countdown_text: new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16)
+        },
+        daily_active: true,
     };
 
     const templateRequest = await fetch(`/pages/actives/actives.template.html?v=${_page_version}`);
@@ -146,6 +165,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
         _toast.hide();
     }
     _active_page = `actives_${tab}`;
+    document.dispatchEvent(new Event('loadActives'));
 }
 
 async function loadAirdropPage() {
@@ -166,4 +186,6 @@ async function loadAirdropPage() {
     _wa.BackButton.show();
     _toast.hide();
     _active_page = "airdrop";
+
+    clearInterval(_actives_daily_interval);
 }

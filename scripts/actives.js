@@ -1,4 +1,21 @@
-var active_modal_id;
+document.addEventListener('loadActives', async () => {
+    console.log('loadActives')
+
+    clearInterval(_actives_daily_interval);
+    _actives_daily_interval = setInterval(() => {
+        _actives_daily_countdown--;
+
+        if (_actives_daily_countdown <= 0) {
+            document.getElementById('dailyCardWrapper').classList.add('d-none');
+            hideActivesModal();
+            console.log('Hide actives daily');
+            clearInterval(_actives_daily_interval);
+            return;
+        }
+
+        document.getElementById("dailyCard--timerCountdown").innerHTML = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);;
+    }, 1000);
+});
 
 function showActivesModal(el) {
     const modal = document.getElementById('activesModal');
@@ -14,9 +31,17 @@ function showActivesModal(el) {
     document.getElementById('activesModal--income').innerHTML = el.dataset.income;
     document.getElementById('activesModal--startPrice').innerHTML = el.dataset.startPrice;
     document.getElementById('activesModal--button').dataset.id = el.dataset.id;
-    active_modal_id = el.dataset.id;
 
-    console.log(`Show modal for ${active_modal_id}`);
+    document.getElementById('body').classList.add('modalShown');
+    blur.classList.remove('activesBlur--hidden');
+    modal.classList.remove('activesModal--hidden');
+    content.classList.add('blur');
+}
+
+function showActivesModalDaily() {
+    const modal = document.getElementById('activesModalDaily');
+    const blur = document.getElementById('activesBlur');
+    const content = document.getElementById('pageContent');
 
     document.getElementById('body').classList.add('modalShown');
     blur.classList.remove('activesBlur--hidden');
@@ -28,6 +53,7 @@ function hideActivesModal() {
     console.log('Hiding actives modals');
     document.getElementById('activesBlur').classList.add('activesBlur--hidden');
     document.getElementById('activesModal').classList.add('activesModal--hidden');
+    document.getElementById('activesModalDaily').classList.add('activesModal--hidden');
     document.getElementById('body').classList.remove('modalShown');
     document.getElementById('pageContent').classList.remove('blur');
 }
