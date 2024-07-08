@@ -1,4 +1,4 @@
-var _page_version = 65;
+var _page_version = 67;
 
 function changeActiveButton(page) {
     console.log('Active Button:', page);

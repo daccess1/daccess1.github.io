@@ -175,6 +175,8 @@
     background-image: url("/img/icon-slide-right.svg");
   }
   &--carousel {
+    padding-top: 20px;
+
     &Text {
       width: 100%;
       background: #000;
@@ -189,6 +191,35 @@
     }
     &Level {
       margin: 0;
+    }
+    &ImageWrapper {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      img {
+        height: 194px;
+        position: relative;
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -84px;
+        margin-top: -84px;
+        background-image: url("/img/tap-bg.svg");
+        width: 168px;
+        height: 168px;
+        background-size: contain;
+        z-index: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgb(79,227,79, 0.8),
+        0 0 33px rgb(79,227,79, 0.6),
+        0 0 50px rgb(79,227,79, 0.4),
+        0 0 83px rgb(79,227,79, 0.2);
+      }
     }
   }
   &--stats {

@@ -39,7 +39,6 @@ async function getUserData() {
         }
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
-            // _player.language_code = _lang;
             console.log(_player);
         } else {
             const body = {

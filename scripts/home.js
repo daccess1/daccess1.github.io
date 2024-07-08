@@ -28,6 +28,11 @@ function tapEventListener(event) {
 
         if (_player.balance >= _levels[_player.player_level.level + 1]) {
             _player.player_level.level++;
+
+            const image = document.getElementById('tapGame--player');
+            image.src = `/img/character-level-${_player.player_level.level}.png.webp`;
+            image.srcset = `/img/character-level-${_player.player_level.level}@2x.png.webp 2x, /img/character-level-${_player.player_level.level}@3x.png.webp 3x`;
+
             document.getElementById('level--infoNumberValue').innerHTML = _player.player_level.level;
         }
 
@@ -185,17 +190,19 @@ function drawLevelBars() {
     let coloredBars = 0;
     let barsScore = 0;
 
-    while (barsScore < _player.balance) {
-        barsScore+= pointsPerBar;
-        coloredBars++;
+    if (_player.player_level.level === 8) {
+        coloredBars = 9;
+    } else {
+        while (barsScore < _player.balance) {
+            barsScore += pointsPerBar;
+            coloredBars++;
+        }
     }
 
     for (let i = 1; i <= coloredBars; i++) {
-        console.log(`color bar ${i}`);
         document.getElementsByClassName(`level--bar--${i}`)[0].classList.add('level--bar--active');
     }
     for (let i = coloredBars + 1; i <= 9; i++) {
-        console.log(`uncolor bar ${i}`);
         document.getElementsByClassName(`level--bar--${i}`)[0].classList.remove('level--bar--active');
     }
 }

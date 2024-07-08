@@ -30,7 +30,7 @@
         <div class="col d-flex justify-content-center">
             <div class="tapGame--container">
                 <div id="tapGame--game" class="tapGame--game">
-                    <img src="/img/character-level-1.png.webp" srcset="/img/character-level-1@2x.png.webp 2x, /img/character-level-1@3x.png.webp 3x" alt="player" class="tapGame--player" >
+                    <img src="/img/character-level-{{level}}.png.webp" srcset="/img/character-level-{{level}}@2x.png.webp 2x, /img/character-level-{{level}}@3x.png.webp 3x" alt="player" class="tapGame--player tapGame--player--level-{{level}}" id="tapGame--player" >
                 </div>
             </div>
         </div>
@@ -78,9 +78,11 @@
             <div class="swiper levelModal--carousel">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
+                    <!-- Level 1 -->
                     <div class="swiper-slide">
-                        <img src="/img/character-level-1-modal.png.webp" srcset="/img/character-level-1-modal@2x.png.webp 2x, /img/character-level-1-modal@3x.png.webp 3x" class="d-block w-100" alt="level-1">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-1.png.webp" srcset="/img/character-level-1@2x.png.webp 2x, /img/character-level-1@3x.png.webp 3x" class="d-block" alt="level-1">
+                        </div>
                         <p class="levelModal--carouselText">{{text.level}} 1 - {{text_levels.1.name}}</p>
                         <div class="levelModal--carouselLevel">
                             <div class="progress progress--level d-none" id="progress--level--1" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -91,8 +93,11 @@
                             <div class="progress--minScore" id="progress--minScore--1">{{text_levels.1.score}}</div>
                         </div>
                     </div>
+                    <!-- Level 2 -->
                     <div class="swiper-slide">
-                        <img src="/img/character-level-1-modal.png.webp" srcset="/img/character-level-1-modal@2x.png.webp 2x, /img/character-level-1-modal@3x.png.webp 3x" class="d-block w-100" alt="level-1">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-2.png.webp" srcset="/img/character-level-2@2x.png.webp 2x, /img/character-level-2@3x.png.webp 3x" class="d-block" alt="level-2">
+                        </div>
                         <p class="levelModal--carouselText">{{text.level}} 2 - {{text_levels.2.name}}</p>
                         <div class="levelModal--carouselLevel">
                             <div class="progress progress--level d-none" id="progress--level--2" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -103,8 +108,11 @@
                             <div class="progress--minScore" id="progress--minScore--2">{{text_levels.2.score}}</div>
                         </div>
                     </div>
+                    <!-- Level 3 -->
                     <div class="swiper-slide">
-                        <img src="/img/character-level-1-modal.png.webp" srcset="/img/character-level-1-modal@2x.png.webp 2x, /img/character-level-1-modal@3x.png.webp 3x" class="d-block w-100" alt="level-1">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-3.png.webp" srcset="/img/character-level-3@2x.png.webp 2x, /img/character-level-3@3x.png.webp 3x" class="d-block" alt="level-3">
+                        </div>
                         <p class="levelModal--carouselText">{{text.level}} 3 - {{text_levels.3.name}}</p>
                         <div class="levelModal--carouselLevel">
                             <div class="progress progress--level d-none" id="progress--level--3" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -113,8 +121,76 @@
                             <div class="progress--minScore" id="progress--minScore--3">{{text_levels.3.score}}</div>
                         </div>
                     </div>
+                    <!-- Level 4 -->
+                    <div class="swiper-slide">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-4.png.webp" srcset="/img/character-level-4@2x.png.webp 2x, /img/character-level-4@3x.png.webp 3x" class="d-block" alt="level-4">
+                        </div>
+                        <p class="levelModal--carouselText">{{text.level}} 4 - {{text_levels.4.name}}</p>
+                        <div class="levelModal--carouselLevel">
+                            <div class="progress progress--level d-none" id="progress--level--4" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar overflow-visible" style="width: 0">0</div>
+                            </div>
+                            <div class="progress--minScore" id="progress--minScore--4">{{text_levels.4.score}}</div>
+                        </div>
+                    </div>
+                    <!-- Level 5 -->
+                    <div class="swiper-slide">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-5.png.webp" srcset="/img/character-level-5@2x.png.webp 2x, /img/character-level-5@3x.png.webp 3x" class="d-block" alt="level-5">
+                        </div>
+                        <p class="levelModal--carouselText">{{text.level}} 5 - {{text_levels.5.name}}</p>
+                        <div class="levelModal--carouselLevel">
+                            <div class="progress progress--level d-none" id="progress--level--5" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar overflow-visible" style="width: 0">0</div>
+                            </div>
+                            <div class="progress--minScore" id="progress--minScore--5">{{text_levels.5.score}}</div>
+                        </div>
+                    </div>
+                    <!-- Level 6 -->
+                    <div class="swiper-slide">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-6.png.webp" srcset="/img/character-level-6@2x.png.webp 2x, /img/character-level-6@3x.png.webp 3x" class="d-block" alt="level-6">
+                        </div>
+                        <p class="levelModal--carouselText">{{text.level}} 6 - {{text_levels.6.name}}</p>
+                        <div class="levelModal--carouselLevel">
+                            <div class="progress progress--level d-none" id="progress--level--6" role="progressbar" aria-label="Level" aria-valuenow="26" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar overflow-visible" style="width: 0">0</div>
+                            </div>
+                            <div class="progress--minScore" id="progress--minScore--6">{{text_levels.6.score}}</div>
+                        </div>
+                    </div>
+                    <!-- Level 7 -->
+                    <div class="swiper-slide">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-7.png.webp" srcset="/img/character-level-7@2x.png.webp 2x, /img/character-level-7@3x.png.webp 3x" class="d-block" alt="level-7">
+                        </div>
+                        <p class="levelModal--carouselText">{{text.level}} 7 - {{text_levels.7.name}}</p>
+                        <div class="levelModal--carouselLevel">
+                            <div class="progress progress--level d-none" id="progress--level--7" role="progressbar" aria-label="Level" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar overflow-visible" style="width: 0">0</div>
+                            </div>
+                            <div class="progress--minScore" id="progress--minScore--7">{{text_levels.7.score}}</div>
+                        </div>
+                    </div>
+                    <!-- Level 8 -->
+                    <div class="swiper-slide">
+                        <div class="levelModal--carouselImageWrapper">
+                            <img src="/img/character-level-8.png.webp" srcset="/img/character-level-8@2x.png.webp 2x, /img/character-level-8@3x.png.webp 3x" class="d-block" alt="level-8">
+                        </div>
+                        <p class="levelModal--carouselText">{{text.level}} 8 - {{text_levels.8.name}}</p>
+                        <div class="levelModal--carouselLevel">
+                            <div class="progress progress--level d-none" id="progress--level--8" role="progressbar" aria-label="Level" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar overflow-visible" style="width: 0">0</div>
+                            </div>
+                            <div class="progress--minScore" id="progress--minScore--8">{{text_levels.8.score}}</div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- /levels -->
                 </div>
-                <!-- If we need navigation buttons -->
+
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
