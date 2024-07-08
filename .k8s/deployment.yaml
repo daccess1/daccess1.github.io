@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: umperium-frontend
+  labels:
+    app: umperium-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: umperium-frontend
+  template:
+    metadata:
+      name: umperium-frontend
+      labels:
+        app: umperium-frontend
+    spec:
+      containers:
+        - name: umperium-frontend
+          image: 729065055096.dkr.ecr.ap-northeast-2.amazonaws.com/umperium-frontend:latest
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 500m
+              memory: 50Mi
+            requests:
+              cpu: 250m
+              memory: 25Mi
+          ports:
+            - containerPort: 80
+              protocol: TCP
+      restartPolicy: Always
+      
