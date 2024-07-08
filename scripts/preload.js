@@ -42,7 +42,7 @@ document.addEventListener('preload', async () => {
     renderBottomMenu();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
-    await loadActivesPage('round');
+    // await loadActivesPage('round');
     // await getUserData();
     // await loadBoostPage();
     // await loadFriendsPage();
