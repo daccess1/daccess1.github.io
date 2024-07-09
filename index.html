@@ -47,8 +47,11 @@
 <body class="wrapper" id="body" style="background-color: #295067;">
     <div id="pageContent" class="pageContent">
 
-        <div id="loadscreen" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url('/img/loadscreen@3x.png.webp'); background-position: center top; background-size: cover;">
-            <img src="/img/tube-spinner.svg" style="position: fixed; left: 50%; bottom: 30px; margin-left: -30px; width: 60px" alt="">
+        <div id="loadscreen" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url('/img/loadscreen-bg@3x.png.webp'); background-position: center top; background-size: cover;">
+            <div style="position: fixed; left:0; right: 0; bottom: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center">
+                <img src="/img/tube-spinner.svg"  alt="" style="margin-bottom: -20px; width: 60px">
+                <img src="/img/loadscreen-logo@3x.png.webp" style="width: 100%" alt="logo">
+            </div>
         </div>
     </div>
 
@@ -86,10 +89,10 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/scripts/preload.js?v=71"></script>
+    <script type="text/javascript" src="/scripts/preload.js?v=72"></script>
     <script type="text/javascript">
         preload();
     </script>
-    <script type="text/javascript" src="/scripts/home.js?v=69" async></script>
+    <script type="text/javascript" src="/scripts/home.js?v=72" async></script>
 </body>
 </html>
