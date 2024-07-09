@@ -355,7 +355,7 @@
 .dailyCard {
   display: flex;
   position: relative;
-  background-image: url("/img/card-of-the-day-bg@3x.png");
+  background-image: url("/img/card-of-the-day-bg@3x.png.webp");
   background-position: center;
   background-size: 102%;
   background-repeat: no-repeat;
@@ -432,7 +432,7 @@
   }
 }
 .activesModalDaily {
-  background-image: url("/img/daily-modal-bg@3x.png") !important;
+  background-image: url("/img/daily-modal-bg@3x.png.webp") !important;
   background-size: cover;
   background-position: left top;
   padding-bottom: 7px;
