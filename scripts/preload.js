@@ -46,6 +46,7 @@ document.addEventListener('preload', async () => {
     renderBottomMenu();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
+    document.getElementById('body').style.backgroundColor = '#01290F';
     // await loadActivesPage('round');
     // await getUserData();
     // await loadBoostPage();
