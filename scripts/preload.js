@@ -21,8 +21,10 @@ var _actives_daily_countdown;
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
-    _wa.headerColor = '#01290F';
-    _wa.backgroundColor = '#01290F';
+    _wa.headerColor = '#295067';
+    _wa.backgroundColor = '#295067';
+    // _wa.headerColor = '#01290F';
+    // _wa.backgroundColor = '#01290F';
     _wa.expand();
 } );
 
@@ -39,6 +41,8 @@ document.addEventListener('preload', async () => {
     _toast = new bootstrap.Toast(toastEl);
 
     await loadHomePage();
+    _wa.headerColor = '#01290F';
+    _wa.backgroundColor = '#01290F';
     renderBottomMenu();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;

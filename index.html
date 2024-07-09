@@ -44,9 +44,12 @@
         }
     </style>
 </head>
-<body class="wrapper" id="body" style="background-color: #01290F;">
+<body class="wrapper" id="body" style="background-color: #295067;">
     <div id="pageContent" class="pageContent">
-        <div id="loadscreen" style="text-align: center; font-size: 24px; font-weight: 700; font-family: 'Open Sans', sans-serif; width: 100%; margin-top: 100px">LoadScreen</div>
+
+        <div id="loadscreen" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url('/img/loadscreen@3x.png.webp'); background-position: center top; background-size: cover;">
+            <img src="/img/tube-spinner.svg" style="position: fixed; left: 50%; bottom: 30px; margin-left: -30px; width: 60px" alt="">
+        </div>
     </div>
 
     <div id="bottomMenu" style="display: none" class="bottomMenu">
@@ -83,7 +86,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/scripts/preload.js?v=69"></script>
+    <script type="text/javascript" src="/scripts/preload.js?v=70"></script>
     <script type="text/javascript">
         preload();
     </script>
