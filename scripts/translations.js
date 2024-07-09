@@ -35,11 +35,7 @@ var _translations = {
             },
             7: {
                 name: "Enterprise",
-                score: "50M - 100M"
-            },
-            8: {
-                name: "Institutional",
-                score: "from 100M"
+                score: "from 50M"
             }
         },
         home: {
@@ -146,11 +142,7 @@ var _translations = {
             },
             7: {
                 name: "Корпоративный",
-                score: "50M - 100M"
-            },
-            8: {
-                name: "Институциональный",
-                score: "от 100M"
+                score: "от 50M"
             }
         },
         home: {
@@ -257,11 +249,7 @@ var _translations = {
             },
             "7": {
                 "name": "Unternehmen",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Institutionell",
-                "score": "ab 100M"
+                "score": "ab 50M"
             }
         },
         "home": {
@@ -368,11 +356,7 @@ var _translations = {
             },
             "7": {
                 "name": "Empresarial",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Institucional",
-                "score": "desde 100M"
+                "score": "desde 50M"
             }
         },
         "home": {
@@ -479,11 +463,7 @@ var _translations = {
             },
             "7": {
                 "name": "Entreprise",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Institutionnel",
-                "score": "à partir de 100M"
+                "score": "à partir de 50M"
             }
         },
         "home": {
@@ -590,11 +570,7 @@ var _translations = {
             },
             "7": {
                 "name": "उद्यम",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "संस्थागत",
-                "score": "100M से"
+                "score": "50M से"
             }
         },
         "home": {
@@ -701,11 +677,7 @@ var _translations = {
             },
             "7": {
                 "name": "Perusahaan",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Institusional",
-                "score": "dari 100M"
+                "score": "dari 50M"
             }
         },
         "home": {
@@ -812,11 +784,7 @@ var _translations = {
             },
             "7": {
                 "name": "Empresa",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Institucional",
-                "score": "a partir de 100M"
+                "score": "a partir de 50M"
             }
         },
         "home": {
@@ -923,11 +891,7 @@ var _translations = {
             },
             "7": {
                 "name": "บริษัท",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "สถาบัน",
-                "score": "จาก 100M"
+                "score": "จาก 50M"
             }
         },
         "home": {
@@ -1034,11 +998,7 @@ var _translations = {
             },
             "7": {
                 "name": "Kurumsal",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Kurumsal Seviye",
-                "score": "100M ve üzeri"
+                "score": " ve üzeri 50M"
             }
         },
         "home": {
@@ -1145,11 +1105,7 @@ var _translations = {
             },
             "7": {
                 "name": "Korporativ",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Institut",
-                "score": "100M va yuqori"
+                "score": "50M  va yuqori"
             }
         },
         "home": {
@@ -1256,11 +1212,7 @@ var _translations = {
             },
             "7": {
                 "name": "Doanh nghiệp",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Tổ chức",
-                "score": "Từ 100M trở lên"
+                "score": "Từ 50M trở lên"
             }
         },
         "home": {

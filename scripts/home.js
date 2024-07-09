@@ -190,7 +190,7 @@ function drawLevelBars() {
     let coloredBars = 0;
     let barsScore = 0;
 
-    if (_player.player_level.level === 8) {
+    if (_player.player_level.level === 7) {
         coloredBars = 9;
     } else {
         while (barsScore < _player.balance) {
