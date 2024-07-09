@@ -71,7 +71,7 @@ async function preload() {
         `/scss/bootstrap.min.css?v=${ver}`,
         `/scss/swiper-bundle.min.css?v=${ver}`,
         `/scss/bundle.min.css?v=${ver}`,
-        `/scss/tmp.min.css?v=${ver}`
+        // `/scss/tmp.min.css?v=${ver}`
     ];
 
     let promises = [];
