@@ -1,4 +1,4 @@
-var _available_translations = ['en', 'ru'];
+var _available_translations = ['en', 'ru', 'de', 'es', 'fr', 'hi', 'id', 'pt', 'th', 'tr', 'uz', 'vi'];
 var _translations = {
     en: {
         menu: {
@@ -87,6 +87,7 @@ var _translations = {
             invite_3: "every 24 hours",
             invite_5: "every 12 hours",
             friends_list_title: "List of your friends",
+            url_copied: "URL copied"
         },
         boost: {
             title: "Earn more coins",
@@ -98,7 +99,7 @@ var _translations = {
             promocode_success: "Promocode applied! Received ",
             promocode_error: "Promocode application failed",
             spin_success: "You won:",
-            spin_error: ""
+            spin_error: "Error"
         },
         airdrop: {
             title: "Airdrop",
@@ -197,6 +198,7 @@ var _translations = {
             invite_3: "каждые 24 часа",
             invite_5: "каждые 12 часов",
             friends_list_title: "Твои друзья",
+            url_copied: "Ссылка скопирована",
         },
         boost: {
             title: "Заработай больше<br>монет",
@@ -208,7 +210,7 @@ var _translations = {
             promocode_success: "Промокод применен! Получено",
             promocode_error: "Не удалось применить промокод",
             spin_success: "Вы выиграли:",
-            spin_error: ""
+            spin_error: "Ошибка"
         },
         airdrop: {
             title: "Airdrop",
@@ -306,7 +308,8 @@ var _translations = {
             "invite_wheel": "Glücksrad",
             "invite_3": "alle 24 Stunden",
             "invite_5": "alle 12 Stunden",
-            "friends_list_title": "Liste deiner Freunde"
+            "friends_list_title": "Liste deiner Freunde",
+            "url_copied": "URL kopiert"
         },
         "boost": {
             "title": "Mehr Münzen verdienen",
@@ -318,7 +321,7 @@ var _translations = {
             "promocode_success": "Promocode angewendet! Erhalten ",
             "promocode_error": "Promocode-Anwendung fehlgeschlagen",
             "spin_success": "Du hast gewonnen:",
-            "spin_error": ""
+            "spin_error": "Fehler"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -416,7 +419,8 @@ var _translations = {
             "invite_wheel": "rueda de la fortuna",
             "invite_3": "cada 24 horas",
             "invite_5": "cada 12 horas",
-            "friends_list_title": "Lista de tus amigos"
+            "friends_list_title": "Lista de tus amigos",
+            "url_copied": "URL copiada"
         },
         "boost": {
             "title": "Gana más monedas",
@@ -428,7 +432,7 @@ var _translations = {
             "promocode_success": "¡Código promocional aplicado! Recibido ",
             "promocode_error": "Falló la aplicación del código promocional",
             "spin_success": "Ganaste:",
-            "spin_error": ""
+            "spin_error": "Error"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -526,7 +530,8 @@ var _translations = {
             "invite_wheel": "roue de la fortune",
             "invite_3": "toutes les 24 heures",
             "invite_5": "toutes les 12 heures",
-            "friends_list_title": "Liste de vos amis"
+            "friends_list_title": "Liste de vos amis",
+            "url_copied": "URL copiée"
         },
         "boost": {
             "title": "Gagnez plus de pièces",
@@ -538,7 +543,7 @@ var _translations = {
             "promocode_success": "Code promo appliqué! Reçu ",
             "promocode_error": "Échec de l'application du code promo",
             "spin_success": "Vous avez gagné:",
-            "spin_error": ""
+            "spin_error": "Erreur"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -636,7 +641,8 @@ var _translations = {
             "invite_wheel": "भाग्य चक्र",
             "invite_3": "हर 24 घंटे",
             "invite_5": "हर 12 घंटे",
-            "friends_list_title": "आपके दोस्तों की सूची"
+            "friends_list_title": "आपके दोस्तों की सूची",
+            "url_copied": "URL कॉपी हो गया"
         },
         "boost": {
             "title": "अधिक सिक्के कमाएं",
@@ -648,7 +654,7 @@ var _translations = {
             "promocode_success": "प्रोमोकोड लागू हुआ! प्राप्त ",
             "promocode_error": "प्रोमोकोड लागू करना विफल",
             "spin_success": "आपने जीता:",
-            "spin_error": ""
+            "spin_error": "त्रुटि"
         },
         "airdrop": {
             "title": "एयरड्रॉप",
@@ -746,7 +752,8 @@ var _translations = {
             "invite_wheel": "roda keberuntungan",
             "invite_3": "setiap 24 jam",
             "invite_5": "setiap 12 jam",
-            "friends_list_title": "Daftar teman Anda"
+            "friends_list_title": "Daftar teman Anda",
+            "url_copied": "URL disalin"
         },
         "boost": {
             "title": "Dapatkan lebih banyak koin",
@@ -758,7 +765,7 @@ var _translations = {
             "promocode_success": "Kode promo diterapkan! Diterima ",
             "promocode_error": "Penerapan kode promo gagal",
             "spin_success": "Anda menang:",
-            "spin_error": ""
+            "spin_error": "Kesalahan"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -856,7 +863,8 @@ var _translations = {
             "invite_wheel": "roda da fortuna",
             "invite_3": "a cada 24 horas",
             "invite_5": "a cada 12 horas",
-            "friends_list_title": "Lista de seus amigos"
+            "friends_list_title": "Lista de seus amigos",
+            "url_copied": "URL copiada"
         },
         "boost": {
             "title": "Ganhe mais moedas",
@@ -868,7 +876,7 @@ var _translations = {
             "promocode_success": "Código promocional aplicado! Recebido ",
             "promocode_error": "Falha na aplicação do código promocional",
             "spin_success": "Você ganhou:",
-            "spin_error": ""
+            "spin_error": "Erro"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -966,7 +974,8 @@ var _translations = {
             "invite_wheel": "วงล้อแห่งโชคชะตา",
             "invite_3": "ทุกๆ 24 ชั่วโมง",
             "invite_5": "ทุกๆ 12 ชั่วโมง",
-            "friends_list_title": "รายชื่อเพื่อนของคุณ"
+            "friends_list_title": "รายชื่อเพื่อนของคุณ",
+            "url_copied": "คัดลอก URL แล้ว"
         },
         "boost": {
             "title": "รับเหรียญเพิ่ม",
@@ -978,7 +987,7 @@ var _translations = {
             "promocode_success": "ใช้รหัสโปรโมชั่นแล้ว! ได้รับ ",
             "promocode_error": "การใช้รหัสโปรโมชั่นล้มเหลว",
             "spin_success": "คุณชนะ:",
-            "spin_error": ""
+            "spin_error": "ข้อผิดพลาด"
         },
         "airdrop": {
             "title": "แอร์ดรอป",
@@ -988,116 +997,6 @@ var _translations = {
             "success": "ส่งการบริจาคแล้ว",
             "error": "การบริจาคล้มเหลว",
             "error_insufficient_funds": "เหรียญไม่เพียงพอสำหรับการบริจาค"
-        }
-    },
-    tl: {
-        "menu": {
-            "home": "Bahay",
-            "actives": "Aktibo",
-            "friends": "Mga Kaibigan",
-            "boost": "Pampalakas",
-            "airdrop": "Airdrop"
-        },
-        "levels": {
-            "1": {
-                "name": "Baguhan",
-                "score": "0 - 5K"
-            },
-            "2": {
-                "name": "Konserbatibo",
-                "score": "5K - 25K"
-            },
-            "3": {
-                "name": "Katamtaman",
-                "score": "25K - 100K"
-            },
-            "4": {
-                "name": "Makatwiran",
-                "score": "100K - 1M"
-            },
-            "5": {
-                "name": "Mapagsapalaran",
-                "score": "1M - 10M"
-            },
-            "6": {
-                "name": "Aggressive",
-                "score": "10M - 50M"
-            },
-            "7": {
-                "name": "Pangkumpanya",
-                "score": "50M - 100M"
-            },
-            "8": {
-                "name": "Pang-Institusyon",
-                "score": "mula sa 100M"
-            }
-        },
-        "home": {
-            "level": "Antas",
-            "investments_count": "Mga Aktibo",
-            "investments_const": "Halaga ng pamumuhunan",
-            "profit": "Kita",
-            "pnl": "PNL",
-            "rounds": "Mga Ronda",
-            "directions": "Mga Direksyon",
-            "projects": "Mga Proyekto",
-            "specials": "Espesyal",
-            "ranking": "Ang iyong ranggo",
-            "change_lang": "Piliin ang wika"
-        },
-        "actives": {
-            "title": "Mag-invest<br>at kumita ng kita",
-            "rounds": "Mga Ronda",
-            "directions": "Mga Direksyon",
-            "projects": "Mga Proyekto",
-            "specials": "Espesyal",
-            "level": "Antas",
-            "income": "Kita",
-            "price": "Presyo",
-            "upgrade": "I-upgrade",
-            "header_actives": "Aktibo",
-            "header_income": "Kita",
-            "toast_success": "Matagumpay na na-upgrade ang aktibo",
-            "toast_fail": "Nabigo ang pag-upgrade ng aktibo",
-            "modal_invested": "Na-invest",
-            "modal_profit": "Kita",
-            "daily_card": "Araw-araw na card",
-            "daily_answer_correct": "Tama! Nakakuha ka ng:",
-            "daily_answer_wrong": "Mali! Tamang sagot:"
-        },
-        "friends": {
-            "title": "Imbitahan ang mga kaibigan at<br>makakuha ng mga bonus!",
-            "invite_button": "Imbitahan ang kaibigan",
-            "one_friend_title": "Imbitahan ang kaibigan",
-            "one_friend_bonus": "para sa bawat kaibigan",
-            "three_friend_title": "Imbitahan ang 3 kaibigan",
-            "five_friend_title": "Imbitahan ang 5 kaibigan",
-            "invite_spin": "Paikutin",
-            "invite_wheel": "gulong ng kapalaran",
-            "invite_3": "bawat 24 oras",
-            "invite_5": "bawat 12 oras",
-            "friends_list_title": "Listahan ng iyong mga kaibigan"
-        },
-        "boost": {
-            "title": "Kumita ng mas maraming barya",
-            "button": "Paikutin",
-            "button_invite": "Natitirang imbitasyon",
-            "task_list_title": "Listahan ng gawain",
-            "promocode": "Promocode",
-            "promocode_button": "Ilapat",
-            "promocode_success": "Nagamit ang promocode! Nakatanggap ng ",
-            "promocode_error": "Nabigo ang paggamit ng promocode",
-            "spin_success": "Nanalo ka ng:",
-            "spin_error": ""
-        },
-        "airdrop": {
-            "title": "Airdrop",
-            "text": "Pagkatapos ng pagtatapos ng unang season, ililista ang token.<br><br>Sa ngayon, maaari kang magpadala ng ilan sa iyong mga puntos para sa kawanggawa.",
-            "placeholder": "Halaga",
-            "button": "Ipadala",
-            "success": "Naipadala ang donasyon",
-            "error": "Nabigo ang donasyon",
-            "error_insufficient_funds": "Hindi sapat ang mga barya para mag-donate"
         }
     },
     tr: {
@@ -1186,7 +1085,8 @@ var _translations = {
             "invite_wheel": "şans çarkı",
             "invite_3": "her 24 saatte bir",
             "invite_5": "her 12 saatte bir",
-            "friends_list_title": "Arkadaşlarınızın Listesi"
+            "friends_list_title": "Arkadaşlarınızın Listesi",
+            "url_copied": "URL kopyalandı"
         },
         "boost": {
             "title": "Daha Fazla Coin Kazanın",
@@ -1198,7 +1098,7 @@ var _translations = {
             "promocode_success": "Promosyon kodu uygulandı! Aldınız ",
             "promocode_error": "Promosyon kodu uygulama hatası",
             "spin_success": "Kazandınız:",
-            "spin_error": ""
+            "spin_error": "Hata"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1296,7 +1196,8 @@ var _translations = {
             "invite_wheel": "taqdir g‘ildiragi",
             "invite_3": "har 24 soatda",
             "invite_5": "har 12 soatda",
-            "friends_list_title": "Do‘stlaringiz ro‘yxati"
+            "friends_list_title": "Do‘stlaringiz ro‘yxati",
+            "url_copied": "URL nusxalandi"
         },
         "boost": {
             "title": "Ko‘proq tanga oling",
@@ -1308,7 +1209,7 @@ var _translations = {
             "promocode_success": "Promokod muvaffaqiyatli qo‘llandi! Olingan ",
             "promocode_error": "Promokodni qo‘llashda xatolik",
             "spin_success": "Siz yutdingiz:",
-            "spin_error": ""
+            "spin_error": "Xato"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1406,7 +1307,8 @@ var _translations = {
             "invite_wheel": "vòng quay may mắn",
             "invite_3": "mỗi 24 giờ",
             "invite_5": "mỗi 12 giờ",
-            "friends_list_title": "Danh sách bạn bè của bạn"
+            "friends_list_title": "Danh sách bạn bè của bạn",
+            "url_copied": "URL đã được sao chép"
         },
         "boost": {
             "title": "Kiếm thêm đồng",
@@ -1418,7 +1320,7 @@ var _translations = {
             "promocode_success": "Mã khuyến mãi đã được áp dụng! Nhận được ",
             "promocode_error": "Áp dụng mã khuyến mãi thất bại",
             "spin_success": "Bạn đã thắng:",
-            "spin_error": ""
+            "spin_error": "Lỗi"
         },
         "airdrop": {
             "title": "Airdrop",

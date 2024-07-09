@@ -94,11 +94,11 @@ a {
   &--item {
     display: flex;
     flex: 0 1 auto;
-    width: 50px;
+    width: 60px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 8px;
+    padding: 10px 0;
 
     &Icon {
       height: 20px;
@@ -109,6 +109,7 @@ a {
       font-weight: 700;
       color: #9aaa9f;
       line-height: 7px;
+      text-align: center;
     }
 
     &--active {
@@ -149,7 +150,6 @@ body.wrapper .form-control:focus {
   .btn-close {
     border: 0;
     border-radius: .375rem;
-    opacity: var(--bs-btn-close-opacity);
     background: none;
     width: 40px;
     height: 40px;
