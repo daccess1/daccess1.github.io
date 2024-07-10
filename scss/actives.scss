@@ -357,7 +357,7 @@
   position: relative;
   background-image: url("/img/card-of-the-day-bg@3x.png.webp");
   background-position: center;
-  background-size: 102%;
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;
   margin-bottom: 7px;
@@ -379,6 +379,7 @@
     line-height: 26px;
     color: #ffffff;
     margin-bottom: 17px;
+    min-height: 52px;
   }
   &--reward {
     font-weight: 700;

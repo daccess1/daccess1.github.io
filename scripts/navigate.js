@@ -143,7 +143,6 @@ async function loadActivesPage(tab = 'round', reload = false) {
         items: data,
         text: _translations[_player.language_code].actives,
         daily: {
-            title: "Прокачай ум и получи",
             question: "Какая криптовалюта крупнейшая по капитализации?",
             answers: [
                 'Bitcoin',

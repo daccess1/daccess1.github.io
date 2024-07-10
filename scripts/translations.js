@@ -68,8 +68,10 @@ var _translations = {
             modal_invested: "Invested",
             modal_profit: "Profit",
             daily_card: "Daily card",
+            daily_card_title: "Sharpen your mind and earn",
             daily_answer_correct: "Correct! You've earned:",
             daily_answer_wrong: "Mistake! Correct answer:",
+            "daily_card_title": "",
         },
         friends: {
             title: "Invite friends and<br>get bonuses!",
@@ -175,6 +177,7 @@ var _translations = {
             modal_invested: "Инвестировано",
             modal_profit: "Доход",
             daily_card: "Карточка дня",
+            daily_card_title: "Прокачай ум и получи",
             daily_answer_correct: "Правильно! Получено:",
             daily_answer_wrong: "Неверно! Правильный ответ:",
         },
@@ -282,6 +285,7 @@ var _translations = {
             "modal_invested": "Investiert",
             "modal_profit": "Gewinn",
             "daily_card": "Tageskarte",
+            "daily_card_title": "Schärfe deinen Verstand und verdiene",
             "daily_answer_correct": "Richtig! Du hast verdient:",
             "daily_answer_wrong": "Fehler! Richtige Antwort:"
         },
@@ -389,6 +393,7 @@ var _translations = {
             "modal_invested": "Invertido",
             "modal_profit": "Ganancia",
             "daily_card": "Tarjeta diaria",
+            "daily_card_title": "Agudiza tu mente y gana",
             "daily_answer_correct": "¡Correcto! Has ganado:",
             "daily_answer_wrong": "¡Error! Respuesta correcta:"
         },
@@ -496,6 +501,7 @@ var _translations = {
             "modal_invested": "Investi",
             "modal_profit": "Profit",
             "daily_card": "Carte quotidienne",
+            "daily_card_title": "Aiguisez votre esprit et gagnez",
             "daily_answer_correct": "Correct! Vous avez gagné:",
             "daily_answer_wrong": "Erreur! Réponse correcte:"
         },
@@ -603,6 +609,7 @@ var _translations = {
             "modal_invested": "निवेशित",
             "modal_profit": "लाभ",
             "daily_card": "दैनिक कार्ड",
+            "daily_card_title": "अपने दिमाग को तेज करें और कमाएँ",
             "daily_answer_correct": "सही! आपने कमाया:",
             "daily_answer_wrong": "गलती! सही उत्तर:"
         },
@@ -710,6 +717,7 @@ var _translations = {
             "modal_invested": "Diinvestasikan",
             "modal_profit": "Keuntungan",
             "daily_card": "Kartu harian",
+            "daily_card_title": "Asah pikiranmu dan dapatkan",
             "daily_answer_correct": "Benar! Anda mendapatkan:",
             "daily_answer_wrong": "Salah! Jawaban yang benar:"
         },
@@ -817,6 +825,7 @@ var _translations = {
             "modal_invested": "Investido",
             "modal_profit": "Lucro",
             "daily_card": "Carta diária",
+            "daily_card_title": "Afie sua mente e ganhe",
             "daily_answer_correct": "Correto! Você ganhou:",
             "daily_answer_wrong": "Erro! Resposta correta:"
         },
@@ -924,6 +933,7 @@ var _translations = {
             "modal_invested": "ลงทุน",
             "modal_profit": "กำไร",
             "daily_card": "การ์ดรายวัน",
+            "daily_card_title": "ฝึกสมองและรับ",
             "daily_answer_correct": "ถูกต้อง! คุณได้รับ:",
             "daily_answer_wrong": "ผิดพลาด! คำตอบที่ถูกต้อง:"
         },
@@ -1031,6 +1041,7 @@ var _translations = {
             "modal_invested": "Yatırılan",
             "modal_profit": "Kar",
             "daily_card": "Günlük Kart",
+            "daily_card_title": "Zihnini keskinleştir ve kazan",
             "daily_answer_correct": "Doğru! Kazandınız:",
             "daily_answer_wrong": "Hata! Doğru cevap:"
         },
@@ -1138,6 +1149,7 @@ var _translations = {
             "modal_invested": "Sarmoya qilingan",
             "modal_profit": "Foyda",
             "daily_card": "Kunlik karta",
+            "daily_card_title": "Aqlingizni charxlang va oling",
             "daily_answer_correct": "To‘g‘ri! Siz yutdingiz:",
             "daily_answer_wrong": "Xato! To‘g‘ri javob:"
         },
@@ -1245,6 +1257,7 @@ var _translations = {
             "modal_invested": "Đã đầu tư",
             "modal_profit": "Lợi nhuận",
             "daily_card": "Thẻ hàng ngày",
+            "daily_card_title": "Rèn luyện trí óc và kiếm",
             "daily_answer_correct": "Đúng rồi! Bạn đã kiếm được:",
             "daily_answer_wrong": "Sai rồi! Đáp án đúng là:"
         },
