@@ -259,6 +259,24 @@
     </div>
 </div>
 
+{{#show_offline_income}}
+<div class="incomeModal--backdrop" id="incomeModal--backdrop" onclick="hideIncomeModal()"></div>
+<div class="incomeModal" id="incomeModal">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h3 class="incomeModal--title">{{text.offline_income_title}}</h3>
+                <div class="incomeModal--valueWrapper d-flex justify-content-center">
+                    <div class="incomeModal--value">{{offline_income}} <img src="/img/icon-coin.svg" alt="coin"></div>
+                </div>
+                <p class="incomeModal--cta">{{text.offline_income_cta}}</p>
+                <a class="btn btn-primary incomeModal--button" onclick="hideIncomeModal()">{{text.offline_income_close}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/show_offline_income}}
+
 
 <img src="/img/icon-slide-right.svg" width="0" height="0" alt="">
 <img src="/img/tap-bg.svg" width="0" height="0" alt="">

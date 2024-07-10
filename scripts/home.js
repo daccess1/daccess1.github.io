@@ -206,3 +206,8 @@ function drawLevelBars() {
         document.getElementsByClassName(`level--bar--${i}`)[0].classList.remove('level--bar--active');
     }
 }
+
+function hideIncomeModal() {
+    document.getElementById('incomeModal').classList.add('incomeModal--hidden');
+    document.getElementById('incomeModal--backdrop').classList.add('d-none');
+}

@@ -18,6 +18,7 @@ var _levels = {
 }
 var _actives_daily_interval;
 var _actives_daily_countdown;
+var _show_offline_income = true;
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
@@ -54,7 +55,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 74;
+    const ver = 75;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
@@ -71,7 +72,7 @@ async function preload() {
         `/scss/bootstrap.min.css?v=${ver}`,
         `/scss/swiper-bundle.min.css?v=${ver}`,
         `/scss/bundle.min.css?v=${ver}`,
-        // `/scss/tmp.min.css?v=${ver}`
+        `/scss/tmp.min.css?v=${ver}`
     ];
 
     let promises = [];

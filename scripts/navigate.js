@@ -1,4 +1,4 @@
-var _page_version = 72;
+var _page_version = 75;
 
 function changeActiveButton(page) {
     console.log('Active Button:', page);
@@ -20,6 +20,17 @@ async function loadHomePage(reload = false) {
         return;
     }
 
+    let offline_income = 0;
+
+    if (_show_offline_income) {
+        //TODO: get income from API
+        offline_income = 5123;
+    }
+
+    if (offline_income === 0) {
+        _show_offline_income = false;
+    }
+
     await getUserData();
     changeActiveButton('home');
 
@@ -33,7 +44,9 @@ async function loadHomePage(reload = false) {
         pnl: _player.average_cards_profit,
         text: _translations[_player.language_code].home,
         text_levels: _translations[_player.language_code].levels,
-        language_code: _player.language_code
+        language_code: _player.language_code,
+        show_offline_income: _show_offline_income,
+        offline_income: offline_income,
     }
 
     const templateRequest = await fetch(`/pages/home/home.template.html?v=${_page_version}`);
@@ -47,6 +60,7 @@ async function loadHomePage(reload = false) {
     _toast.hide();
     _active_page = "home";
     clearInterval(_actives_daily_interval);
+    _show_offline_income = false;
 }
 
 async function loadFriendsPage(reload = false) {

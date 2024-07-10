@@ -49,7 +49,10 @@ var _translations = {
             projects: "Projects",
             specials: "Special",
             ranking: "Your rank",
-            change_lang: "Select language"
+            change_lang: "Select language",
+            offline_income_title: "Your income",
+            offline_income_cta: "Check out the app more often!",
+            offline_income_close: "OK",
         },
         actives: {
             title: "Invest<br>and gain profit",
@@ -71,7 +74,6 @@ var _translations = {
             daily_card_title: "Sharpen your mind and earn",
             daily_answer_correct: "Correct! You've earned:",
             daily_answer_wrong: "Mistake! Correct answer:",
-            "daily_card_title": "",
         },
         friends: {
             title: "Invite friends and<br>get bonuses!",
@@ -158,7 +160,10 @@ var _translations = {
             projects: "Проекты",
             specials: "Особые",
             ranking: "Ваше место",
-            change_lang: "Выберите язык"
+            change_lang: "Выберите язык",
+            offline_income_title: "Ваш доход составил",
+            offline_income_cta: "Чаще заходите в приложение!",
+            offline_income_close: "OK",
         },
         actives: {
             title: "Инвестируй<br>и получай доход",
@@ -266,7 +271,10 @@ var _translations = {
             "projects": "Projekte",
             "specials": "Spezial",
             "ranking": "Dein Rang",
-            "change_lang": "Sprache auswählen"
+            "change_lang": "Sprache auswählen",
+            "offline_income_title": "Dein Einkommen",
+            "offline_income_cta": "Schau öfter in die App!",
+            "offline_income_close": "OK",
         },
         "actives": {
             "title": "Investiere<br>und erziele Gewinn",
@@ -374,7 +382,10 @@ var _translations = {
             "projects": "Proyectos",
             "specials": "Especial",
             "ranking": "Tu rango",
-            "change_lang": "Seleccionar idioma"
+            "change_lang": "Seleccionar idioma",
+            "offline_income_title": "Tu ingreso",
+            "offline_income_cta": "¡Revisa la aplicación más a menudo!",
+            "offline_income_close": "OK"
         },
         "actives": {
             "title": "Invierte<br>y gana beneficios",
@@ -482,7 +493,10 @@ var _translations = {
             "projects": "Projets",
             "specials": "Spécial",
             "ranking": "Votre rang",
-            "change_lang": "Choisir la langue"
+            "change_lang": "Choisir la langue",
+            "offline_income_title": "Vos revenus",
+            "offline_income_cta": "Consultez l'application plus souvent!",
+            "offline_income_close": "OK",
         },
         "actives": {
             "title": "Investir<br>et réaliser un profit",
@@ -590,7 +604,10 @@ var _translations = {
             "projects": "प्रोजेक्ट्स",
             "specials": "विशेष",
             "ranking": "आपकी रैंक",
-            "change_lang": "भाषा चुनें"
+            "change_lang": "भाषा चुनें",
+            "offline_income_title": "आपकी आय",
+            "offline_income_cta": "ऐप को अधिक बार देखें!",
+            "offline_income_close": "ठीक है",
         },
         "actives": {
             "title": "निवेश करें<br>और लाभ कमाएं",
@@ -698,7 +715,10 @@ var _translations = {
             "projects": "Proyek",
             "specials": "Spesial",
             "ranking": "Peringkat Anda",
-            "change_lang": "Pilih bahasa"
+            "change_lang": "Pilih bahasa",
+            "offline_income_title": "Penghasilan Anda",
+            "offline_income_cta": "Periksa aplikasi lebih sering!",
+            "offline_income_close": "OK"
         },
         "actives": {
             "title": "Investasi<br>dan dapatkan keuntungan",
@@ -806,7 +826,10 @@ var _translations = {
             "projects": "Projetos",
             "specials": "Especial",
             "ranking": "Sua classificação",
-            "change_lang": "Selecionar idioma"
+            "change_lang": "Selecionar idioma",
+            "offline_income_title": "Seu rendimento",
+            "offline_income_cta": "Verifique o aplicativo com mais frequência!",
+            "offline_income_close": "OK"
         },
         "actives": {
             "title": "Invista<br>e obtenha lucro",
@@ -914,7 +937,10 @@ var _translations = {
             "projects": "โครงการ",
             "specials": "พิเศษ",
             "ranking": "อันดับของคุณ",
-            "change_lang": "เลือกภาษา"
+            "change_lang": "เลือกภาษา",
+            "offline_income_title": "รายได้ของคุณ",
+            "offline_income_cta": "ตรวจสอบแอปบ่อยขึ้น!",
+            "offline_income_close": "ตกลง"
         },
         "actives": {
             "title": "ลงทุน<br>และรับกำไร",
@@ -1022,7 +1048,10 @@ var _translations = {
             "projects": "Projeler",
             "specials": "Özel",
             "ranking": "Sıralamanız",
-            "change_lang": "Dil Seçin"
+            "change_lang": "Dil Seçin",
+            "offline_income_title": "Geliriniz",
+            "offline_income_cta": "Uygulamayı daha sık kontrol edin!",
+            "offline_income_close": "Tamam",
         },
         "actives": {
             "title": "Yatırım Yap<br>ve Kar Kazan",
@@ -1130,7 +1159,10 @@ var _translations = {
             "projects": "Loyihalar",
             "specials": "Maxsus",
             "ranking": "Sizning reytingingiz",
-            "change_lang": "Tilni tanlang"
+            "change_lang": "Tilni tanlang",
+            "offline_income_title": "Daromadingiz",
+            "offline_income_cta": "Ilovaga ko'proq qarang!",
+            "offline_income_close": "OK"
         },
         "actives": {
             "title": "Sarmoya qiling<br>va foyda oling",
@@ -1238,7 +1270,10 @@ var _translations = {
             "projects": "Dự án",
             "specials": "Đặc biệt",
             "ranking": "Xếp hạng của bạn",
-            "change_lang": "Chọn ngôn ngữ"
+            "change_lang": "Chọn ngôn ngữ",
+            "offline_income_title": "Thu nhập của bạn",
+            "offline_income_cta": "Kiểm tra ứng dụng thường xuyên hơn!",
+            "offline_income_close": "OK"
         },
         "actives": {
             "title": "Đầu tư<br>và kiếm lợi nhuận",
