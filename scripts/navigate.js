@@ -72,9 +72,10 @@ async function loadFriendsPage(reload = false) {
     changeActiveButton('friends');
     const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
     const viewData = await viewDataPayload.json();
+    console.log(viewData);
 
     for (let item of viewData) {
-        item.level_name = _translations[_player.language_code].levels[item.player_level.level];
+        item.level_name = _translations[_player.language_code].levels[item.player_level.level].name;
     }
 
     const view = {
