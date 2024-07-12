@@ -81,7 +81,7 @@ document.addEventListener('loadHome', () => {
             console.log(eventType, e.type);
             tapsTimeout = setTimeout(() => {
                 if (tapsCount > 0) {
-                    backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/update_taps`, 'post', {
+                    backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
                         "taps": tapsCount
                     }).then(res => {
                         console.log(res);
@@ -112,7 +112,7 @@ async function showLevelModal() {
         },
     });
 
-    const response = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/stats`);
+    const response = await fetch(`${_base_url}/player/${_tg_user.id}/stats`);
     const data = await response.json();
 
     document.getElementById('levelModal--statsValue--totalActives').innerHTML = data.total_investments_count;
@@ -176,7 +176,7 @@ async function changeLanguage(el) {
 
     console.log('lang change:', newLang);
     _player.language_code = newLang;
-    await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/lang`, 'post', {
+    await backendAPIRequest(`/player/${_tg_user.id}/lang`, 'post', {
         language_code: newLang
     });
     renderBottomMenu();

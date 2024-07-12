@@ -59,7 +59,7 @@ function hideActivesModal() {
 }
 
 async function loadActives(type = 'round') {
-    const payload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/cards/player/${_tg_user.id}/${type}`);
+    const payload = await fetch(`${_base_url}/cards/player/${_tg_user.id}/${type}`);
     return await payload.json();
 }
 
@@ -82,7 +82,7 @@ async function upgradeActive(el) {
 async function upgradeRequest(id) {
     return new Promise(function (resolve, ) {
         let xhr = new XMLHttpRequest();
-        xhr.open('post', `https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/cards/player/${_tg_user.id}/upgrade`, true);
+        xhr.open('post', `${_base_url}/cards/player/${_tg_user.id}/upgrade`, true);
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.onload = function () {
             var status = xhr.status;

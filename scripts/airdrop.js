@@ -8,7 +8,7 @@ async function donate() {
         return;
     }
 
-    const response = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/donate`, "post", {
+    const response = await backendAPIRequest(`/player/${_tg_user.id}/donate`, "post", {
         amount: value
     });
 

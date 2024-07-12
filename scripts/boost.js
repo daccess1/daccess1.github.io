@@ -35,7 +35,7 @@ async function spinWheel() {
         0, 1000, -1, 1000, 3000, 10000, 0, 1000, 5000, 3000
     ]
 
-    const result = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/spin_wheel`);
+    const result = await backendAPIRequest(`/player/${_tg_user.id}/spin_wheel`);
 
     if (result.status !== 200) {
         return;
@@ -86,7 +86,7 @@ async function applyPromocode() {
     console.log(code);
 
     try {
-        const response = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/redeem_promo_code`, "post", {
+        const response = await backendAPIRequest(`/player/${_tg_user.id}/redeem_promo_code`, "post", {
             code: code
         });
         console.log(response);
@@ -117,7 +117,7 @@ async function clickTask(el) {
         return;
     }
 
-    const response = await backendAPIRequest(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/tasks/${id}`, "post", null);
+    const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
     console.log(response);
 
     if (response.status === 200) {

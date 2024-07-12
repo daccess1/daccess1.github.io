@@ -33,7 +33,7 @@ async function getUserData() {
         console.log('Loading player');
         let playerPayload;
         try {
-            playerPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}`);
+            playerPayload = await fetch(`${_base_url}/player/${_tg_user.id}`);
         } catch (ex) {
 
         }
@@ -48,7 +48,7 @@ async function getUserData() {
                 "avatar_link": "",
                 "language_code": _tg_user.language_code
             }
-            const response = await backendAPIRequest('https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player', 'post', body);
+            const response = await backendAPIRequest('/player', 'post', body);
             if (response.status === 200 || response.status === 201) {
                 _player = JSON.parse(response.body);
             }
@@ -68,7 +68,7 @@ async function getUserData() {
 async function backendAPIRequest(url, method = 'post', data = null) {
     return new Promise(function (resolve, reject) {
         let xhr = new XMLHttpRequest();
-        xhr.open(method, url, true);
+        xhr.open(method, _base_url + url, true);
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.onload = function () {
             var status = xhr.status;

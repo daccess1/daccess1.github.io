@@ -49,8 +49,7 @@ async function loadHomePage(reload = false) {
         offline_income: offline_income,
     }
 
-    const templateRequest = await fetch(`/pages/home/home.template.html?v=${_page_version}`);
-    const template = await templateRequest.text();
+    const template = _page_templates['home'];
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
 
     drawLevelBars();
@@ -70,7 +69,7 @@ async function loadFriendsPage(reload = false) {
 
     console.log('Loading friends page');
     changeActiveButton('friends');
-    const viewDataPayload = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/friends/${_player.ref_id}`);
+    const viewDataPayload = await fetch(`${_base_url}/player/friends/${_player.ref_id}`);
     const viewData = await viewDataPayload.json();
     console.log(viewData);
 
@@ -85,8 +84,7 @@ async function loadFriendsPage(reload = false) {
         text: _translations[_player.language_code].friends
     }
 
-    const templateRequest = await fetch(`/pages/friends/friends.template.html?v=${_page_version}`);
-    const template = await templateRequest.text();
+    const template = _page_templates['friends'];
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
     _toast.hide();
@@ -102,7 +100,7 @@ async function loadBoostPage() {
 
     console.log('Loading boost page');
     changeActiveButton('boost');
-    const tasksRequest = await fetch(`https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net/player/${_tg_user.id}/tasks`);
+    const tasksRequest = await fetch(`${_base_url}/player/${_tg_user.id}/tasks`);
     const tasks = await tasksRequest.json();
 
     console.log(tasks);
@@ -117,8 +115,7 @@ async function loadBoostPage() {
         text: _translations[_player.language_code].boost
     }
 
-    const templateRequest = await fetch(`/pages/boost/boost.template.html?v=${_page_version}`);
-    const template = await templateRequest.text();
+    const template = _page_templates['boost'];
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     document.dispatchEvent(new Event('loadBoost'));
     _wa.BackButton.show();
@@ -170,8 +167,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
         daily_active: true,
     };
 
-    const templateRequest = await fetch(`/pages/actives/actives.template.html?v=${_page_version}`);
-    const template = await templateRequest.text();
+    const template = _page_templates['actives'];
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
 
@@ -194,8 +190,7 @@ async function loadAirdropPage() {
         text: _translations[_player.language_code].airdrop
     }
 
-    const templateRequest = await fetch(`/pages/airdrop/airdrop.template.html?v=${_page_version}`);
-    const template = await templateRequest.text();
+    const template = _page_templates['airdrop'];
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
     _wa.BackButton.show();
     _toast.hide();

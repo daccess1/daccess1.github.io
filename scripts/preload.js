@@ -19,6 +19,8 @@ var _levels = {
 var _actives_daily_interval;
 var _actives_daily_countdown;
 var _show_offline_income = true;
+var _base_url = "https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net";
+var _page_templates = {};
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
@@ -74,10 +76,17 @@ async function preload() {
         `/scss/bundle.min.css?v=${ver}`,
         `/scss/tmp.min.css?v=${ver}`
     ];
+    const templates = {
+        "home": `/pages/home/home.template.html?v=${ver}`,
+        "friends": `/pages/friends/friends.template.html?v=${ver}`,
+        "boost": `/pages/boost/boost.template.html?v=${ver}`,
+        "actives": `/pages/actives/actives.template.html?v=${ver}`,
+        "airdrop": `/pages/airdrop/airdrop.template.html?v=${ver}`,
+    }
 
     let promises = [];
-    scripts.forEach(style => {
-        const promise = fetchResource(style, 'script');
+    scripts.forEach(script => {
+        const promise = fetchResource(script, 'script');
         promises.push(promise);
     });
 
@@ -86,12 +95,17 @@ async function preload() {
         promises.push(promise);
     });
 
+    Object.entries(templates).forEach(([name, url]) => {
+        const promise = fetchResource(url, 'template', name);
+        promises.push(promise);
+    });
+
     await Promise.all(promises);
 
     document.dispatchEvent(new Event('preload'));
 }
 
-async function fetchResource(url, type) {
+async function fetchResource(url, type, template_name = '') {
     const response = await fetch(url);
     const payload = await response.text();
 
@@ -108,5 +122,9 @@ async function fetchResource(url, type) {
         script.type = 'text/javascript';
         script.innerHTML = payload;
         document.body.appendChild(script);
+    }
+
+    if (type === 'template') {
+        _page_templates[template_name] = payload;
     }
 }
