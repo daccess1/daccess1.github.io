@@ -1,5 +1,3 @@
-var _page_version = 75;
-
 function changeActiveButton(page) {
     console.log('Active Button:', page);
     const buttons = document.getElementsByClassName('bottomMenu--item');
@@ -20,6 +18,12 @@ async function loadHomePage(reload = false) {
         return;
     }
 
+    changeActiveButton('home');
+
+    if (_active_page !== "loadscreen") {
+        showPagePreloader();
+    }
+
     let offline_income = 0;
 
     if (_show_offline_income) {
@@ -32,7 +36,6 @@ async function loadHomePage(reload = false) {
     }
 
     await getUserData();
-    changeActiveButton('home');
 
     const view = {
         avatar: _player.avatar_link,
@@ -67,8 +70,9 @@ async function loadFriendsPage(reload = false) {
         return;
     }
 
-    console.log('Loading friends page');
     changeActiveButton('friends');
+    showPagePreloader();
+
     const viewDataPayload = await fetch(`${_base_url}/player/friends/${_player.ref_id}`);
     const viewData = await viewDataPayload.json();
     console.log(viewData);
@@ -98,8 +102,9 @@ async function loadBoostPage() {
         return;
     }
 
-    console.log('Loading boost page');
     changeActiveButton('boost');
+    showPagePreloader();
+
     const tasksRequest = await fetch(`${_base_url}/player/${_tg_user.id}/tasks`);
     const tasks = await tasksRequest.json();
 
@@ -131,6 +136,21 @@ async function loadActivesPage(tab = 'round', reload = false) {
     }
 
     changeActiveButton('actives');
+
+    if (!reload && !_active_page.includes('actives_')) {
+        showPagePreloader();
+    }
+
+    if (_active_page.includes('actives_')) {
+        console.log('Changing actives tab');
+        const buttons = document.getElementsByClassName('activesTabs--item');
+        for (let button of buttons) {
+            button.classList.remove('activesTabs--item--active');
+        }
+        document.getElementById(`activesTabs--item--${tab}`).classList.add('activesTabs--item--active');
+        document.getElementById('activesContent--wrapper').innerHTML = '<div class="activesContent--preloader"><img src="/img/infinite-spinner-orange.svg" alt="loading"></div>';
+    }
+
     _current_actives_tab = tab;
 
     let data = await loadActives(tab);
@@ -184,6 +204,7 @@ async function loadAirdropPage() {
     }
 
     changeActiveButton('airdrop');
+    showPagePreloader();
 
     const view = {
         balance: _player.balance,
@@ -197,4 +218,8 @@ async function loadAirdropPage() {
     _active_page = "airdrop";
 
     clearInterval(_actives_daily_interval);
+}
+
+function showPagePreloader() {
+    document.getElementById('pageContent').innerHTML = '<div class="pagePreloader"><img src="/img/infinite-spinner-orange.svg" alt="loading"></div>';
 }

@@ -88,7 +88,7 @@ document.addEventListener('loadHome', () => {
                     });
                 }
                 tapsCount = 0;
-            }, 1000);
+            }, 300);
             animateTimeout = setTimeout(() => {
                 homeTapContainer.classList.remove('tapGame--tapped');
             }, 100);

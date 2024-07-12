@@ -6,7 +6,16 @@ document.addEventListener('loadActives', async () => {
         _actives_daily_countdown--;
 
         if (_actives_daily_countdown <= 0) {
-            document.getElementById('dailyCardWrapper').classList.add('d-none');
+            try {
+                const wrapper = document.getElementById('dailyCardWrapper');
+
+                if (wrapper) {
+                    wrapper.classList.add('d-none');
+                }
+            } catch (ex) {
+
+            }
+
             hideActivesModal();
             console.log('Hide actives daily');
             clearInterval(_actives_daily_interval);

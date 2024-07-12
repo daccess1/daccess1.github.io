@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
     _wa.headerColor = '#295067';
     _wa.backgroundColor = '#295067';
-    // _wa.headerColor = '#01290F';
-    // _wa.backgroundColor = '#01290F';
     _wa.expand();
 } );
 
@@ -44,20 +42,17 @@ document.addEventListener('preload', async () => {
     _toast = new bootstrap.Toast(toastEl);
 
     await loadHomePage();
+
     _wa.headerColor = '#01290F';
     _wa.backgroundColor = '#01290F';
     renderBottomMenu();
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
     document.getElementById('body').style.backgroundColor = '#01290F';
-    // await loadActivesPage('round');
-    // await getUserData();
-    // await loadBoostPage();
-    // await loadFriendsPage();
 });
 
 async function preload() {
-    const ver = 76;
+    const ver = 77;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,

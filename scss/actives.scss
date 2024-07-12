@@ -475,3 +475,11 @@
     margin-bottom: 7px;
   }
 }
+.activesContent--preloader {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 60px;
+  }
+}
