@@ -4,7 +4,7 @@ function copyUrlButtonClick() {
     _toast.show();
 }
 
-async function getUserData() {
+async function getTgUserData() {
     let userPayload = decodeURIComponent(_wa.initData);
     userPayload = userPayload.substring(userPayload.indexOf('user=') + 5, userPayload.lastIndexOf('}') + 1);
 
@@ -13,16 +13,18 @@ async function getUserData() {
         console.log(_tg_user);
     }
 
-    const urlParams = new URLSearchParams(decodeURIComponent(window.location.href));
-    if (urlParams.has('start_param')) {
-        _start_param = urlParams.get('start_param');
-    }
-
     if (!_tg_user) {
         _tg_user = {
             id: 131705404,
             language_code: 'ru'
         }
+    }
+}
+
+async function getUserData() {
+    const urlParams = new URLSearchParams(decodeURIComponent(window.location.href));
+    if (urlParams.has('start_param')) {
+        _start_param = urlParams.get('start_param');
     }
 
     if (!_available_translations.includes(_tg_user.language_code)) {

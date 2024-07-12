@@ -24,11 +24,15 @@ async function loadHomePage(reload = false) {
         showPagePreloader();
     }
 
+    await getTgUserData();
+
     let offline_income = 0;
 
     if (_show_offline_income) {
-        //TODO: get income from API
-        offline_income = 5123;
+        const offlineIncomeRequest = await fetch(`${_base_url}/player/${_tg_user.id}/offline_income`);
+        const payload = await offlineIncomeRequest.json();
+        console.log('offline income:', payload);
+        offline_income = payload.offline_income;
     }
 
     if (offline_income === 0) {
