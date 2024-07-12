@@ -19,7 +19,7 @@ var _levels = {
 var _actives_daily_interval;
 var _actives_daily_countdown;
 var _show_offline_income = true;
-var _base_url = "https://bba7p9tu9njf9teo8qkf.containers.yandexcloud.net";
+var _base_url = "https://game-backend.umperium-game.com";
 var _page_templates = {};
 
 document.addEventListener('DOMContentLoaded', async () => {
