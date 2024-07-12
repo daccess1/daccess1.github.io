@@ -52,7 +52,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 77;
+    const ver = 78;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
@@ -69,7 +69,7 @@ async function preload() {
         `/scss/bootstrap.min.css?v=${ver}`,
         `/scss/swiper-bundle.min.css?v=${ver}`,
         `/scss/bundle.min.css?v=${ver}`,
-        `/scss/tmp.min.css?v=${ver}`
+        // `/scss/tmp.min.css?v=${ver}`
     ];
     const templates = {
         "home": `/pages/home/home.template.html?v=${ver}`,

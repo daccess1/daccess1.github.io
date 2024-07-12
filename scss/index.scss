@@ -163,3 +163,13 @@ body.wrapper .form-control:focus {
 .modal-fullscreen .modal-footer, .modal-fullscreen .modal-header {
   border: 0 none !important;
 }
+.pagePreloader {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 60%;
+  }
+}

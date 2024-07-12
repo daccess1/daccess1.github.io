@@ -30,8 +30,8 @@ function tapEventListener(event) {
             _player.player_level.level++;
 
             const image = document.getElementById('tapGame--player');
-            image.src = `/img/character-level-${_player.player_level.level}.png.webp`;
-            image.srcset = `/img/character-level-${_player.player_level.level}@2x.png.webp 2x, /img/character-level-${_player.player_level.level}@3x.png.webp 3x`;
+            image.src = `https://d25ebjvanew4na.cloudfront.net/static/character-level-${_player.player_level.level}.png.webp`;
+            image.srcset = `https://d25ebjvanew4na.cloudfront.net/static/character-level-${_player.player_level.level}@2x.png.webp 2x, https://d25ebjvanew4na.cloudfront.net/static/character-level-${_player.player_level.level}@3x.png.webp 3x`;
 
             document.getElementById('level--infoNumberValue').innerHTML = _player.player_level.level;
         }

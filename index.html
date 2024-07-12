@@ -9,7 +9,7 @@
     <meta property="og:url" content="https://t.me/big_bad_bot">
     <meta property="og:title" content="OG App title">
     <meta property="og:description" content="OG App description">
-    <meta property="og:image" content="https://daccess1.github.io/img/character-level-1.png.webp">
+    <meta property="og:image" content="https://d25ebjvanew4na.cloudfront.net/static/character-level-1.png.webp">
     <title>Umperium</title>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -47,10 +47,10 @@
 <body class="wrapper" id="body" style="background-color: #295067;">
     <div id="pageContent" class="pageContent">
 
-        <div id="loadscreen" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url('/img/loadscreen-bg@3x.png.webp'); background-position: center top; background-size: cover;">
+        <div id="loadscreen" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url('https://d25ebjvanew4na.cloudfront.net/static/loadscreen-bg@3x.png.webp'); background-position: center top; background-size: cover;">
             <div style="position: fixed; left:0; right: 0; bottom: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center">
-                <img src="/img/infinite-spinner.svg"  alt="" style="position: absolute; width: 60px; margin-left: -30px; top: 48px; left: 50%;">
-                <img src="/img/loadscreen-logo@3x.png.webp" style="width: 300px" alt="logo">
+                <img src="https://d25ebjvanew4na.cloudfront.net/static/infinite-spinner.svg"  alt="" style="position: absolute; width: 60px; margin-left: -30px; top: 48px; left: 50%;">
+                <img src="https://d25ebjvanew4na.cloudfront.net/static/loadscreen-logo@3x.png.webp" style="width: 300px" alt="logo">
             </div>
         </div>
     </div>
@@ -58,23 +58,23 @@
     <div id="bottomMenu" style="display: none" class="bottomMenu">
         <div class="bottomMenu--container">
             <a class="bottomMenu--item bottomMenu--item--active" data-page="home" onclick="loadHomePage()">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-home-active.svg" data-active="/img/menu-icon-home-active.svg" data-inactive="/img/menu-icon-home-inactive.svg" alt="home">
+                <img class="bottomMenu--itemIcon" src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-home-active.svg" data-active="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-home-active.svg" data-inactive="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-home-inactive.svg" alt="home">
                 <span class="bottomMenu--itemText" id="bottomMenu--itemText--home"></span>
             </a>
             <a class="bottomMenu--item" data-page="actives" onclick="loadActivesPage()">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-actives-inactive.svg" data-active="/img/menu-icon-actives-active.svg" data-inactive="/img/menu-icon-actives-inactive.svg" alt="actives">
+                <img class="bottomMenu--itemIcon" src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-actives-inactive.svg" data-active="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-actives-active.svg" data-inactive="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-actives-inactive.svg" alt="actives">
                 <span class="bottomMenu--itemText" id="bottomMenu--itemText--actives"></span>
             </a>
             <a class="bottomMenu--item" onclick="loadFriendsPage()" data-page="friends">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-friends-inactive.svg" data-active="/img/menu-icon-friends-active.svg" data-inactive="/img/menu-icon-friends-inactive.svg" alt="friends">
+                <img class="bottomMenu--itemIcon" src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-friends-inactive.svg" data-active="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-friends-active.svg" data-inactive="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-friends-inactive.svg" alt="friends">
                 <span class="bottomMenu--itemText" id="bottomMenu--itemText--friends"></span>
             </a>
             <a class="bottomMenu--item" onclick="loadBoostPage()" data-page="boost">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-boost-inactive.svg" data-active="/img/menu-icon-boost-active.svg" data-inactive="/img/menu-icon-boost-inactive.svg" alt="boost">
+                <img class="bottomMenu--itemIcon" src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-boost-inactive.svg" data-active="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-boost-active.svg" data-inactive="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-boost-inactive.svg" alt="boost">
                 <span class="bottomMenu--itemText" id="bottomMenu--itemText--boost"></span>
             </a>
             <a class="bottomMenu--item" onclick="loadAirdropPage()" data-page="airdrop">
-                <img class="bottomMenu--itemIcon" src="/img/menu-icon-airdrop-inactive.svg" data-active="/img/menu-icon-airdrop-active.svg" data-inactive="/img/menu-icon-airdrop-inactive.svg" alt="airdrop">
+                <img class="bottomMenu--itemIcon" src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-airdrop-inactive.svg" data-active="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-airdrop-active.svg" data-inactive="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-airdrop-inactive.svg" alt="airdrop">
                 <span class="bottomMenu--itemText" id="bottomMenu--itemText--airdrop"></span>
             </a>
         </div>
@@ -89,10 +89,15 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/scripts/preload.js?v=77"></script>
+    <script type="text/javascript" src="/scripts/preload.js?v=78"></script>
     <script type="text/javascript">
         preload();
     </script>
-    <script type="text/javascript" src="/scripts/home.js?v=77" async></script>
+    <script type="text/javascript" src="/scripts/home.js?v=78" async></script>
+    <img src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-home-inactive.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-actives-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-friends-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-boost-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://d25ebjvanew4na.cloudfront.net/static/menu-icon-airdrop-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
 </body>
 </html>

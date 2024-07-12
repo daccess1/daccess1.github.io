@@ -148,7 +148,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
             button.classList.remove('activesTabs--item--active');
         }
         document.getElementById(`activesTabs--item--${tab}`).classList.add('activesTabs--item--active');
-        document.getElementById('activesContent--wrapper').innerHTML = '<div class="activesContent--preloader"><img src="/img/infinite-spinner-orange.svg" alt="loading"></div>';
+        document.getElementById('activesContent--wrapper').innerHTML = '<div class="activesContent--preloader"><img src="https://d25ebjvanew4na.cloudfront.net/static/infinite-spinner-orange.svg" alt="loading"></div>';
     }
 
     _current_actives_tab = tab;
@@ -221,5 +221,5 @@ async function loadAirdropPage() {
 }
 
 function showPagePreloader() {
-    document.getElementById('pageContent').innerHTML = '<div class="pagePreloader"><img src="/img/infinite-spinner-orange.svg" alt="loading"></div>';
+    document.getElementById('pageContent').innerHTML = '<div class="pagePreloader"><img src="https://d25ebjvanew4na.cloudfront.net/static/infinite-spinner-orange.svg" alt="loading"></div>';
 }
