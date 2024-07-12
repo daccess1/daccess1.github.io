@@ -67,6 +67,7 @@ async function loadHomePage(reload = false) {
     _active_page = "home";
     clearInterval(_actives_daily_interval);
     _show_offline_income = false;
+    resetOfflineTimeout();
 }
 
 async function loadFriendsPage(reload = false) {
@@ -99,6 +100,7 @@ async function loadFriendsPage(reload = false) {
     _active_page = "friends";
 
     clearInterval(_actives_daily_interval);
+    resetOfflineTimeout();
 }
 
 async function loadBoostPage() {
@@ -199,6 +201,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
         _toast.hide();
     }
     _active_page = `actives_${tab}`;
+    resetOfflineTimeout();
     document.dispatchEvent(new Event('loadActives'));
 }
 
@@ -222,6 +225,7 @@ async function loadAirdropPage() {
     _active_page = "airdrop";
 
     clearInterval(_actives_daily_interval);
+    resetOfflineTimeout();
 }
 
 function showPagePreloader() {

@@ -27,6 +27,8 @@ document.addEventListener('loadActives', async () => {
 });
 
 function showActivesModal(el) {
+    resetOfflineTimeout();
+
     const modal = document.getElementById('activesModal');
     const blur = document.getElementById('activesBlur');
     const content = document.getElementById('pageContent');
@@ -48,6 +50,8 @@ function showActivesModal(el) {
 }
 
 function showActivesModalDaily() {
+    resetOfflineTimeout();
+
     const modal = document.getElementById('activesModalDaily');
     const blur = document.getElementById('activesBlur');
     const content = document.getElementById('pageContent');
@@ -59,6 +63,8 @@ function showActivesModalDaily() {
 }
 
 function hideActivesModal() {
+    resetOfflineTimeout();
+
     console.log('Hiding actives modals');
     document.getElementById('activesBlur').classList.add('activesBlur--hidden');
     document.getElementById('activesModal').classList.add('activesModal--hidden');
@@ -68,11 +74,15 @@ function hideActivesModal() {
 }
 
 async function loadActives(type = 'round') {
+    resetOfflineTimeout();
+
     const payload = await fetch(`${_base_url}/cards/player/${_tg_user.id}/${type}`);
     return await payload.json();
 }
 
 async function upgradeActive(el) {
+    resetOfflineTimeout();
+
     let is_success = await upgradeRequest(el.dataset.id);
     hideActivesModal();
 

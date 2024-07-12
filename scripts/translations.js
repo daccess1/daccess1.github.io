@@ -38,6 +38,11 @@ var _translations = {
                 score: "from 50M"
             }
         },
+        offline: {
+          offline_title: "You are offline",
+          offline_text: "You are currently offline, because you were not active for 3 hours",
+          offline_button: "Go online"
+        },
         home: {
             level: "Level",
             investments_count: "Actives",

@@ -22,6 +22,8 @@ document.addEventListener('loadBoost', function() {
 });
 
 async function spinWheel() {
+    resetOfflineTimeout();
+
     if (_player.friends_total < 3) {
         console.log('Navigate to friends page');
         return await loadFriendsPage();
@@ -83,7 +85,7 @@ async function applyPromocode() {
     const input = document.getElementById('promocodeValue');
     const code = input.value;
 
-    console.log(code);
+    resetOfflineTimeout();
 
     try {
         const response = await backendAPIRequest(`/player/${_tg_user.id}/redeem_promo_code`, "post", {
@@ -116,6 +118,8 @@ async function clickTask(el) {
         _wa.openLink(url);
         return;
     }
+
+    resetOfflineTimeout();
 
     const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
     console.log(response);

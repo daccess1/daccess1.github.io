@@ -21,6 +21,9 @@ var _actives_daily_countdown;
 var _show_offline_income = true;
 var _base_url = "https://game-backend.umperium-game.com";
 var _page_templates = {};
+var _offline_timeout_time_max = 10;
+var _offline_timeout_time_current = 0;
+var _offline_timeout;
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
@@ -69,7 +72,7 @@ async function preload() {
         `/scss/bootstrap.min.css?v=${ver}`,
         `/scss/swiper-bundle.min.css?v=${ver}`,
         `/scss/bundle.min.css?v=${ver}`,
-        // `/scss/tmp.min.css?v=${ver}`
+        `/scss/tmp.min.css?v=${ver}`
     ];
     const templates = {
         "home": `/pages/home/home.template.html?v=${ver}`,

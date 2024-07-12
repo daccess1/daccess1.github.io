@@ -41,6 +41,7 @@ function tapEventListener(event) {
         drawLevelBars();
         tapsCount++;
         clearTimeout(tapsTimeout);
+        resetOfflineTimeout();
     }
 }
 
@@ -97,6 +98,8 @@ document.addEventListener('loadHome', () => {
 });
 
 async function showLevelModal() {
+    resetOfflineTimeout();
+
     _active_page = "level_modal";
 
     const swiper = new Swiper('.swiper', {
@@ -169,6 +172,8 @@ function drawTapResult(x, y) {
 }
 
 async function changeLanguage(el) {
+    resetOfflineTimeout();
+
     const newLang = el.dataset.lang;
     if (_player.language_code === newLang) {
         return;

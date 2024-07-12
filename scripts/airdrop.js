@@ -1,4 +1,6 @@
 async function donate() {
+    resetOfflineTimeout();
+
     const input = document.getElementById('donationValue');
     const value = parseInt(input.value);
 

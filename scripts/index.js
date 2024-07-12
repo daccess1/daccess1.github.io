@@ -96,4 +96,31 @@ function renderBottomMenu() {
     document.getElementById('bottomMenu--itemText--friends').innerHTML = _translations[_player.language_code].menu.friends;
     document.getElementById('bottomMenu--itemText--boost').innerHTML = _translations[_player.language_code].menu.boost;
     document.getElementById('bottomMenu--itemText--airdrop').innerHTML = _translations[_player.language_code].menu.airdrop;
+
+    document.getElementById('offlineModal').classList.remove('d-none');
+    document.getElementById('offlineModal--title').innerHTML = _translations[_player.language_code].offline.offline_title;
+    document.getElementById('offlineModal--cta').innerHTML = _translations[_player.language_code].offline.offline_text;
+    document.getElementById('offlineModal--button').innerHTML = _translations[_player.language_code].offline.offline_button;
+}
+
+function resetOfflineTimeout() {
+    clearTimeout(_offline_timeout);
+    _offline_timeout_time_current = 0;
+    document.getElementById('offlineModal').classList.add('offlineModal--hidden');
+    document.getElementById('offlineModal--backdrop').classList.add('d-none');
+
+    _offline_timeout = setInterval(() => {
+        _offline_timeout_time_current++;
+
+        if (_offline_timeout_time_current >= _offline_timeout_time_max) {
+            console.log('User is offline');
+            document.getElementById('offlineModal').classList.remove('offlineModal--hidden');
+            document.getElementById('offlineModal--backdrop').classList.remove('d-none');
+
+            clearTimeout(_offline_timeout);
+        } else {
+            // console.log(`User online for ${_offline_timeout_time_current} seconds`);
+            //TODO: check timer and send balance update request
+        }
+    }, 1000);
 }
