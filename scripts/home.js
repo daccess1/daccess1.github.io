@@ -2,16 +2,9 @@ var tapsCount = 0;
 var tapsTimeout, animateTimeout;
 var energyCurrent, homePlayerBalance, homeTapContainer;
 var energyInterval;
-var tapsStartTime;
-var energyRestored = 0;
+var tapsStartTime = new Date();
 
 function tapEventListener(event) {
-    if (tapsCount === 0) {
-        tapsStartTime = new Date().toISOString();
-        energyRestored = 0;
-        console.log('Start tapping energy:', _player.current_energy);
-    }
-
     let posX, posY;
 
     if (event.type === 'touchstart') {
@@ -57,16 +50,6 @@ document.addEventListener('loadHome', () => {
 
     selectedLangButton.classList.add('changeLangButton--active');
 
-    clearInterval(energyInterval);
-    energyInterval = setInterval(() => {
-        if (_player.current_energy < _player.max_energy) {
-            _player.current_energy++;
-            energyRestored++;
-        }
-
-        energyCurrent.innerHTML = _player.current_energy;
-    }, 1000);
-
     const eventParams = { passive: false };
     target.addEventListener('touchcancel', ignore, eventParams);
     target.addEventListener('touchend', ignore, eventParams);
@@ -74,6 +57,23 @@ document.addEventListener('loadHome', () => {
     function ignore(e) {
         e.preventDefault();
     }
+
+    energyInterval = setInterval(async () => {
+        console.log('Update energy 3 sec');
+        const tmpTapsCount = tapsCount;
+        const tmpTapsStartTime = tapsStartTime.toISOString();
+        tapsCount = 0;
+        tapsStartTime = new Date();
+        backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
+            taps: tmpTapsCount,
+            timestamp: tmpTapsStartTime,
+        }).then(res => {
+            console.log(res);
+            const body = JSON.parse(res.body);
+            _player.current_energy = body.new_energy;
+            energyCurrent.innerHTML = _player.current_energy;
+        });
+    }, 3000);
 
     ['mousedown', 'touchstart'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
@@ -83,13 +83,9 @@ document.addEventListener('loadHome', () => {
         target.addEventListener(eventType, (e) => {
             tapsTimeout = setTimeout(() => {
                 if (tapsCount > 0) {
-                    console.log('Tap time:', tapsStartTime, '-', new Date().toISOString());
-                    console.log('Energy restored while tapping:', energyRestored);
-                    console.log('Current energy:', _player.current_energy);
                     backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
                         taps: tapsCount,
-                        current_energy: _player.current_energy,
-                        timestamp: tapsStartTime,
+                        timestamp: tapsStartTime.toISOString(),
                     }).then(res => {
                         console.log(res);
                     });
