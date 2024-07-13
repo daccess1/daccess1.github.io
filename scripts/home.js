@@ -3,10 +3,13 @@ var tapsTimeout, animateTimeout;
 var energyCurrent, homePlayerBalance, homeTapContainer;
 var energyInterval;
 var tapsStartTime;
+var energyRestored = 0;
 
 function tapEventListener(event) {
     if (tapsCount === 0) {
         tapsStartTime = new Date().toISOString();
+        energyRestored = 0;
+        console.log('Start tapping energy:', _player.current_energy);
     }
 
     let posX, posY;
@@ -18,8 +21,6 @@ function tapEventListener(event) {
         posX = event.pageX;
         posY = event.pageY;
     }
-
-    console.log(posX, posY);
 
     if (_player.current_energy > 0) {
         _player.current_energy--;
@@ -48,7 +49,6 @@ function tapEventListener(event) {
 }
 
 document.addEventListener('loadHome', () => {
-    console.log('load home event');
     const target = document.getElementById("tapGame--game");
     homeTapContainer = document.getElementById('tapGame');
     energyCurrent = document.getElementById('level--energyValueCurrent');
@@ -61,6 +61,7 @@ document.addEventListener('loadHome', () => {
     energyInterval = setInterval(() => {
         if (_player.current_energy < _player.max_energy) {
             _player.current_energy++;
+            energyRestored++;
         }
 
         energyCurrent.innerHTML = _player.current_energy;
@@ -75,17 +76,19 @@ document.addEventListener('loadHome', () => {
     }
 
     ['mousedown', 'touchstart'].forEach(eventType => {
-    // ['click'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
     });
 
     ['mouseup', 'mouseleave', 'touchend'].forEach(eventType => {
         target.addEventListener(eventType, (e) => {
-            console.log(eventType, e.type);
             tapsTimeout = setTimeout(() => {
                 if (tapsCount > 0) {
+                    console.log('Tap time:', tapsStartTime, '-', new Date().toISOString());
+                    console.log('Energy restored while tapping:', energyRestored);
+                    console.log('Current energy:', _player.current_energy);
                     backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
                         taps: tapsCount,
+                        current_energy: _player.current_energy,
                         timestamp: tapsStartTime,
                     }).then(res => {
                         console.log(res);

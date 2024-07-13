@@ -21,7 +21,7 @@ var _actives_daily_countdown;
 var _show_offline_income = true;
 var _base_url = "https://game-backend.umperium-game.com";
 var _page_templates = {};
-var _offline_timeout_time_max = 30;
+var _offline_timeout_time_max = 60;
 var _offline_timeout_time_current = 0;
 var _offline_timeout;
 
@@ -55,7 +55,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 81;
+    const ver = 83;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,

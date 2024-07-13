@@ -154,6 +154,11 @@ var _translations = {
                 score: "от 50M"
             }
         },
+        offline: {
+            offline_title: "Вы оффлайн",
+            offline_text: "В данный момент вы ушли в оффлайн, потому что не проявляли активность 3 часа",
+            offline_button: "Я онлайн"
+        },
         home: {
             level: "Уровень",
             investments_count: "Активы",
@@ -264,6 +269,11 @@ var _translations = {
                 "name": "Unternehmen",
                 "score": "ab 50M"
             }
+        },
+        "offline": {
+            "offline_title": "Du bist offline",
+            "offline_text": "Du bist derzeit offline, weil du 3 Stunden lang nicht aktiv warst",
+            "offline_button": "Online gehen"
         },
         "home": {
             "level": "Stufe",
@@ -376,6 +386,11 @@ var _translations = {
                 "score": "desde 50M"
             }
         },
+        "offline": {
+            "offline_title": "Estás desconectado",
+            "offline_text": "Actualmente estás desconectado porque no estuviste activo durante 3 horas",
+            "offline_button": "Conectarse"
+        },
         "home": {
             "level": "Nivel",
             "investments_count": "Activos",
@@ -486,6 +501,11 @@ var _translations = {
                 "name": "Entreprise",
                 "score": "à partir de 50M"
             }
+        },
+        "offline": {
+            "offline_title": "Vous êtes hors ligne",
+            "offline_text": "Vous êtes actuellement hors ligne car vous n'avez pas été actif pendant 3 heures",
+            "offline_button": "Se connecter"
         },
         "home": {
             "level": "Niveau",
@@ -598,6 +618,11 @@ var _translations = {
                 "score": "50M से"
             }
         },
+        "offline": {
+            "offline_title": "आप ऑफ़लाइन हैं",
+            "offline_text": "आप वर्तमान में ऑफ़लाइन हैं, क्योंकि आप 3 घंटे तक सक्रिय नहीं थे",
+            "offline_button": "ऑनलाइन जाएं"
+        },
         "home": {
             "level": "स्तर",
             "investments_count": "सक्रिय",
@@ -708,6 +733,11 @@ var _translations = {
                 "name": "Perusahaan",
                 "score": "dari 50M"
             }
+        },
+        "offline": {
+            "offline_title": "Anda sedang offline",
+            "offline_text": "Anda saat ini sedang offline karena Anda tidak aktif selama 3 jam",
+            "offline_button": "Pergi online"
         },
         "home": {
             "level": "Tingkat",
@@ -820,6 +850,11 @@ var _translations = {
                 "score": "a partir de 50M"
             }
         },
+        "offline": {
+            "offline_title": "Você está offline",
+            "offline_text": "Você está offline no momento porque não esteve ativo por 3 horas",
+            "offline_button": "Ficar online"
+        },
         "home": {
             "level": "Nível",
             "investments_count": "Ativos",
@@ -930,6 +965,11 @@ var _translations = {
                 "name": "บริษัท",
                 "score": "จาก 50M"
             }
+        },
+        "offline": {
+            "offline_title": "คุณออฟไลน์อยู่",
+            "offline_text": "คุณออฟไลน์อยู่ เนื่องจากคุณไม่ใช้งานมา 3 ชั่วโมง",
+            "offline_button": "ออนไลน์"
         },
         "home": {
             "level": "ระดับ",
@@ -1042,6 +1082,11 @@ var _translations = {
                 "score": " ve üzeri 50M"
             }
         },
+        "offline": {
+            "offline_title": "Çevrimdışısınız",
+            "offline_text": "3 saat boyunca aktif olmadığınız için şu anda çevrimdışısınız",
+            "offline_button": "Çevrimiçi ol"
+        },
         "home": {
             "level": "Seviye",
             "investments_count": "Aktifler",
@@ -1153,6 +1198,11 @@ var _translations = {
                 "score": "50M  va yuqori"
             }
         },
+        "offline": {
+            "offline_title": "Siz oflaysiz",
+            "offline_text": "Siz hozir oflaysiz, chunki 3 soat davomida faol bo'lmadingiz",
+            "offline_button": "Onlayn o'ting"
+        },
         "home": {
             "level": "Daraja",
             "investments_count": "Faoliyatlar",
@@ -1263,6 +1313,11 @@ var _translations = {
                 "name": "Doanh nghiệp",
                 "score": "Từ 50M trở lên"
             }
+        },
+        "offline": {
+            "offline_title": "Bạn đang ngoại tuyến",
+            "offline_text": "Hiện tại bạn đang ngoại tuyến vì bạn đã không hoạt động trong 3 giờ",
+            "offline_button": "Trực tuyến"
         },
         "home": {
             "level": "Cấp độ",
