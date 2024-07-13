@@ -2,14 +2,16 @@ var tapsCount = 0;
 var tapsTimeout, animateTimeout;
 var energyCurrent, homePlayerBalance, homeTapContainer;
 var energyInterval;
+var tapsStartTime;
 
 function tapEventListener(event) {
-    console.log('tap', event);
-    console.log('type', event.type);
+    if (tapsCount === 0) {
+        tapsStartTime = new Date().toISOString();
+    }
+
     let posX, posY;
 
     if (event.type === 'touchstart') {
-        console.log('touchend evt pos')
         posX = event.changedTouches[0].clientX;
         posY = event.changedTouches[0].clientY;
     } else {
@@ -83,7 +85,8 @@ document.addEventListener('loadHome', () => {
             tapsTimeout = setTimeout(() => {
                 if (tapsCount > 0) {
                     backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
-                        "taps": tapsCount
+                        taps: tapsCount,
+                        timestamp: tapsStartTime,
                     }).then(res => {
                         console.log(res);
                     });
