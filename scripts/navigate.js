@@ -172,7 +172,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
 
     for (let item of data) {
         if (item.level > 0) {
-            total_purchased++;
+            total_purchased += item.level;
             total_income += item.income;
         }
     }
@@ -189,6 +189,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
         text: _translations[_player.language_code].actives,
         daily: daily,
         daily_active: true,
+        balance: _player.balance,
     };
 
     const template = _page_templates['actives'];
@@ -228,5 +229,6 @@ async function loadAirdropPage() {
 
 function showPagePreloader() {
     clearInterval(energyInterval);
+    clearInterval(_actives_daily_interval);
     document.getElementById('pageContent').innerHTML = '<div class="pagePreloader"><img src="https://d25ebjvanew4na.cloudfront.net/static/infinite-spinner-orange.svg" alt="loading"></div>';
 }

@@ -2,6 +2,9 @@ document.addEventListener('loadActives', async () => {
     console.log('loadActives');
 
     clearInterval(_actives_daily_interval);
+    energyInterval = setInterval(async () => {
+        //TODO: Update balance
+    }, 3000);
     _actives_daily_interval = setInterval(() => {
         _actives_daily_countdown--;
 
@@ -22,7 +25,7 @@ document.addEventListener('loadActives', async () => {
             return;
         }
 
-        document.getElementById("dailyCard--timerCountdown").innerHTML = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);;
+        document.getElementById("dailyCard--timerCountdown").innerHTML = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);
     }, 1000);
 });
 
@@ -42,6 +45,7 @@ function showActivesModal(el) {
     document.getElementById('activesModal--income').innerHTML = el.dataset.income;
     document.getElementById('activesModal--startPrice').innerHTML = el.dataset.startPrice;
     document.getElementById('activesModal--button').dataset.id = el.dataset.id;
+    document.getElementById('activesModal--button').dataset.price = el.dataset.startPrice;
 
     document.getElementById('body').classList.add('modalShown');
     blur.classList.remove('activesBlur--hidden');
@@ -88,11 +92,16 @@ async function loadDaily() {
 async function upgradeActive(el) {
     resetOfflineTimeout();
 
-    if (_player.balance < parseInt(el.dataset.startPrice)) {
-        console.log('Not enought coins');
+    if (_player.balance < parseInt(el.dataset.price)) {
+        hideActivesModal();
+
+        document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_fail;
+        _toast.show();
+
+        return;
     } else {
         console.log(_player.balance)
-        console.log(el.dataset.startPrice)
+        console.log(el.dataset)
     }
 
     let is_success = await upgradeRequest(el.dataset.id);
@@ -144,7 +153,6 @@ async function dailyAnswerClick(el) {
     } else {
         console.log('Correct answer');
     }
-
 
     hideActivesModal();
 

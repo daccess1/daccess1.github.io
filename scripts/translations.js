@@ -92,7 +92,8 @@ var _translations = {
             invite_3: "every 24 hours",
             invite_5: "every 12 hours",
             friends_list_title: "List of your friends",
-            url_copied: "URL copied"
+            url_copied: "URL copied",
+            tg_message_text: encodeURI("Track your income, invite friends, and unlock rewards. Tap below to start earning now! 🚀"),
         },
         boost: {
             title: "Earn more coins",
@@ -209,6 +210,7 @@ var _translations = {
             invite_5: "каждые 12 часов",
             friends_list_title: "Твои друзья",
             url_copied: "Ссылка скопирована",
+            tg_message_text: "Отслеживай доход, приглашай друзей, получай награды. Заходи сейчас и зарабатывай! 🚀"
         },
         boost: {
             title: "Заработай больше<br>монет",

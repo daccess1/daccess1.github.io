@@ -9,6 +9,14 @@
     </div>
 </div>
 
+<div class="container-fluid screenHeader screenHeader--activesBalance mb-0 pt-0">
+    <div class="row">
+        <div class="col">
+            <h1 class="screenHeader--title screenHeader--title--points"><span id="airdropBalance">{{balance}}</span> <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg" alt="coin"></h1>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluid screenHeader">
     <div class="row">
         <div class="col">
@@ -190,7 +198,7 @@
         </div>
         <div class="row z-1 position-relative">
             <div class="col">
-                <button class="activesModal--button" id="activesModal--button" data-id="" onclick="upgradeActive(this)">{{text.upgrade}}</button>
+                <button class="activesModal--button" id="activesModal--button" data-id="" data-price="" onclick="upgradeActive(this)">{{text.upgrade}}</button>
             </div>
         </div>
     </div>
