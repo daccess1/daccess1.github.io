@@ -229,5 +229,6 @@ async function loadAirdropPage() {
 }
 
 function showPagePreloader() {
+    clearInterval(energyInterval);
     document.getElementById('pageContent').innerHTML = '<div class="pagePreloader"><img src="https://d25ebjvanew4na.cloudfront.net/static/infinite-spinner-orange.svg" alt="loading"></div>';
 }

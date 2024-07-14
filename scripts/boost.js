@@ -121,6 +121,7 @@ async function clickTask(el) {
 
     resetOfflineTimeout();
 
+    console.log('Url:', `/player/${_tg_user.id}/tasks/${id}`);
     const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
     console.log(response);
 

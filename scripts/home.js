@@ -59,7 +59,7 @@ document.addEventListener('loadHome', () => {
     }
 
     energyInterval = setInterval(async () => {
-        console.log('Update energy 3 sec');
+        //TODO: Update balance
         const tmpTapsCount = tapsCount;
         const tmpTapsStartTime = tapsStartTime.toISOString();
         tapsCount = 0;
