@@ -1,5 +1,5 @@
 document.addEventListener('loadActives', async () => {
-    console.log('loadActives')
+    console.log('loadActives');
 
     clearInterval(_actives_daily_interval);
     _actives_daily_interval = setInterval(() => {
@@ -87,6 +87,13 @@ async function loadDaily() {
 
 async function upgradeActive(el) {
     resetOfflineTimeout();
+
+    if (_player.balance < parseInt(el.dataset.startPrice)) {
+        console.log('Not enought coins');
+    } else {
+        console.log(_player.balance)
+        console.log(el.dataset.startPrice)
+    }
 
     let is_success = await upgradeRequest(el.dataset.id);
     hideActivesModal();
