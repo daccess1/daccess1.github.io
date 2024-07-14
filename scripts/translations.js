@@ -109,7 +109,7 @@ var _translations = {
         },
         airdrop: {
             title: "Airdrop",
-            text: "After ending of the first season the token will be listed.<br><br>Right now you can send some of your points for charity.",
+            "text": "Listing information will be provided later – stay tuned for updates.<br><br>Currently, you can send some of your points to a fund, which will be used for charitable purposes.",
             placeholder: "Amount",
             button: "Send",
             success: "Donation sent",
@@ -226,7 +226,7 @@ var _translations = {
         },
         airdrop: {
             title: "Airdrop",
-            text: "После окончания первого сезона состоится листинг.<br><br>Сейчас вы можете отправить часть своих поинтов в фонд на благотворительность.",
+            text: " Информация о листинге будет позже – следите за обновлениями.<br><br>Сейчас вы можете отправить часть своих поинтов в фонд, они будут потрачены на благотворительные цели.",
             button: "Отправить",
             placeholder: "Введите сумму",
             success: "Пожертвование отправлено",
@@ -342,7 +342,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Nach dem Ende der ersten Saison wird der Token gelistet.<br><br>Im Moment kannst du einige deiner Punkte für wohltätige Zwecke spenden.",
+            "text": "Informationen zur Listung werden später bekannt gegeben – bleiben Sie dran.<br><br>Derzeit können Sie einen Teil Ihrer Punkte an einen Fonds senden, der für wohltätige Zwecke verwendet wird.",
             "placeholder": "Betrag",
             "button": "Senden",
             "success": "Spende gesendet",
@@ -458,7 +458,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Después del final de la primera temporada, el token será listado.<br><br>En este momento puedes enviar algunos de tus puntos a la caridad.",
+            "text": "La información sobre la lista se proporcionará más tarde, mantente atento.<br><br>Ahora puedes enviar parte de tus puntos a un fondo, que se utilizarán para fines benéficos.",
             "placeholder": "Cantidad",
             "button": "Enviar",
             "success": "Donación enviada",
@@ -574,7 +574,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Après la fin de la première saison, le token sera listé.<br><br>En ce moment, vous pouvez envoyer certains de vos points à des œuvres de charité.",
+            "text": "Les informations sur la liste seront fournies plus tard – restez à l'écoute.<br><br>Actuellement, vous pouvez envoyer une partie de vos points à un fonds, qui seront utilisés à des fins caritatives.",
             "placeholder": "Montant",
             "button": "Envoyer",
             "success": "Don envoyé",
@@ -690,7 +690,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "एयरड्रॉप",
-            "text": "पहले सीज़न के अंत के बाद टोकन सूचीबद्ध होगा।<br><br>अभी आप कुछ अपने पॉइंट्स दान कर सकते हैं।",
+            "text": "लिस्टिंग की जानकारी बाद में दी जाएगी - अपडेट के लिए बने रहें।<br><br>अभी आप अपने कुछ पॉइंट्स को एक फंड में भेज सकते हैं, जो चैरिटी के लिए खर्च किए जाएंगे।",
             "placeholder": "राशि",
             "button": "भेजें",
             "success": "दान भेजा गया",
@@ -806,7 +806,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Setelah akhir musim pertama, token akan terdaftar.<br><br>Saat ini, Anda dapat mengirim beberapa poin Anda untuk amal.",
+            "text": "Informasi tentang listing akan diberikan nanti – tetap ikuti pembaruan.<br><br>Saat ini Anda dapat mengirim sebagian poin Anda ke dana, yang akan digunakan untuk tujuan amal.",
             "placeholder": "Jumlah",
             "button": "Kirim",
             "success": "Donasi terkirim",
@@ -922,7 +922,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Após o término da primeira temporada, o token será listado.<br><br>No momento, você pode enviar alguns de seus pontos para a caridade.",
+            "text": "As informações sobre a listagem serão fornecidas mais tarde – fique atento às atualizações.<br><br>Agora você pode enviar parte de seus pontos para um fundo, que será usado para fins de caridade.",
             "placeholder": "Quantidade",
             "button": "Enviar",
             "success": "Doação enviada",
@@ -1038,7 +1038,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "แอร์ดรอป",
-            "text": "หลังจากสิ้นสุดฤดูกาลแรก โทเค็นจะถูกลิสต์<br><br>ตอนนี้คุณสามารถส่งคะแนนบางส่วนของคุณเพื่อการกุศลได้",
+            "text": "ข้อมูลเกี่ยวกับการลิสต์จะได้รับในภายหลัง – โปรดติดตามการอัปเดต<br><br>ขณะนี้คุณสามารถส่งคะแนนส่วนหนึ่งของคุณไปยังกองทุน ซึ่งจะนำไปใช้เพื่อการกุศล",
             "placeholder": "จำนวน",
             "button": "ส่ง",
             "success": "ส่งการบริจาคแล้ว",
@@ -1154,7 +1154,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Birinci sezonun sonunda token listelenecek.<br><br>Şu anda bazı puanlarınızı hayır kurumlarına gönderebilirsiniz.",
+            "text": "Listeleme bilgileri daha sonra verilecektir – güncellemeleri takip edin.<br><br>Şu anda puanlarınızın bir kısmını bir fona gönderebilir ve bunlar hayır amaçlı kullanılacaktır.",
             "placeholder": "Miktar",
             "button": "Gönder",
             "success": "Bağışlama gönderildi",
@@ -1270,7 +1270,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Birinci mavsum tugagandan so‘ng token ro‘yxatga olinadi.<br><br>Hozirda siz ba'zi ballaringizni xayriya uchun jo‘natasiz.",
+            "text": "Listing ma'lumotlari keyinroq beriladi – yangilanishlarni kuzatib boring.<br><br>Hozirda siz ballaringizning bir qismini xayriya maqsadlari uchun sarflanadigan fondga yuborishingiz mumkin.",
             "placeholder": "Miqdor",
             "button": "Yuborish",
             "success": "Xayriya yuborildi",
@@ -1386,7 +1386,7 @@ var _translations = {
         },
         "airdrop": {
             "title": "Airdrop",
-            "text": "Sau khi mùa giải đầu tiên kết thúc, token sẽ được niêm yết.<br><br>Hiện tại bạn có thể gửi một số điểm của bạn cho từ thiện.",
+            "text": "Thông tin về danh sách sẽ được cung cấp sau – hãy theo dõi các bản cập nhật.<br><br>Hiện tại bạn có thể gửi một phần điểm của mình vào quỹ, chúng sẽ được sử dụng cho mục đích từ thiện.",
             "placeholder": "Số lượng",
             "button": "Gửi",
             "success": "Đã gửi quyên góp",
