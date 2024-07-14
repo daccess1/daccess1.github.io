@@ -80,6 +80,11 @@ async function loadActives(type = 'round') {
     return await payload.json();
 }
 
+async function loadDaily() {
+    const payload = await fetch(`${_base_url}/player/${_tg_user.id}/daily`);
+    return await payload.json();
+}
+
 async function upgradeActive(el) {
     resetOfflineTimeout();
 
@@ -115,4 +120,27 @@ async function upgradeRequest(id) {
             card_id: id
         }));
     });
+}
+
+async function dailyAnswerClick(el) {
+    const answer = el.dataset.answer;
+    console.log(answer);
+
+    const response = await backendAPIRequest(`/player/${_tg_user.id}/daily`, 'post', {
+        value: answer
+    });
+
+    console.log(response);
+
+    if (response.body === '"wrong answer"') {
+        console.log('Wrong answer');
+    } else {
+        console.log('Correct answer');
+    }
+
+
+    hideActivesModal();
+
+    // document.getElementById("toast-body").innerHTML = `${_translations[_player.language_code].airdrop.error_insufficient_funds}`;
+    // _toast.show();
 }

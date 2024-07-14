@@ -159,7 +159,14 @@ async function loadActivesPage(tab = 'round', reload = false) {
 
     _current_actives_tab = tab;
 
-    let data = await loadActives(tab);
+
+    let daily, data;
+    await Promise.all([
+        daily = await loadDaily(),
+        data = await loadActives(tab)
+    ]);
+    console.log('data', data);
+    console.log('daily', daily);
     let total_income = 0;
     let total_purchased = 0;
 
@@ -180,16 +187,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
         header_notification: `${_translations[_player.language_code].actives.header_actives}: ${total_purchased} | ${_translations[_player.language_code].actives.header_income}: ${total_income}`,
         items: data,
         text: _translations[_player.language_code].actives,
-        daily: {
-            question: "Какая криптовалюта крупнейшая по капитализации?",
-            answers: [
-                'Bitcoin',
-                'Ethereum',
-                'TON'
-            ],
-            reward: 5000,
-            countdown_text: new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16)
-        },
+        daily: daily,
         daily_active: true,
     };
 
