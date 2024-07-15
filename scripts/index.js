@@ -118,9 +118,7 @@ function resetOfflineTimeout() {
             document.getElementById('offlineModal--backdrop').classList.remove('d-none');
 
             clearTimeout(_offline_timeout);
-        } else {
-            // console.log(`User online for ${_offline_timeout_time_current} seconds`);
-            //TODO: check timer and send balance update request
+            clearInterval(energyInterval);
         }
     }, 1000);
 }
