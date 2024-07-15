@@ -3,6 +3,7 @@ var tapsTimeout, animateTimeout;
 var energyCurrent, homePlayerBalance, homeTapContainer;
 var energyInterval;
 var tapsStartTime = new Date();
+var dailyData;
 
 function tapEventListener(event) {
     let posX, posY;
@@ -36,6 +37,7 @@ function tapEventListener(event) {
         drawTapResult(posX, posY);
         drawLevelBars();
         tapsCount++;
+        console.log(tapsCount);
         clearTimeout(tapsTimeout);
         resetOfflineTimeout();
     }
@@ -59,21 +61,33 @@ document.addEventListener('loadHome', () => {
     }
 
     energyInterval = setInterval(async () => {
-        //TODO: Update balance
         const tmpTapsCount = tapsCount;
         const tmpTapsStartTime = tapsStartTime.toISOString();
+        console.log(tapsCount);
+        if (tapsCount > 0) {
+            backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
+                taps: tmpTapsCount,
+                timestamp: tmpTapsStartTime,
+            }).then(res => {
+                console.log(res);
+                const body = JSON.parse(res.body);
+                _player.current_energy = body.new_energy;
+                energyCurrent.innerHTML = _player.current_energy;
+            });
+        } else {
+            console.log(`${_base_url}/player/${_tg_user.id}/balance`);
+            const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
+            const body = await req.json();
+            console.log(body);
+            _player.current_energy = body.energy;
+            energyCurrent.innerHTML = _player.current_energy;
+            _player.balance = body.balance;
+            homePlayerBalance.innerHTML = _player.balance;
+        }
+
         tapsCount = 0;
         tapsStartTime = new Date();
-        backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
-            taps: tmpTapsCount,
-            timestamp: tmpTapsStartTime,
-        }).then(res => {
-            console.log(res);
-            const body = JSON.parse(res.body);
-            _player.current_energy = body.new_energy;
-            energyCurrent.innerHTML = _player.current_energy;
-        });
-    }, 3000);
+    }, 5000);
 
     ['mousedown', 'touchstart'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);

@@ -3,8 +3,12 @@ document.addEventListener('loadActives', async () => {
 
     clearInterval(_actives_daily_interval);
     energyInterval = setInterval(async () => {
-        //TODO: Update balance
-    }, 3000);
+        const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
+        const body = await req.json();
+        console.log('actives body', body);
+        _player.balance = body.balance;
+        document.getElementById('screenTopNotification--activesBalance').innerHTML = body.balance;
+    }, 60000 * 60);
     _actives_daily_interval = setInterval(() => {
         _actives_daily_countdown--;
 
@@ -91,8 +95,9 @@ async function loadDaily() {
 
 async function upgradeActive(el) {
     resetOfflineTimeout();
+    const price = parseInt(el.dataset.price);
 
-    if (_player.balance < parseInt(el.dataset.price)) {
+    if (_player.balance < price) {
         hideActivesModal();
 
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_fail;
@@ -113,6 +118,8 @@ async function upgradeActive(el) {
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_success;
         _toast.show();
         await loadActivesPage(_current_actives_tab, true);
+        _player.balance -= price;
+        document.getElementById('activesBalance').innerHTML = _player.balance;
     } else {
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_fail;
         _toast.show();

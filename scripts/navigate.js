@@ -160,13 +160,18 @@ async function loadActivesPage(tab = 'round', reload = false) {
     _current_actives_tab = tab;
 
 
-    let daily, data;
-    await Promise.all([
-        daily = await loadDaily(),
-        data = await loadActives(tab)
-    ]);
-    console.log('data', data);
-    console.log('daily', daily);
+    let data;
+
+    if (!_active_page.includes('actives_')) {
+        await Promise.all([
+            dailyData = await loadDaily(),
+            data = await loadActives(tab)
+        ]);
+    } else {
+        data = await loadActives(tab);
+    }
+
+
     let total_income = 0;
     let total_purchased = 0;
 
@@ -177,7 +182,10 @@ async function loadActivesPage(tab = 'round', reload = false) {
         }
     }
 
-    _actives_daily_countdown = 46325;
+
+
+    _actives_daily_countdown = 86400 - Math.floor((new Date().getTime() - new Date(dailyData.countdown).getTime()) / 1000);
+    dailyData.countdown_time = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);
 
     const view = {
         tab_rounds: tab === 'round',
@@ -187,10 +195,12 @@ async function loadActivesPage(tab = 'round', reload = false) {
         header_notification: `${_translations[_player.language_code].actives.header_actives}: ${total_purchased} | ${_translations[_player.language_code].actives.header_income}: ${total_income}`,
         items: data,
         text: _translations[_player.language_code].actives,
-        daily: daily,
+        daily: dailyData,
         daily_active: true,
         balance: _player.balance,
     };
+
+    console.log(view);
 
     const template = _page_templates['actives'];
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);
