@@ -1,4 +1,5 @@
-var _available_translations = ['en', 'ru', 'de', 'es', 'fr', 'hi', 'id', 'pt', 'th', 'tr', 'uz', 'vi'];
+// var _available_translations = ['en', 'ru', 'de', 'es', 'fr', 'hi', 'id', 'pt', 'th', 'tr', 'uz', 'vi'];
+var _available_translations = ['en', 'ru'];
 var _translations = {
     en: {
         menu: {

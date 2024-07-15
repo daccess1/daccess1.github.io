@@ -4,6 +4,7 @@ var energyCurrent, homePlayerBalance, homeTapContainer;
 var energyInterval;
 var tapsStartTime = new Date();
 var dailyData;
+var skipUpdateAfterTaps = false;
 
 function tapEventListener(event) {
     let posX, posY;
@@ -73,7 +74,11 @@ document.addEventListener('loadHome', () => {
                 const body = JSON.parse(res.body);
                 _player.current_energy = body.new_energy;
                 energyCurrent.innerHTML = _player.current_energy;
+                skipUpdateAfterTaps = true;
             });
+        } else if (skipUpdateAfterTaps) {
+            console.log('Skip update after taps');
+            skipUpdateAfterTaps = false;
         } else {
             console.log(`${_base_url}/player/${_tg_user.id}/balance`);
             const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
@@ -87,7 +92,7 @@ document.addEventListener('loadHome', () => {
 
         tapsCount = 0;
         tapsStartTime = new Date();
-    }, 5000);
+    }, 3000);
 
     ['mousedown', 'touchstart'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
@@ -102,10 +107,11 @@ document.addEventListener('loadHome', () => {
                         timestamp: tapsStartTime.toISOString(),
                     }).then(res => {
                         console.log(res);
+                        skipUpdateAfterTaps = true;
                     });
                 }
                 tapsCount = 0;
-            }, 300);
+            }, 500);
             animateTimeout = setTimeout(() => {
                 homeTapContainer.classList.remove('tapGame--tapped');
             }, 100);
