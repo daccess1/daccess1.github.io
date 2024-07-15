@@ -1,5 +1,4 @@
-// var _available_translations = ['en', 'ru', 'de', 'es', 'fr', 'hi', 'id', 'pt', 'th', 'tr', 'uz', 'vi'];
-var _available_translations = ['en', 'ru'];
+var _available_translations = ['en', 'ru', 'de', 'es', 'fr', 'hi', 'id', 'pt', 'th', 'tr', 'uz', 'vi'];
 var _translations = {
     en: {
         menu: {
@@ -94,7 +93,7 @@ var _translations = {
             invite_5: "every 12 hours",
             friends_list_title: "List of your friends",
             url_copied: "URL copied",
-            tg_message_text: encodeURI("Track your income, invite friends, and unlock rewards. Tap below to start earning now! 🚀"),
+            "tg_message_text": encodeURI("Play with me in Umperium and get a chance to win a Lamborghini! Become part of an investment fund: tap the screen, invest in assets, and sharpen your mind! 🚀"),
         },
         boost: {
             title: "Earn more coins",
@@ -211,7 +210,7 @@ var _translations = {
             invite_5: "каждые 12 часов",
             friends_list_title: "Твои друзья",
             url_copied: "Ссылка скопирована",
-            tg_message_text: "Отслеживай доход, приглашай друзей, получай награды. Заходи сейчас и зарабатывай! 🚀"
+            ttg_message_text: encodeURI("Играй со мной в Umperium и получи возможность выиграть Lamborghini! Стань частью инвестиционного фонда: тапай по экрану, инвестируй в активы и прокачивай ум! 🚀")
         },
         boost: {
             title: "Заработай больше<br>монет",
@@ -327,7 +326,8 @@ var _translations = {
             "invite_3": "alle 24 Stunden",
             "invite_5": "alle 12 Stunden",
             "friends_list_title": "Liste deiner Freunde",
-            "url_copied": "URL kopiert"
+            "url_copied": "URL kopiert",
+            "tg_message_text": encodeURI("Spiel mit mir Umperium und erhalte die Chance, einen Lamborghini zu gewinnen! Werde Teil eines Investmentfonds: Tippe auf den Bildschirm, investiere in Vermögenswerte und verbessere deinen Verstand! 🚀"),
         },
         "boost": {
             "title": "Mehr Münzen verdienen",
@@ -443,7 +443,8 @@ var _translations = {
             "invite_3": "cada 24 horas",
             "invite_5": "cada 12 horas",
             "friends_list_title": "Lista de tus amigos",
-            "url_copied": "URL copiada"
+            "url_copied": "URL copiada",
+            "tg_message_text": encodeURI("¡Juega conmigo en Umperium y obtén la oportunidad de ganar un Lamborghini! Sé parte de un fondo de inversión: toca la pantalla, invierte en activos y mejora tu mente! 🚀")
         },
         "boost": {
             "title": "Gana más monedas",
@@ -559,7 +560,8 @@ var _translations = {
             "invite_3": "toutes les 24 heures",
             "invite_5": "toutes les 12 heures",
             "friends_list_title": "Liste de vos amis",
-            "url_copied": "URL copiée"
+            "url_copied": "URL copiée",
+            "tg_message_text": encodeURI("Joue avec moi à Umperium et tente de gagner une Lamborghini ! Fais partie d'un fonds d'investissement : tape sur l'écran, investis dans des actifs et développe ton esprit ! 🚀")
         },
         "boost": {
             "title": "Gagnez plus de pièces",
@@ -675,7 +677,8 @@ var _translations = {
             "invite_3": "हर 24 घंटे",
             "invite_5": "हर 12 घंटे",
             "friends_list_title": "आपके दोस्तों की सूची",
-            "url_copied": "URL कॉपी हो गया"
+            "url_copied": "URL कॉपी हो गया",
+            "tg_message_text": encodeURI("Umperium में मेरे साथ खेलो और Lamborghini जीतने का मौका पाओ! एक निवेश फंड का हिस्सा बनो: स्क्रीन पर टैप करो, संपत्तियों में निवेश करो और अपना दिमाग तेज करो! 🚀")
         },
         "boost": {
             "title": "अधिक सिक्के कमाएं",
@@ -791,7 +794,8 @@ var _translations = {
             "invite_3": "setiap 24 jam",
             "invite_5": "setiap 12 jam",
             "friends_list_title": "Daftar teman Anda",
-            "url_copied": "URL disalin"
+            "url_copied": "URL disalin",
+            "tg_message_text": encodeURI("Bermain dengan saya di Umperium dan dapatkan kesempatan untuk memenangkan Lamborghini! Jadilah bagian dari dana investasi: ketuk layar, berinvestasi dalam aset, dan tingkatkan pikiranmu! 🚀")
         },
         "boost": {
             "title": "Dapatkan lebih banyak koin",
@@ -907,7 +911,8 @@ var _translations = {
             "invite_3": "a cada 24 horas",
             "invite_5": "a cada 12 horas",
             "friends_list_title": "Lista de seus amigos",
-            "url_copied": "URL copiada"
+            "url_copied": "URL copiada",
+            "tg_message_text": encodeURI("Jogue comigo no Umperium e tenha a chance de ganhar um Lamborghini! Faça parte de um fundo de investimento: toque na tela, invista em ativos e melhore sua mente! 🚀")
         },
         "boost": {
             "title": "Ganhe mais moedas",
@@ -1023,7 +1028,8 @@ var _translations = {
             "invite_3": "ทุกๆ 24 ชั่วโมง",
             "invite_5": "ทุกๆ 12 ชั่วโมง",
             "friends_list_title": "รายชื่อเพื่อนของคุณ",
-            "url_copied": "คัดลอก URL แล้ว"
+            "url_copied": "คัดลอก URL แล้ว",
+            "tg_message_text": encodeURI("เล่นกับฉันใน Umperium และรับโอกาสที่จะชนะ Lamborghini! เป็นส่วนหนึ่งของกองทุนการลงทุน: แตะหน้าจอ, ลงทุนในสินทรัพย์และพัฒนาสมองของคุณ! 🚀")
         },
         "boost": {
             "title": "รับเหรียญเพิ่ม",
@@ -1139,7 +1145,8 @@ var _translations = {
             "invite_3": "her 24 saatte bir",
             "invite_5": "her 12 saatte bir",
             "friends_list_title": "Arkadaşlarınızın Listesi",
-            "url_copied": "URL kopyalandı"
+            "url_copied": "URL kopyalandı",
+            "tg_message_text": encodeURI("Umperium'da benimle oyna ve Lamborghini kazanma şansı yakala! Bir yatırım fonunun parçası ol: ekrana dokun, varlıklara yatırım yap ve zihnini geliştir! 🚀")
         },
         "boost": {
             "title": "Daha Fazla Coin Kazanın",
@@ -1255,7 +1262,8 @@ var _translations = {
             "invite_3": "har 24 soatda",
             "invite_5": "har 12 soatda",
             "friends_list_title": "Do‘stlaringiz ro‘yxati",
-            "url_copied": "URL nusxalandi"
+            "url_copied": "URL nusxalandi",
+            "tg_message_text": encodeURI("Umperiumda men bilan o'yna va Lamborghini yutib olish imkoniyatiga ega bo'ling! Investitsiya fondining bir qismi bo'ling: ekranga teging, aktivlarga sarmoya yotqizing va aqlingizni oshiring! 🚀")
         },
         "boost": {
             "title": "Ko‘proq tanga oling",
@@ -1371,7 +1379,8 @@ var _translations = {
             "invite_3": "mỗi 24 giờ",
             "invite_5": "mỗi 12 giờ",
             "friends_list_title": "Danh sách bạn bè của bạn",
-            "url_copied": "URL đã được sao chép"
+            "url_copied": "URL đã được sao chép",
+            "tg_message_text": encodeURI("Chơi với tôi trong Umperium và có cơ hội giành được Lamborghini! Trở thành một phần của quỹ đầu tư: chạm vào màn hình, đầu tư vào tài sản và rèn luyện trí óc của bạn! 🚀")
         },
         "boost": {
             "title": "Kiếm thêm đồng",
