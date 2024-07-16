@@ -1,9 +1,7 @@
 let _wheelRotated;
 var _countdownInterval;
-console.log('boost js');
 
 document.addEventListener('loadBoost', function() {
-    console.log('load boost');
     _wheelRotated = !!_player.time_to_next_spin;
 
     const screenTopNotification = document.getElementById("screenTopNotification");
@@ -25,7 +23,6 @@ async function spinWheel() {
     resetOfflineTimeout();
 
     if (_player.friends_total < 3) {
-        console.log('Navigate to friends page');
         return await loadFriendsPage();
     }
 
@@ -52,7 +49,6 @@ async function spinWheel() {
     div.style.transform = 'rotate('+deg+'deg)';
     div.style.webkitTransform = 'rotate('+deg+'deg)';
 
-    console.log(`Target sector: ${targetSector}, points: ${sectors[targetSector]}`);
     _wheelRotated = true;
 
 
@@ -91,9 +87,8 @@ async function applyPromocode() {
         const response = await backendAPIRequest(`/player/${_tg_user.id}/redeem_promo_code`, "post", {
             code: code
         });
-        console.log(response);
+
         if (response.status === 200) {
-            console.log('Success');
             const data = JSON.parse(response.body);
             _player.balance += data.bonus;
             document.getElementById("toast-body").innerHTML = `${_translations[_player.language_code].boost.promocode_success} ${data.bonus}`;
@@ -103,7 +98,6 @@ async function applyPromocode() {
             _toast.show();
         }
     } catch (ex) {
-        console.log('Ex:', ex);
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].boost.promocode_error;
         _toast.show();
     }
@@ -114,16 +108,13 @@ async function clickTask(el) {
     const url = el.dataset.url;
 
     if (el.classList.contains('boostTask--item--clicked')) {
-        console.log('Already clicked');
         _wa.openLink(url);
         return;
     }
 
     resetOfflineTimeout();
 
-    console.log('Url:', `/player/${_tg_user.id}/tasks/${id}`);
     const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
-    console.log(response);
 
     if (response.status === 200) {
         el.classList.add('boostTask--item--clicked');

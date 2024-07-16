@@ -24,6 +24,7 @@ var _page_templates = {};
 var _offline_timeout_time_max = 3600 * 3;
 var _offline_timeout_time_current = 0;
 var _offline_timeout;
+var _offline_balance_update_time = 60;
 
 document.addEventListener('DOMContentLoaded', async () => {
     _wa = window.Telegram.WebApp;
@@ -33,9 +34,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 } );
 
 document.addEventListener('preload', async () => {
-    console.log('loadscreen event');
-
-
     _wa.BackButton.onClick(() => {
         loadHomePage();
         _active_page = "home";

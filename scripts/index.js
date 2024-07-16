@@ -10,14 +10,6 @@ async function getTgUserData() {
 
     if (userPayload) {
         _tg_user = JSON.parse(userPayload);
-        console.log(_tg_user);
-    }
-
-    if (!_tg_user) {
-        _tg_user = {
-            id: 131705404,
-            language_code: 'ru'
-        }
     }
 }
 
@@ -32,7 +24,6 @@ async function getUserData() {
     }
 
     if (_tg_user) {
-        console.log('Loading player');
         let playerPayload;
         try {
             playerPayload = await fetch(`${_base_url}/player/${_tg_user.id}`);
@@ -41,7 +32,6 @@ async function getUserData() {
         }
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
-            console.log(_player);
         } else {
             const body = {
                 "user_id": _tg_user.id,
@@ -113,7 +103,6 @@ function resetOfflineTimeout() {
         _offline_timeout_time_current++;
 
         if (_offline_timeout_time_current >= _offline_timeout_time_max) {
-            console.log('User is offline');
             document.getElementById('offlineModal').classList.remove('offlineModal--hidden');
             document.getElementById('offlineModal--backdrop').classList.remove('d-none');
 

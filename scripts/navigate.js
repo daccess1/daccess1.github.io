@@ -1,6 +1,6 @@
 function changeActiveButton(page) {
-    console.log('Active Button:', page);
     const buttons = document.getElementsByClassName('bottomMenu--item');
+
     for (let button of buttons) {
         const icon = button.getElementsByClassName('bottomMenu--itemIcon')[0];
         if (button.dataset.page === page) {
@@ -31,7 +31,6 @@ async function loadHomePage(reload = false) {
     if (_show_offline_income) {
         const offlineIncomeRequest = await fetch(`${_base_url}/player/${_tg_user.id}/offline_income`);
         const payload = await offlineIncomeRequest.json();
-        console.log('offline income:', payload);
         offline_income = payload.offline_income;
     }
 
@@ -80,7 +79,6 @@ async function loadFriendsPage(reload = false) {
 
     const viewDataPayload = await fetch(`${_base_url}/player/friends/${_player.ref_id}`);
     const viewData = await viewDataPayload.json();
-    console.log(viewData);
 
     for (let item of viewData) {
         item.level_name = _translations[_player.language_code].levels[item.player_level.level].name;
@@ -114,8 +112,6 @@ async function loadBoostPage() {
     const tasksRequest = await fetch(`${_base_url}/player/${_tg_user.id}/tasks`);
     const tasks = await tasksRequest.json();
 
-    console.log(tasks);
-
     const view = {
         countdown: new Date(_player.time_to_next_spin * 1000).toISOString().slice(11, 19),
         can_spin: _player.friends_total >= 3,
@@ -148,7 +144,6 @@ async function loadActivesPage(tab = 'round', reload = false) {
     }
 
     if (_active_page.includes('actives_')) {
-        console.log('Changing actives tab');
         const buttons = document.getElementsByClassName('activesTabs--item');
         for (let button of buttons) {
             button.classList.remove('activesTabs--item--active');
@@ -199,8 +194,6 @@ async function loadActivesPage(tab = 'round', reload = false) {
         daily_active: true,
         balance: _player.balance,
     };
-
-    console.log(view);
 
     const template = _page_templates['actives'];
     document.getElementById('pageContent').innerHTML = Mustache.render(template, view);

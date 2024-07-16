@@ -1,11 +1,8 @@
 document.addEventListener('loadActives', async () => {
-    console.log('loadActives');
-
     clearInterval(_actives_daily_interval);
     energyInterval = setInterval(async () => {
         const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
         const body = await req.json();
-        console.log('actives body', body);
         _player.balance = body.balance;
         document.getElementById('screenTopNotification--activesBalance').innerHTML = body.balance;
     }, 60000 * 60);
@@ -24,7 +21,6 @@ document.addEventListener('loadActives', async () => {
             }
 
             hideActivesModal();
-            console.log('Hide actives daily');
             clearInterval(_actives_daily_interval);
             return;
         }
@@ -73,7 +69,6 @@ function showActivesModalDaily() {
 function hideActivesModal() {
     resetOfflineTimeout();
 
-    console.log('Hiding actives modals');
     document.getElementById('activesBlur').classList.add('activesBlur--hidden');
     document.getElementById('activesModal').classList.add('activesModal--hidden');
     document.getElementById('activesModalDaily').classList.add('activesModal--hidden');
@@ -104,15 +99,10 @@ async function upgradeActive(el) {
         _toast.show();
 
         return;
-    } else {
-        console.log(_player.balance)
-        console.log(el.dataset)
     }
 
     let is_success = await upgradeRequest(el.dataset.id);
     hideActivesModal();
-
-    console.log('Card upgrade result:', is_success);
 
     if (is_success) {
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_success;
@@ -147,7 +137,6 @@ async function upgradeRequest(id) {
 
 async function dailyAnswerClick(el) {
     const answer = el.dataset.answer;
-    console.log(answer);
 
     const response = await backendAPIRequest(`/player/${_tg_user.id}/daily`, 'post', {
         value: answer
@@ -155,6 +144,7 @@ async function dailyAnswerClick(el) {
 
     console.log(response);
 
+    //TODO: CORS API fix
     if (response.body === '"wrong answer"') {
         console.log('Wrong answer');
     } else {
