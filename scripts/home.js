@@ -54,6 +54,7 @@ document.addEventListener('loadHome', () => {
     selectedLangButton.classList.add('changeLangButton--active');
 
     const eventParams = { passive: false };
+    target.addEventListener('touchstart', ignore, eventParams);
     target.addEventListener('touchcancel', ignore, eventParams);
     target.addEventListener('touchend', ignore, eventParams);
     target.addEventListener('touchmove', ignore, eventParams);
@@ -114,11 +115,11 @@ document.addEventListener('loadHome', () => {
         }
     }, 3000);
 
-    ['mousedown', 'touchstart'].forEach(eventType => {
+    ['pointerdown'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
     });
 
-    ['mouseup', 'mouseleave', 'touchend'].forEach(eventType => {
+    ['pointerup'].forEach(eventType => {
         target.addEventListener(eventType, (e) => {
             tapsTimeout = setTimeout(() => {
                 if (tapsCount > 0) {
