@@ -166,6 +166,9 @@ async function loadActivesPage(tab = 'round', reload = false) {
         data = await loadActives(tab);
     }
 
+    if (dailyData) {
+        dailyBonus = dailyData.reward;
+    }
 
     let total_income = 0;
     let total_purchased = 0;

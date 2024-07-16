@@ -78,7 +78,8 @@ var _translations = {
             daily_card: "Daily card",
             daily_card_title: "Sharpen your mind and earn",
             daily_answer_correct: "Correct! You've earned:",
-            daily_answer_wrong: "Mistake! Correct answer:",
+            daily_answer_repeated: "You've already answered this question",
+            daily_answer_wrong: "Mistake!",
         },
         friends: {
             title: "Invite friends and<br>get bonuses!",
@@ -195,7 +196,8 @@ var _translations = {
             daily_card: "Карточка дня",
             daily_card_title: "Прокачай ум и получи",
             daily_answer_correct: "Правильно! Получено:",
-            daily_answer_wrong: "Неверно! Правильный ответ:",
+            daily_answer_wrong: "Неверно!",
+            daily_answer_repeated: "Вы уже отвечали на вопрос сегодня"
         },
         friends: {
             title: "Приглашай друзей и<br>получай бонусы",
@@ -312,7 +314,8 @@ var _translations = {
             "daily_card": "Tageskarte",
             "daily_card_title": "Schärfe deinen Verstand und verdiene",
             "daily_answer_correct": "Richtig! Du hast verdient:",
-            "daily_answer_wrong": "Fehler! Richtige Antwort:"
+            "daily_answer_repeated": "Du hast diese Frage bereits beantwortet",
+            "daily_answer_wrong": "Fehler!"
         },
         "friends": {
             "title": "Freunde einladen und<br>Bonus erhalten!",
@@ -429,7 +432,8 @@ var _translations = {
             "daily_card": "Tarjeta diaria",
             "daily_card_title": "Agudiza tu mente y gana",
             "daily_answer_correct": "¡Correcto! Has ganado:",
-            "daily_answer_wrong": "¡Error! Respuesta correcta:"
+            "daily_answer_repeated": "Ya has respondido a esta pregunta",
+            "daily_answer_wrong": "¡Error!"
         },
         "friends": {
             "title": "¡Invita a amigos y<br>obtén bonificaciones!",
@@ -546,7 +550,8 @@ var _translations = {
             "daily_card": "Carte quotidienne",
             "daily_card_title": "Aiguisez votre esprit et gagnez",
             "daily_answer_correct": "Correct! Vous avez gagné:",
-            "daily_answer_wrong": "Erreur! Réponse correcte:"
+            "daily_answer_repeated": "Vous avez déjà répondu à cette question",
+            "daily_answer_wrong": "Erreur !"
         },
         "friends": {
             "title": "Invitez des amis et<br>obtenez des bonus!",
@@ -663,7 +668,8 @@ var _translations = {
             "daily_card": "दैनिक कार्ड",
             "daily_card_title": "अपने दिमाग को तेज करें और कमाएँ",
             "daily_answer_correct": "सही! आपने कमाया:",
-            "daily_answer_wrong": "गलती! सही उत्तर:"
+            "daily_answer_repeated": "आपने पहले ही इस प्रश्न का उत्तर दे दिया है",
+            "daily_answer_wrong": "गलती!"
         },
         "friends": {
             "title": "दोस्तों को आमंत्रित करें और<br>बोनस प्राप्त करें!",
@@ -780,7 +786,8 @@ var _translations = {
             "daily_card": "Kartu harian",
             "daily_card_title": "Asah pikiranmu dan dapatkan",
             "daily_answer_correct": "Benar! Anda mendapatkan:",
-            "daily_answer_wrong": "Salah! Jawaban yang benar:"
+            "daily_answer_repeated": "Anda sudah menjawab pertanyaan ini",
+            "daily_answer_wrong": "Kesalahan!"
         },
         "friends": {
             "title": "Undang teman dan<br>dapatkan bonus!",
@@ -897,7 +904,8 @@ var _translations = {
             "daily_card": "Carta diária",
             "daily_card_title": "Afie sua mente e ganhe",
             "daily_answer_correct": "Correto! Você ganhou:",
-            "daily_answer_wrong": "Erro! Resposta correta:"
+            "daily_answer_repeated": "Você já respondeu a esta pergunta",
+            "daily_answer_wrong": "Erro!"
         },
         "friends": {
             "title": "Convide amigos e<br>ganhe bônus!",
@@ -1014,7 +1022,8 @@ var _translations = {
             "daily_card": "การ์ดรายวัน",
             "daily_card_title": "ฝึกสมองและรับ",
             "daily_answer_correct": "ถูกต้อง! คุณได้รับ:",
-            "daily_answer_wrong": "ผิดพลาด! คำตอบที่ถูกต้อง:"
+            "daily_answer_repeated": "คุณได้ตอบคำถามนี้แล้ว",
+            "daily_answer_wrong": "ผิดพลาด!"
         },
         "friends": {
             "title": "เชิญเพื่อนและ<br>รับโบนัส!",
@@ -1131,7 +1140,8 @@ var _translations = {
             "daily_card": "Günlük Kart",
             "daily_card_title": "Zihnini keskinleştir ve kazan",
             "daily_answer_correct": "Doğru! Kazandınız:",
-            "daily_answer_wrong": "Hata! Doğru cevap:"
+            "daily_answer_repeated": "Bu soruya zaten cevap verdiniz",
+            "daily_answer_wrong": "Hata!"
         },
         "friends": {
             "title": "Arkadaşları Davet Et<br>ve Bonus Kazan!",
@@ -1248,7 +1258,8 @@ var _translations = {
             "daily_card": "Kunlik karta",
             "daily_card_title": "Aqlingizni charxlang va oling",
             "daily_answer_correct": "To‘g‘ri! Siz yutdingiz:",
-            "daily_answer_wrong": "Xato! To‘g‘ri javob:"
+            "daily_answer_repeated": "Siz bu savolga allaqachon javob bergansiz",
+            "daily_answer_wrong": "Xato!"
         },
         "friends": {
             "title": "Do‘stlarni taklif et<br>va bonuslar oling!",
@@ -1365,7 +1376,8 @@ var _translations = {
             "daily_card": "Thẻ hàng ngày",
             "daily_card_title": "Rèn luyện trí óc và kiếm",
             "daily_answer_correct": "Đúng rồi! Bạn đã kiếm được:",
-            "daily_answer_wrong": "Sai rồi! Đáp án đúng là:"
+            "daily_answer_repeated": "Bạn đã trả lời câu hỏi này rồi",
+            "daily_answer_wrong": "Sai lầm!"
         },
         "friends": {
             "title": "Mời bạn bè và<br>nhận phần thưởng!",

@@ -1,3 +1,5 @@
+var dailyBonus;
+
 document.addEventListener('loadActives', async () => {
     clearInterval(_actives_daily_interval);
     energyInterval = setInterval(async () => {
@@ -142,13 +144,20 @@ async function dailyAnswerClick(el) {
         value: answer
     });
 
-    console.log(response);
-
-    //TODO: CORS API fix
     if (response.body === '"wrong answer"') {
-        console.log('Wrong answer');
+        document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_wrong ;
+        _toast.show();
     } else {
-        console.log('Correct answer');
+        if (response.status === 400 && response.error === '{"status":"error","message":"sorry mr. Abuser, you cannot answer again today"}') {
+            document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_repeated;
+            _toast.show();
+        } else if (response.status === 200) {
+            _toast.hide();
+            document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_correct + ' ' + dailyBonus + ' <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg">';
+            _toast.show();
+            _player.balance += dailyBonus;
+            document.getElementById('activesBalance').innerHTML = _player.balance;
+        }
     }
 
     hideActivesModal();

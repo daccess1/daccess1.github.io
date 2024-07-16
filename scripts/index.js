@@ -11,6 +11,14 @@ async function getTgUserData() {
     if (userPayload) {
         _tg_user = JSON.parse(userPayload);
     }
+
+    //TODO: remove debug user
+    if (!_tg_user) {
+        _tg_user = {
+            id: 131705404,
+            language_code: 'ru'
+        }
+    }
 }
 
 async function getUserData() {
@@ -60,23 +68,33 @@ async function getUserData() {
 async function backendAPIRequest(url, method = 'post', data = null) {
     return new Promise(function (resolve, reject) {
         let xhr = new XMLHttpRequest();
-        xhr.open(method, _base_url + url, true);
-        xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.onload = function () {
-            var status = xhr.status;
-            if (status < 300) {
-                resolve({
-                    status: status,
-                    body: xhr.responseText
-                });
-            } else {
-                reject({
-                    status: status,
-                    error: xhr.responseText
-                });
-            }
-        };
-        xhr.send(data ? JSON.stringify(data) : null);
+
+        try {
+            xhr.open(method, _base_url + url, true);
+            xhr.setRequestHeader('Content-type', 'application/json');
+            xhr.onload = function () {
+                var status = xhr.status;
+                if (status < 300) {
+
+                    resolve({
+                        status: status,
+                        body: xhr.responseText
+                    });
+                } else {
+                    resolve({
+                        status: status,
+                        error: xhr.responseText
+                    });
+                }
+            };
+            xhr.send(data ? JSON.stringify(data) : null);
+        } catch (ex) {
+            resolve({
+                status: xhr.status,
+                error: xhr.responseText
+            });
+        }
+
     });
 }
 
