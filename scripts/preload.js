@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     _wa.headerColor = '#295067';
     _wa.backgroundColor = '#295067';
     _wa.expand();
+    window.addEventListener("scroll", (e) => {
+        console.log('scroll');
+        // e.preventDefault();
+    });
 } );
 
 document.addEventListener('preload', async () => {
