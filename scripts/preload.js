@@ -54,10 +54,13 @@ document.addEventListener('preload', async () => {
     document.getElementById('bottomMenu').style = null;
     document.getElementById('toast').style = null;
     document.getElementById('body').style.backgroundColor = '#01290F';
+
+    const scrollableElement = document.getElementById('pageContent');
+    scrollableElement.addEventListener("touchstart", preventCollapse);
 });
 
 async function preload() {
-    const ver = 96;
+    const ver = 100;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,

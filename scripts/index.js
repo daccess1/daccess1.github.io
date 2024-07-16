@@ -129,3 +129,28 @@ function resetOfflineTimeout() {
         }
     }, 1000);
 }
+
+// Ensure the document is scrollable
+function ensureDocumentIsScrollable() {
+    const isScrollable =
+        document.documentElement.scrollHeight > window.innerHeight;
+    // Check if the document is scrollable
+    if (!isScrollable) {
+        /*
+        Set the document's height to 100 % of
+        the viewport height plus one extra pixel
+        to make it scrollable.
+        */
+        document.documentElement.style.setProperty(
+            "height",
+            "calc(100vh + 1px)",
+            "important"
+        );
+    }
+}
+
+function preventCollapse(event) {
+    if (window.scrollY === 0) {
+        window.scrollTo(0, 1);
+    }
+}

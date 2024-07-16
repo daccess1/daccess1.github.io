@@ -45,6 +45,8 @@ function tapEventListener(event) {
 }
 
 document.addEventListener('loadHome', () => {
+    ensureDocumentIsScrollable();
+
     const target = document.getElementById("tapGame--game");
     homeTapContainer = document.getElementById('tapGame');
     energyCurrent = document.getElementById('level--energyValueCurrent');
@@ -62,6 +64,7 @@ document.addEventListener('loadHome', () => {
 
     function ignore(e) {
         console.log('Evt prevent:', e);
+        preventCollapse();
         e.preventDefault();
     }
 
