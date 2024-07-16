@@ -60,6 +60,7 @@ document.addEventListener('loadHome', () => {
     target.addEventListener('scroll', ignore, eventParams);
 
     function ignore(e) {
+        console.log('Evt prevent:', e);
         e.preventDefault();
     }
 
@@ -113,7 +114,7 @@ document.addEventListener('loadHome', () => {
         }
     }, 3000);
 
-    ['mousedown'].forEach(eventType => {
+    ['mousedown', 'touchstart'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
     });
 
