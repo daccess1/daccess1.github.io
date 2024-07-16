@@ -56,6 +56,8 @@ document.addEventListener('loadHome', () => {
     const eventParams = { passive: false };
     target.addEventListener('touchcancel', ignore, eventParams);
     target.addEventListener('touchend', ignore, eventParams);
+    target.addEventListener('touchmove', ignore, eventParams);
+    target.addEventListener('scroll', ignore, eventParams);
 
     function ignore(e) {
         e.preventDefault();
@@ -111,7 +113,7 @@ document.addEventListener('loadHome', () => {
         }
     }, 3000);
 
-    ['mousedown', 'touchstart'].forEach(eventType => {
+    ['mousedown'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
     });
 
