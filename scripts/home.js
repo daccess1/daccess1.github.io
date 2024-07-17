@@ -63,7 +63,6 @@ document.addEventListener('loadHome', () => {
     target.addEventListener('scroll', ignore, eventParams);
 
     function ignore(e) {
-        console.log('Evt prevent:', e);
         preventCollapse();
         e.preventDefault();
     }

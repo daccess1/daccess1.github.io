@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     _wa.backgroundColor = '#295067';
     _wa.expand();
     window.addEventListener("scroll", (e) => {
-        console.log('scroll');
         // e.preventDefault();
     });
 } );
@@ -60,7 +59,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 100;
+    const ver = 101;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,

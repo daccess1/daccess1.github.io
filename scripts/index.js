@@ -11,14 +11,6 @@ async function getTgUserData() {
     if (userPayload) {
         _tg_user = JSON.parse(userPayload);
     }
-
-    //TODO: remove debug user
-    if (!_tg_user) {
-        _tg_user = {
-            id: 131705404,
-            language_code: 'ru'
-        }
-    }
 }
 
 async function getUserData() {
