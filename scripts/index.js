@@ -14,6 +14,11 @@ async function getTgUserData() {
 }
 
 async function getUserData() {
+    if (!_tg_user) {
+        _tg_user = {
+            id: 131705404
+        }
+    }
     const urlParams = new URLSearchParams(decodeURIComponent(window.location.href));
     if (urlParams.has('start_param')) {
         _start_param = urlParams.get('start_param');
