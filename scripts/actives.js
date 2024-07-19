@@ -81,12 +81,12 @@ function hideActivesModal() {
 async function loadActives(type = 'round') {
     resetOfflineTimeout();
 
-    const payload = await fetch(`${_base_url}/cards/player/${_tg_user.id}/${type}`);
+    const payload = await fetch(`${_base_url}/cards/player/${_player.language_code}/${_tg_user.id}/${type}`);
     return await payload.json();
 }
 
 async function loadDaily() {
-    const payload = await fetch(`${_base_url}/player/${_tg_user.id}/daily`);
+    const payload = await fetch(`${_base_url}/player/${_player.language_code}/${_tg_user.id}/daily`);
     return await payload.json();
 }
 
