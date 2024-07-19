@@ -11,14 +11,15 @@ async function getTgUserData() {
     if (userPayload) {
         _tg_user = JSON.parse(userPayload);
     }
-}
 
-async function getUserData() {
     if (!_tg_user) {
         _tg_user = {
             id: 131705404
         }
     }
+}
+
+async function getUserData() {
     const urlParams = new URLSearchParams(decodeURIComponent(window.location.href));
     if (urlParams.has('start_param')) {
         _start_param = urlParams.get('start_param');
