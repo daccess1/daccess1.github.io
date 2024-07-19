@@ -109,7 +109,7 @@ async function loadBoostPage() {
     changeActiveButton('boost');
     showPagePreloader();
 
-    const tasksRequest = await fetch(`${_base_url}/player/${_tg_user.id}/tasks`);
+    const tasksRequest = await fetch(`${_base_url}/player/${_player.language_code}/${_tg_user.id}/tasks`);
     const tasks = await tasksRequest.json();
 
     const view = {
