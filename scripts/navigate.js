@@ -29,9 +29,14 @@ async function loadHomePage(reload = false) {
     let offline_income = 0;
 
     if (_show_offline_income) {
-        const offlineIncomeRequest = await fetch(`${_base_url}/player/${_tg_user.id}/offline_income`);
-        const payload = await offlineIncomeRequest.json();
-        offline_income = payload.offline_income;
+        try {
+            const offlineIncomeRequest = await fetch(`${_base_url}/player/${_tg_user.id}/offline_income`);
+            const payload = await offlineIncomeRequest.json();
+            offline_income = payload.offline_income;
+        } catch (ex) {
+            offline_income = 0;
+            _show_offline_income = false;
+        }
     }
 
     if (offline_income === 0) {

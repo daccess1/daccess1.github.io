@@ -41,7 +41,7 @@ async function getUserData() {
         } else {
             const body = {
                 "user_id": _tg_user.id,
-                "user_name": _tg_user.first_name + ' ' + _tg_user.last_name,
+                "user_name": _tg_user.username,
                 "inviter_ref_id": _start_param,
                 "avatar_link": "",
                 "language_code": _tg_user.language_code
