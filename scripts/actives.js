@@ -86,8 +86,12 @@ async function loadActives(type = 'round') {
 }
 
 async function loadDaily() {
-    const payload = await fetch(`${_base_url}/player/${_player.language_code}/${_tg_user.id}/daily`);
-    return await payload.json();
+    try {
+        const payload = await fetch(`${_base_url}/player/${_player.language_code}/${_tg_user.id}/daily`);
+        return await payload.json();
+    } catch (ex) {
+        return null;
+    }
 }
 
 async function upgradeActive(el) {

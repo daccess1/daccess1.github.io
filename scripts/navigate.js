@@ -58,6 +58,7 @@ async function loadHomePage(reload = false) {
         language_code: _player.language_code,
         show_offline_income: _show_offline_income,
         offline_income: offline_income,
+        show_avatar: _player.avatar_link.length > 0
     }
 
     const template = _page_templates['home'];
@@ -159,20 +160,32 @@ async function loadActivesPage(tab = 'round', reload = false) {
 
     _current_actives_tab = tab;
 
-
     let data;
+    let daily_active = false;
 
-    if (!_active_page.includes('actives_')) {
-        await Promise.all([
-            dailyData = await loadDaily(),
-            data = await loadActives(tab)
-        ]);
-    } else {
-        data = await loadActives(tab);
+    try {
+        if (!_active_page.includes('actives_')) {
+            await Promise.all([
+                dailyData = await loadDaily(),
+                data = await loadActives(tab)
+            ]);
+        } else {
+            data = await loadActives(tab);
+        }
+    } catch (ex) {
+
     }
 
+
     if (dailyData) {
-        dailyBonus = dailyData.reward;
+        try {
+            dailyBonus = dailyData.reward;
+            _actives_daily_countdown = 86400 - Math.floor((new Date().getTime() - new Date(dailyData.countdown).getTime()) / 1000);
+            dailyData.countdown_time = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);
+            daily_active = true;
+        } catch (ex) {
+
+        }
     }
 
     let total_income = 0;
@@ -185,11 +198,6 @@ async function loadActivesPage(tab = 'round', reload = false) {
         }
     }
 
-
-
-    _actives_daily_countdown = 86400 - Math.floor((new Date().getTime() - new Date(dailyData.countdown).getTime()) / 1000);
-    dailyData.countdown_time = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);
-
     const view = {
         tab_rounds: tab === 'round',
         tab_directions: tab === 'direction',
@@ -199,7 +207,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
         items: data,
         text: _translations[_player.language_code].actives,
         daily: dailyData,
-        daily_active: true,
+        daily_active: daily_active,
         balance: _player.balance,
     };
 
