@@ -46,6 +46,7 @@ async function getUserData() {
                 "avatar_link": "",
                 "language_code": _tg_user.language_code
             }
+            console.log('Creating player:', body);
             const response = await backendAPIRequest('/player', 'post', body);
             if (response.status === 200 || response.status === 201) {
                 _player = JSON.parse(response.body);
