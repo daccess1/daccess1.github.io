@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 document.addEventListener('preload', async () => {
     _wa.BackButton.onClick(() => {
         document.getElementById('body').classList.remove('modalShown');
+        document.getElementById('pageContent').classList.remove('blur');
         loadHomePage();
         _active_page = "home";
     });
@@ -60,7 +61,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 105;
+    const ver = 106;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
