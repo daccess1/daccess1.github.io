@@ -3,7 +3,7 @@
     "id": "neon",
     "name": "Неоновый Квартал",
     "name_in": "Неоновом Квартале",
-    "description": "Сердце города, где неоновые вывески сливаются в ослепительную реку. Здесь корпорация «Синтэк» продаёт будущее за наличные: кибернетические конечности, нейроимпланты и синтетические кайфы. Но за блеском скрываются контрактные убийцы в чёрных плащах и дилеры, готовые подсадить вас на цифровой аддиктив.",
+    "description": "Сердце города, где неоновые вывески сливаются в ослепительную реку. Здесь корпорация «Синтэк» продаёт будущее за наличные: кибернетические конечности, нейроимпланты и синтетические апгрейды. Но за блеском скрываются наемные убийцы в чёрных плащах и дилеры, готовые подсадить вас на цифровой аддиктив.",
     "image": {
       "main": "/assets/images/city/neon.webp",
       "shop": "/assets/images/city/shop.webp",
@@ -21,8 +21,8 @@
         "street_sense": 12
       }
     },
-    "produced_products": ["kibernetika-i-implanty", "elektronika-i-tehnika", "roskosh-i-statusnye-veshi"],
-    "restricted_products": ["narkotiki-i-psihoaktivy", "oruzhie-i-boepripasy", "sistemy-obmana", "transportnye-moduli"],
+    "produced_products": ["kibernetika-i-implanty"],
+    "restricted_products": ["oruzhie-i-boepripasy", "narkotiki-i-psihoaktivy", "transportnye-moduli"],
     "restricted_price_modifier": 2.7,
     "activities": ["neon-rash", "mozgovaya-fishka", "bezumnye-pchely"],
     "entry_fee": 3000
@@ -44,14 +44,14 @@
       "skill_check": {
         "endurance": 14,
         "infiltration": 8,
-        "concealment": 13,
+        "concealment": 11,
         "persuasion": 11,
         "street_sense": 14
       }
     },
-    "produced_products": ["narkotiki-i-psihoaktivy", "oruzhie-i-boepripasy", "transportnye-moduli"],
-    "restricted_products": ["medikamenty-i-bioteh", "roskosh-i-statusnye-veshi", "istochniki-energii"],
-    "restricted_price_modifier": 1.8,
+    "produced_products": ["narkotiki-i-psihoaktivy", "oruzhie-i-boepripasy"],
+    "restricted_products": ["istochniki-energii", "medikamenty-i-bioteh"],
+    "restricted_price_modifier": 1.9,
     "activities": ["neon-rash", "kletka", "bezumnye-pchely", "krovavye-igry", "mehanicheskij-kolizej"],
     "entry_fee": 1500
   },
@@ -72,13 +72,13 @@
       "skill_check": {
         "endurance": 8,
         "infiltration": 13,
-        "concealment": 9,
+        "concealment": 11,
         "persuasion": 11,
         "street_sense": 10
       }
     },
-    "produced_products": ["dannye-i-informaciya", "roskosh-i-statusnye-veshi"],
-    "restricted_products": ["oruzhie-i-boepripasy", "elektronika-i-tehnika", "transportnye-moduli", "sistemy-obmana"],
+    "produced_products": ["roskosh-i-statusnye-veshi"],
+    "restricted_products": ["oruzhie-i-boepripasy", "dannye-i-informaciya"],
     "restricted_price_modifier": 2.9,
     "activities": ["neon-rash", "mozgovaya-fishka"],
     "entry_fee": 3500
@@ -99,15 +99,15 @@
       "description": "",
       "skill_check": {
         "endurance": 11,
-        "infiltration": 7,
-        "concealment": 11,
+        "infiltration": 8,
+        "concealment": 12,
         "persuasion": 13,
         "street_sense": 12
       }
     },
-    "produced_products": ["oruzhie-i-boepripasy", "elektronika-i-tehnika", "resursy-i-syryo", "nanomaterialy", "istochniki-energii"],
-    "restricted_products": [],
-    "restricted_price_modifier": 2,
+    "produced_products": ["nanomaterialy", "resursy-i-syryo"],
+    "restricted_products": ["kibernetika-i-implanty", "sistemy-obmana", "roskosh-i-statusnye-veshi"],
+    "restricted_price_modifier": 2.2,
     "activities": ["mehanicheskij-kolizej", "bezumnye-pchely", "kletka"],
     "entry_fee": 2000
   },
@@ -133,8 +133,8 @@
         "street_sense": 10
       }
     },
-    "produced_products": ["kibernetika-i-implanty", "dannye-i-informaciya", "elektronika-i-tehnika", "transportnye-moduli", "sistemy-obmana"],
-    "restricted_products": ["narkotiki-i-psihoaktivy", "geneticheskie-modifikacii-i-biohaking", "istochniki-energii", "nanomaterialy"],
+    "produced_products": ["dannye-i-informaciya","transportnye-moduli","sistemy-obmana"],
+    "restricted_products": ["geneticheskie-modifikacii","elektronika-i-tehnika"],
     "restricted_price_modifier": 2.2,
     "activities": ["mozgovoj-shtorm", "bezumnye-pchely", "krovavye-igry"],
     "entry_fee": 2000
@@ -161,8 +161,8 @@
         "street_sense": 10
       }
     },
-    "produced_products": ["elektronika-i-tehnika", "nanomaterialy"],
-    "restricted_products": ["narkotiki-i-psihoaktivy", "oruzhie-i-boepripasy", "dannye-i-informaciya", "medikamenty-i-bioteh", "roskosh-i-statusnye-veshi", "geneticheskie-modifikacii-i-biohaking", "sistemy-obmana"],
+    "produced_products": ["elektronika-i-tehnika"],
+    "restricted_products": ["narkotiki-i-psihoaktivy", "roskosh-i-statusnye-veshi", "geneticheskie-modifikacii"],
     "restricted_price_modifier": 2.1,
     "activities": [],
     "entry_fee": 2500
@@ -190,7 +190,7 @@
       }
     },
     "produced_products": ["oruzhie-i-boepripasy", "istochniki-energii"],
-    "restricted_products": ["narkotiki-i-psihoaktivy", "dannye-i-informaciya", "medikamenty-i-bioteh", "roskosh-i-statusnye-veshi", "geneticheskie-modifikacii-i-biohaking", "kibernetika-i-implanty"],
+    "restricted_products": ["elektronika-i-tehnika","nanomaterialy","sistemy-obmana"],
     "restricted_price_modifier": 1.6,
     "activities": ["neon-rash","kletka","mehanicheskij-kolizej"],
     "entry_fee": 1800
@@ -217,8 +217,8 @@
         "street_sense": 8
       }
     },
-    "produced_products": ["medikamenty-i-bioteh", "sistemy-obmana",  "geneticheskie-modifikacii-i-biohaking", "narkotiki-i-psihoaktivy"],
-    "restricted_products": ["kibernetika-i-implanty", "oruzhie-i-boepripasy", "elektronika-i-tehnika", "resursy-i-syryo"],
+    "produced_products": ["medikamenty-i-bioteh","geneticheskie-modifikacii"],
+    "restricted_products": ["kibernetika-i-implanty", "roskosh-i-statusnye-veshi", "resursy-i-syryo"],
     "restricted_price_modifier": 1.9,
     "activities": [],
     "entry_fee": 2000
